@@ -1,0 +1,61 @@
+{
+  "config_path": "src\\monetary_rl\\config\\benchmark_lq.json",
+  "discount_factor": 0.99,
+  "loss_weights": {
+    "inflation": 1.0,
+    "output_gap": 0.5,
+    "rate_smoothing": 0.1
+  },
+  "A": [
+    [
+      0.8,
+      0.2,
+      0.0
+    ],
+    [
+      0.05,
+      0.78,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "B": [
+    [
+      -0.08
+    ],
+    [
+      -0.12
+    ],
+    [
+      1.0
+    ]
+  ],
+  "Sigma": [
+    [
+      0.1719,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.4587,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "initial_state": [
+    1.0,
+    -1.0,
+    0.0
+  ],
+  "example_total_discounted_loss": 20.26178899304753,
+  "phase2_summary_present": true
+}

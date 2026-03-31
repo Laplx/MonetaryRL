@@ -1,0 +1,14 @@
+{
+  "name": "ann_inflation",
+  "hidden_units": 2,
+  "train_size": 54,
+  "val_size": 12,
+  "test_size": 12,
+  "train_mse": 0.01622185182935251,
+  "val_mse": 0.04175524814074418,
+  "test_mse": 0.16749993945285271,
+  "full_sample_mse": 0.043423618588566644,
+  "residual_std_full_sample": 0.201735934335801,
+  "n_iter": 268,
+  "random_state": 0
+}

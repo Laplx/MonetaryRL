@@ -1,0 +1,38 @@
+{
+  "name": "baseline_lq_benchmark",
+  "state_names": [
+    "inflation_gap",
+    "output_gap",
+    "lagged_policy_rate_gap"
+  ],
+  "action_name": "policy_rate_gap",
+  "inflation_target": 2.0,
+  "neutral_rate": 2.0,
+  "discount_factor": 0.99,
+  "loss_weights": {
+    "inflation": 1.0,
+    "output_gap": 0.5,
+    "rate_smoothing": 0.1
+  },
+  "A": [
+    [0.8, 0.2, 0.0],
+    [0.05, 0.78, 0.0],
+    [0.0, 0.0, 0.0]
+  ],
+  "B": [
+    [-0.08],
+    [-0.12],
+    [1.0]
+  ],
+  "Sigma": [
+    [0.1719, 0.0, 0.0],
+    [0.0, 0.4587, 0.0],
+    [0.0, 0.0, 0.0]
+  ],
+  "calibration_notes": {
+    "dynamic_structure": "stylized stable 3-state benchmark consistent with Phase 0/1 specification",
+    "shock_scales": "inflation and output-gap shock scales anchored to Phase 2 SVAR residual standard deviations",
+    "targets": "inflation target and neutral rate both set to 2.0 as baseline",
+    "status": "initial benchmark calibration for Phase 3; may be refined before final thesis draft"
+  }
+}

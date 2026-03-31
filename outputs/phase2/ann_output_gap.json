@@ -1,0 +1,14 @@
+{
+  "name": "ann_output_gap",
+  "hidden_units": 3,
+  "train_size": 54,
+  "val_size": 12,
+  "test_size": 12,
+  "train_mse": 0.10125296596340015,
+  "val_mse": 0.49914757112300895,
+  "test_mse": 0.22971031550956664,
+  "full_sample_mse": 0.18223018976428865,
+  "residual_std_full_sample": 0.42950515102825804,
+  "n_iter": 314,
+  "random_state": 3
+}
