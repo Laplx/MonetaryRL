@@ -14,6 +14,8 @@ class BenchmarkEnvConfig:
     action_high: float = 6.0
     initial_state_low: tuple[float, float, float] = (-2.0, -2.0, -2.0)
     initial_state_high: tuple[float, float, float] = (2.0, 2.0, 2.0)
+    state_abs_limit: float = 25.0
+    terminal_penalty: float = 50.0
     seed: int = 0
 
 
@@ -42,9 +44,13 @@ class LQBenchmarkEnv:
         loss = float(self.model.stage_loss(self.state, clipped_action))
         reward = -loss
         next_state = self.model.state_transition(self.state, clipped_action, shock).astype(np.float32)
+        exploded = (not np.all(np.isfinite(next_state))) or bool(np.any(np.abs(next_state) > self.config.state_abs_limit))
+        if exploded:
+            reward -= self.config.terminal_penalty
+            next_state = np.nan_to_num(next_state, nan=0.0, posinf=self.config.state_abs_limit, neginf=-self.config.state_abs_limit)
+            next_state = np.clip(next_state, -self.config.state_abs_limit, self.config.state_abs_limit).astype(np.float32)
         self.state = next_state
         self.t += 1
-        done = self.t >= self.config.horizon
-        info = {"loss": loss, "raw_action": float(action), "action": clipped_action}
+        done = self.t >= self.config.horizon or exploded
+        info = {"loss": loss, "raw_action": float(action), "action": clipped_action, "exploded": exploded}
         return next_state.copy(), reward, done, info
-

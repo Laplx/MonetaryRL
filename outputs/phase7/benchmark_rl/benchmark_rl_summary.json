@@ -1,0 +1,92 @@
+{
+  "riccati_K": [
+    [
+      1.089101,
+      1.078439,
+      0.434052
+    ]
+  ],
+  "linear_policy_theta": [
+    1.15759,
+    0.923679,
+    0.379484
+  ],
+  "taylor_gap_intercept": 0.2165731284960799,
+  "ppo_config": {
+    "total_updates": 180,
+    "rollout_steps": 768,
+    "gamma": 0.99,
+    "gae_lambda": 0.95,
+    "clip_ratio": 0.2,
+    "policy_lr": 0.0003,
+    "value_lr": 0.001,
+    "train_epochs": 6,
+    "minibatch_size": 256,
+    "entropy_coef": 0.0005,
+    "value_coef": 0.5,
+    "max_grad_norm": 0.5,
+    "hidden_size": 64,
+    "linear_policy": true,
+    "state_scale": [
+      2.5,
+      2.5,
+      3.0
+    ],
+    "eval_episodes": 48,
+    "eval_interval": 10,
+    "seed": 43
+  },
+  "sac_config": {
+    "total_steps": 14000,
+    "warmup_steps": 1000,
+    "batch_size": 256,
+    "gamma": 0.99,
+    "tau": 0.005,
+    "actor_lr": 0.0003,
+    "critic_lr": 0.0003,
+    "alpha": 0.1,
+    "hidden_size": 64,
+    "replay_capacity": 100000,
+    "eval_episodes": 48,
+    "eval_interval": 2000,
+    "state_scale": [
+      2.5,
+      2.5,
+      3.0
+    ],
+    "seed": 43
+  },
+  "td3_config": {
+    "total_steps": 14000,
+    "warmup_steps": 1000,
+    "batch_size": 256,
+    "gamma": 0.99,
+    "tau": 0.005,
+    "actor_lr": 0.0003,
+    "critic_lr": 0.0003,
+    "hidden_size": 64,
+    "replay_capacity": 100000,
+    "exploration_noise": 0.2,
+    "target_noise": 0.15,
+    "target_noise_clip": 0.3,
+    "policy_delay": 2,
+    "eval_episodes": 48,
+    "eval_interval": 2000,
+    "state_scale": [
+      2.5,
+      2.5,
+      3.0
+    ],
+    "seed": 43
+  },
+  "linear_policy_search": {
+    "iterations": 24,
+    "population_size": 48,
+    "elite_frac": 0.125,
+    "episodes_per_candidate": 4,
+    "eval_episodes": 48,
+    "init_std": 1.0,
+    "min_std": 0.05,
+    "seed": 123
+  }
+}

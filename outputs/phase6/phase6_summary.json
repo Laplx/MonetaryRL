@@ -1,0 +1,25 @@
+{
+  "benchmark_config": "src\\monetary_rl\\config\\benchmark_lq.json",
+  "ppo_config": "src\\monetary_rl\\config\\benchmark_ppo.json",
+  "taylor_rule_source": "outputs\\phase2\\taylor_rule.json",
+  "ppo_seeds": [
+    7,
+    29,
+    43
+  ],
+  "best_ppo_seed": 43,
+  "best_ppo_loss": 20.70389356006596,
+  "riccati_K": [
+    [
+      1.089101,
+      1.078439,
+      0.434052
+    ]
+  ],
+  "linear_policy_theta": [
+    1.15759,
+    0.923679,
+    0.379484
+  ],
+  "taylor_gap_intercept": 0.2165731284960799
+}

@@ -28,6 +28,7 @@ class PPOConfig:
     linear_policy: bool = True
     state_scale: tuple[float, float, float] = (2.5, 2.5, 3.0)
     eval_episodes: int = 32
+    eval_interval: int = 1
     seed: int = 0
 
     @classmethod
@@ -75,6 +76,10 @@ class PPOTrainer:
         np.random.seed(config.seed)
 
         self.state_scale = torch.tensor(config.state_scale, dtype=torch.float32, device=self.device)
+        action_low = float(env.config.action_low)
+        action_high = float(env.config.action_high)
+        self.action_scale = torch.tensor((action_high - action_low) / 2.0, dtype=torch.float32, device=self.device)
+        self.action_bias = torch.tensor((action_high + action_low) / 2.0, dtype=torch.float32, device=self.device)
         self.model = PolicyValueNet(env.model.state_dim, config.hidden_size, config.linear_policy).to(self.device)
         self.optimizer = torch.optim.Adam(
             [
@@ -87,20 +92,35 @@ class PPOTrainer:
         state_tensor = torch.as_tensor(state, dtype=torch.float32, device=self.device)
         return state_tensor / self.state_scale
 
+    def _sample_squashed_action(self, mean: torch.Tensor, std: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
+        dist = Normal(mean, std)
+        pre_tanh = dist.rsample()
+        action = torch.tanh(pre_tanh) * self.action_scale + self.action_bias
+        log_prob = self._squashed_log_prob(dist, pre_tanh)
+        return action, log_prob
+
+    def _squashed_log_prob(self, dist: Normal, pre_tanh: torch.Tensor) -> torch.Tensor:
+        tanh_pre = torch.tanh(pre_tanh)
+        correction = torch.log(self.action_scale * (1.0 - tanh_pre.pow(2)) + 1e-6)
+        return dist.log_prob(pre_tanh) - correction
+
+    def _inverse_squash_action(self, action: torch.Tensor) -> torch.Tensor:
+        normalized = ((action - self.action_bias) / self.action_scale).clamp(-0.999999, 0.999999)
+        return 0.5 * (torch.log1p(normalized) - torch.log1p(-normalized))
+
     def _sample_action(self, state: np.ndarray) -> tuple[float, float, float]:
         state_tensor = self._normalize_state(state).unsqueeze(0)
         with torch.no_grad():
             mean, std, value = self.model(state_tensor)
-            dist = Normal(mean, std)
-            action = dist.sample()
-            log_prob = dist.log_prob(action)
+            action, log_prob = self._sample_squashed_action(mean, std)
         return float(action.item()), float(log_prob.item()), float(value.item())
 
     def _deterministic_action(self, state: np.ndarray) -> float:
         state_tensor = self._normalize_state(state).unsqueeze(0)
         with torch.no_grad():
             mean, _, _ = self.model(state_tensor)
-        return float(mean.item())
+            action = torch.tanh(mean) * self.action_scale + self.action_bias
+        return float(action.item())
 
     def _compute_gae(self, rewards, values, dones, last_value):
         advantages = np.zeros_like(rewards, dtype=np.float32)
@@ -122,17 +142,21 @@ class PPOTrainer:
             states, actions, log_probs, rewards, dones, values = [], [], [], [], [], []
             episode_rewards = []
             running_episode_reward = 0.0
+            rollout_clip_count = 0
+            rollout_action_sum = 0.0
 
             for _ in range(self.config.rollout_steps):
                 action, log_prob, value = self._sample_action(state)
-                next_state, reward, done, _ = self.env.step(action)
+                next_state, reward, done, info = self.env.step(action)
                 states.append(state.copy())
-                actions.append(action)
+                actions.append(float(info["action"]))
                 log_probs.append(log_prob)
                 rewards.append(reward)
                 dones.append(float(done))
                 values.append(value)
                 running_episode_reward += reward
+                rollout_action_sum += abs(float(info["action"]))
+                rollout_clip_count += int(abs(float(info["raw_action"]) - float(info["action"])) > 1e-8)
                 state = next_state
 
                 if done:
@@ -171,7 +195,8 @@ class PPOTrainer:
 
                     mean, std, values_pred = self.model(batch_states)
                     dist = Normal(mean, std)
-                    new_log_probs = dist.log_prob(batch_actions)
+                    pre_tanh_actions = self._inverse_squash_action(batch_actions)
+                    new_log_probs = self._squashed_log_prob(dist, pre_tanh_actions)
                     entropy = dist.entropy().mean()
 
                     ratio = torch.exp(new_log_probs - batch_old_log_probs)
@@ -185,15 +210,19 @@ class PPOTrainer:
                     nn.utils.clip_grad_norm_(self.model.parameters(), self.config.max_grad_norm)
                     self.optimizer.step()
 
-            eval_stats = self.evaluate(self.config.eval_episodes, seed=10_000 + update)
-            training_log.append(
-                {
-                    "update": update,
-                    "mean_episode_reward_in_rollout": float(np.mean(episode_rewards)) if episode_rewards else float("nan"),
-                    "eval_mean_reward": eval_stats["mean_reward"],
-                    "eval_mean_discounted_loss": eval_stats["mean_discounted_loss"],
-                }
-            )
+            if update % self.config.eval_interval == 0 or update == self.config.total_updates - 1:
+                eval_stats = self.evaluate(self.config.eval_episodes, seed=10_000 + update)
+                training_log.append(
+                    {
+                        "update": update,
+                        "mean_episode_reward_in_rollout": float(np.mean(episode_rewards)) if episode_rewards else float("nan"),
+                        "rollout_clip_rate": rollout_clip_count / self.config.rollout_steps,
+                        "rollout_mean_abs_action": rollout_action_sum / self.config.rollout_steps,
+                        "eval_mean_reward": eval_stats["mean_reward"],
+                        "eval_mean_discounted_loss": eval_stats["mean_discounted_loss"],
+                        "eval_clip_rate": eval_stats["clip_rate"],
+                    }
+                )
 
         return {
             "training_log": training_log,
@@ -207,6 +236,9 @@ class PPOTrainer:
         rewards = []
         discounted_losses = []
         trajectories = []
+        clip_count = 0
+        step_count = 0
+        abs_action_sum = 0.0
         for ep in range(episodes):
             state = self.env.reset(seed=seed + ep)
             done = False
@@ -220,6 +252,9 @@ class PPOTrainer:
                 episode_reward += reward
                 discounted_loss += (-reward) * discount
                 discount *= self.config.gamma
+                clip_count += int(abs(float(info["raw_action"]) - float(info["action"])) > 1e-8)
+                abs_action_sum += abs(float(info["action"]))
+                step_count += 1
                 traj.append(
                     {
                         "inflation_gap": float(state[0]),
@@ -239,5 +274,7 @@ class PPOTrainer:
             "std_reward": float(np.std(rewards, ddof=1)) if len(rewards) > 1 else 0.0,
             "mean_discounted_loss": float(np.mean(discounted_losses)),
             "std_discounted_loss": float(np.std(discounted_losses, ddof=1)) if len(discounted_losses) > 1 else 0.0,
+            "mean_abs_action": abs_action_sum / step_count if step_count else 0.0,
+            "clip_rate": clip_count / step_count if step_count else 0.0,
             "first_trajectory": trajectories,
         }

@@ -1,0 +1,27 @@
+{
+  "zlb_action_low": -2.0,
+  "zlb_action_high": 6.0,
+  "riccati_K": [
+    [
+      1.089101,
+      1.078439,
+      0.434052
+    ]
+  ],
+  "linear_policy_theta": [
+    1.280795,
+    1.100309,
+    0.287039
+  ],
+  "taylor_gap_intercept": 0.2165731284960799,
+  "linear_policy_search": {
+    "iterations": 24,
+    "population_size": 48,
+    "elite_frac": 0.125,
+    "episodes_per_candidate": 4,
+    "eval_episodes": 48,
+    "init_std": 1.0,
+    "min_std": 0.05,
+    "seed": 123
+  }
+}
