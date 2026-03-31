@@ -199,6 +199,7 @@ class TD3Trainer:
         return {
             "config": asdict(self.config),
             "training_log": training_log,
+            "actor_state_dict": self.actor.state_dict(),
         }
 
     def evaluate(self, episodes: int, seed: int = 0) -> dict:

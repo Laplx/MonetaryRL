@@ -1,0 +1,41 @@
+{
+  "name": "nonlinear_phillips_strong",
+  "state_names": [
+    "inflation_gap",
+    "output_gap",
+    "lagged_policy_rate_gap"
+  ],
+  "action_name": "policy_rate_gap",
+  "inflation_target": 2.0,
+  "neutral_rate": 2.0,
+  "discount_factor": 0.99,
+  "loss_weights": {
+    "inflation": 1.0,
+    "output_gap": 0.5,
+    "rate_smoothing": 0.1
+  },
+  "A": [
+    [0.77, 0.18, 0.0],
+    [0.05, 0.77, 0.0],
+    [0.0, 0.0, 0.0]
+  ],
+  "B": [
+    [-0.072],
+    [-0.115],
+    [1.0]
+  ],
+  "Sigma": [
+    [0.1719, 0.0, 0.0],
+    [0.0, 0.4587, 0.0],
+    [0.0, 0.0, 0.0]
+  ],
+  "inflation_gap_sq": 0.022,
+  "output_gap_sq": 0.045,
+  "inflation_output_cross": 0.018,
+  "calibration_notes": {
+    "dynamic_structure": "strong nonlinear Phillips extension",
+    "nonlinearity": "strong sign-preserving quadratic response",
+    "shock_scales": "same as benchmark",
+    "status": "Phase 7 tiered nonlinear extension"
+  }
+}

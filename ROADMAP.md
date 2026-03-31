@@ -10,6 +10,25 @@
 | 本文核心定位 | 将强化学习作为货币政策最优控制问题的数值求解器，并与经典最优控制方法进行系统对照。 |
 | 非主线方向 | 不以“经济主体自身通过 RL 学习形成预期/均衡”为主线；该方向只用于文献区分与边界说明。 |
 
+## 0.1 当前项目进度快照
+
+| 阶段 | 当前状态 | 说明 |
+|---|---|---|
+| Phase 0-4 | 已完成 | benchmark 结构、理论推导、经验估计、Riccati 规范解均已完成 |
+| Phase 5 | 已完成基础版 | PPO baseline 可运行，但不是最终最优结果 |
+| Phase 6 | 已完成 | benchmark 系统对照、经验 Taylor 外部规则对照、线性策略搜索基线均已完成 |
+| Phase 7 | 已完成 | `1 + 3 + 3 + 3` 环境乘 `PPO/TD3/SAC` 主矩阵已完成 |
+| Phase 8 | 下一阶段 | 经验规则与历史反事实 |
+| ANN 调优 | 暂缓主线 | 顺序已冻结，但当前不阻塞 Phase 8 主线 |
+
+说明：
+
+| 事项 | 当前结论 |
+|---|---|
+| 当前最重要下一步 | 进入 `Phase 8`，在经验环境下做反事实福利比较 |
+| 当前最重要相似工作 | `Hinterlang and Tänzer (2021)` |
+| 当前 ZLB 三档 | 更准确地说是 `ZLB/ELB-tightness` 三档 |
+
 ## 1. 总目标与研究问题
 
 | 层面 | 内容 |
@@ -64,6 +83,22 @@
 | Phase 8 | 经验规则与历史反事实 | 比较 RL、Taylor rule、历史政策 | 福利损失与路径图 | 必须 |
 | Phase 9 | 稳健性与解释 | 检查训练稳定性、参数敏感性、结构解释 | 稳健性章节材料 | 必须 |
 | Phase 10 | 论文写作与组装 | 写成毕业论文正文 | 论文初稿与终稿 | 必须 |
+
+当前状态补充：
+
+| 阶段 | 状态 |
+|---|---|
+| Phase 0 | 完成 |
+| Phase 1 | 完成 |
+| Phase 2 | 完成 |
+| Phase 3 | 完成 |
+| Phase 4 | 完成 |
+| Phase 5 | 完成基础版 |
+| Phase 6 | 完成 |
+| Phase 7 | 完成 |
+| Phase 8 | 待开始 |
+| Phase 9 | 待开始 |
+| Phase 10 | 待开始 |
 
 并行待办：
 
@@ -700,19 +735,16 @@ $$
 | 写作完成 | 论文正文具备完整理论、实验、解释与局限讨论。 |
 | 复现完成 | 他人可基于配置、代码与数据复现实验主结果。 |
 
-## 20. 下一步的直接执行顺序
+## 20. 当前接手后的直接执行顺序
 
 | 顺序 | 任务 | 输出 |
 |---|---|---|
-| 1 | 把 Phase 0 的基准模型形式最终定稿 | `docs/model_spec.md` |
-| 2 | 写出 Phase 1 的理论草稿与符号表 | `docs/theory_notes.md` |
-| 3 | 搭建数据下载/清洗流程 | `data/` 与处理脚本 |
-| 4 | 实现线性 benchmark 与 Riccati 求解 | `src/models/` 与 `src/solvers/` |
-| 5 | 封装 RL 环境并训练 PPO 基线 | `src/envs/`、`src/train/` |
-| 6 | 完成 E1/E2，对照分析与图表 | `outputs/benchmark/` |
-| 7 | 再进入非线性与 ZLB 扩展 | `outputs/extensions/` |
-| 8 | 完成经验规则与反事实 | `outputs/counterfactual/` |
-| 9 | 同步写作并汇总正文 | `docs/` 与论文主文稿 |
+| 1 | 阅读 `docs/agent_handoff.md`、`docs/phase8_execution_guide.md`、`docs/writing_figure_table_plan.md` | 建立当前上下文 |
+| 2 | 核对 `Phase 2` 经验环境接口与 `Phase 6/7` 待比较规则集合 | 形成 Phase 8 policy registry |
+| 3 | 在经验 `SVAR` 环境下完成 `historical actual / empirical Taylor / Riccati / best RL` 的主反事实比较 | `outputs/phase8/` 主表主图 |
+| 4 | 生成福利损失、目标偏离、利率波动与路径图 | Phase 8 论文主结果 |
+| 5 | 视情况决定是否将当前 `ANN` 环境作为补充结果 | 附录或后续稳健性材料 |
+| 6 | 同步更新 handoff、写作材料与图表清单 | `docs/` 与论文主文稿 |
 
 ---
 

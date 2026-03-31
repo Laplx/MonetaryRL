@@ -1,244 +1,215 @@
 # Agent 交接指引
 
-## 0. 文档目的
+## 0. 文档定位
 
-本文件用于在上下文切换时，把当前项目的状态、关键结论、文件位置、后续优先级和注意事项一次性交代清楚。新的 agent 读完本文件后，应能直接进入后续阶段而不需要重新摸索。
-
-## 1. 项目总目标
-
-| 项目 | 内容 |
+| 项目 | 说明 |
 |---|---|
-| 研究目标 | 在一个结构清晰、参数具现实量级的随机宏观货币政策模型中，系统比较经典最优控制与强化学习在央行利率规则求解中的表现 |
+| 作用 | 为新 agent 提供当前项目真实状态、已完成成果、关键边界、下一阶段任务与常见误区 |
 | 最终权威 | `Thesis Proposal.docx` |
-| 核心定位 | RL 是最优控制问题的数值求解器，不是 L3 学习主体路线 |
-| 关键参照 | `Hinterlang and Tänzer (2021)` 是经验环境设计的最重要参照 |
+| 次级权威 | `ROADMAP.md` |
+| 辅助文档 | `docs/*.md`、`outputs/*/*_summary.md` |
+| 当前更新时间 | `2026-03-31` |
 
-## 2. 已完成阶段
+## 1. 新 agent 必读顺序
+
+| 顺序 | 文件 | 目的 |
+|---|---|---|
+| 1 | `Thesis Proposal.docx` | 核对最终研究边界与开题要求 |
+| 2 | `docs/agent_handoff.md` | 先建立当前真实项目状态 |
+| 3 | `ROADMAP.md` | 理解总路线与 Phase 8 之后的安排 |
+| 4 | `docs/model_spec.md` | 核对 benchmark、扩展顺序与结构性冻结决策 |
+| 5 | `docs/theory_notes.md` | 核对理论框架与写作边界 |
+| 6 | `docs/data_spec.md` | 核对样本、变量与数据定义 |
+| 7 | `docs/calibration_plan.md` | 核对经验环境与 benchmark 的区分 |
+| 8 | `docs/ann_tuning_plan.md` | 明确 ANN 仍然延后且调优顺序已冻结 |
+| 9 | `outputs/phase6/phase6_summary.md` | 理解 benchmark 系统对照结果 |
+| 10 | `outputs/phase7/matrix/phase7_matrix_summary.md` | 理解 Phase 7 主矩阵结果 |
+| 11 | `docs/phase7_writing_findings.md` | 直接接收当前可写入论文的主要结论 |
+| 12 | `docs/phase8_execution_guide.md` | 进入下一阶段前先看执行指引 |
+| 13 | `docs/writing_figure_table_plan.md` | 写作与图表组织参考 |
+
+## 2. 当前阶段状态
 
 | 阶段 | 状态 | 主要产物 |
 |---|---|---|
 | Phase 0 | 完成 | `docs/model_spec.md` |
 | Phase 1 | 完成 | `docs/theory_notes.md`、`docs/theory_writing_notes.md` |
-| Phase 2 | 完成 | `docs/data_spec.md`、`docs/calibration_plan.md`、`scripts/phase2_estimation.py`、`data/processed/`、`outputs/phase2/` |
-| Phase 3 | 完成 | `src/monetary_rl/config/benchmark_lq.json`、`src/monetary_rl/models/lq_benchmark.py`、`scripts/phase3_build_benchmark.py`、`outputs/phase3/` |
-| Phase 4 | 完成 | `src/monetary_rl/solvers/riccati.py`、`scripts/phase4_solve_lq.py`、`outputs/phase4/` |
-| Phase 5 | 完成基础版 | `src/monetary_rl/envs/benchmark_env.py`、`src/monetary_rl/agents/ppo.py`、`scripts/phase5_train_ppo.py`、`outputs/phase5/` |
+| Phase 2 | 完成 | `scripts/phase2_estimation.py`、`data/processed/`、`outputs/phase2/` |
+| Phase 3 | 完成 | `scripts/phase3_build_benchmark.py`、`src/monetary_rl/models/lq_benchmark.py`、`outputs/phase3/` |
+| Phase 4 | 完成 | `scripts/phase4_solve_lq.py`、`src/monetary_rl/solvers/riccati.py`、`outputs/phase4/` |
+| Phase 5 | 完成基础版 | `scripts/phase5_train_ppo.py`、`src/monetary_rl/envs/benchmark_env.py`、`src/monetary_rl/agents/ppo.py`、`outputs/phase5/` |
+| Phase 6 | 完成 | `scripts/phase6_benchmark_compare.py`、`src/monetary_rl/agents/linear_policy.py`、`outputs/phase6/` |
+| Phase 7 | 完成 | `scripts/phase7_matrix_experiments.py`、`src/monetary_rl/agents/sac.py`、`src/monetary_rl/agents/td3.py`、`src/monetary_rl/models/asymmetric_benchmark.py`、`outputs/phase7/matrix/` |
+| Phase 8 | 待开始 | 经验规则与历史反事实 |
+| Phase 9 | 待开始 | 稳健性、解释与写作整合 |
+| Phase 10 | 待开始 | 论文组装与定稿 |
 
-## 3. 关键文档先读顺序
+## 3. 当前主线与用户已冻结的优先级
 
-新 agent 开始前，建议按如下顺序阅读：
-
-| 顺序 | 文件 | 原因 |
-|---|---|---|
-| 1 | `Thesis Proposal.docx` | 最终权威 |
-| 2 | `ROADMAP.md` | 全局路线图 |
-| 3 | `docs/model_spec.md` | Phase 0 冻结的结构性决策 |
-| 4 | `docs/theory_notes.md` | 理论框架 |
-| 5 | `docs/data_spec.md` | 数据口径与样本 |
-| 6 | `docs/calibration_plan.md` | 环境估计与规则估计分工 |
-| 7 | `docs/ann_tuning_plan.md` | ANN 后续调优顺序 |
-| 8 | `outputs/phase2/phase2_summary.md` | 当前经验环境估计结果 |
-| 9 | `outputs/phase4/lq_solution_summary.md` | 理论最优 benchmark 结果 |
-| 10 | `outputs/phase5/ppo_baseline_summary.md` | 当前 RL baseline 状态 |
-
-## 4. 当前最重要的理论/实现边界
-
-| 事项 | 结论 |
+| 主题 | 当前结论 |
 |---|---|
-| Phase 4 的 Riccati 最优解 | 来自理论 LQ benchmark，不是直接把经验 SVAR 环境代入后求得 |
-| benchmark 状态 | $[\tilde{\pi}_t, x_t, \tilde{i}_{t-1}]^\top$ |
-| benchmark 损失 | $\lambda_\pi \tilde{\pi}_t^2+\lambda_x x_t^2+\lambda_i(\tilde{i}_t-\tilde{i}_{t-1})^2$ |
-| 经验环境 | 与 benchmark 分开，Phase 2 已估计 `SVAR + ANN` 两套 |
-| 反事实比较对象 | 理论最优、RL 规则、经验 Taylor rule、历史实际政策 |
-| 写作边界 | 必须说明 Lucas critique |
+| 当前主线 | Phase 7 已完成，下一步进入 `Phase 8` |
+| ANN 调优 | 暂时延后，不作为当前主线 |
+| RL 主线 | 已完成 benchmark 与扩展矩阵，下一步是把规则带入经验环境做反事实比较 |
+| 扩展环境矩阵 | 已冻结并完成为 `1 + 3 + 3 + 3` 个环境，即 `benchmark + 3 nonlinear + 3 ZLB/ELB-tightness + 3 asymmetric` |
+| RL 算法矩阵 | 已冻结并完成为 `PPO + TD3 + SAC` |
+| 重要参照 | `Hinterlang and Tänzer (2021)` 必须始终作为最重要相似工作记在脑中 |
 
-补充说明：
+## 4. 必须严格记住的边界
 
 | 容易混淆的问题 | 正确认知 |
 |---|---|
-| `Phase 4` 的具体数值是否来自经验 SVAR 环境 | 不是；它来自 `Phase 3` 的理论 LQ benchmark |
-| `Phase 4` 为什么还能给出具体反馈矩阵和损失值 | 因为 `Phase 3` 已固定一个可计算的 benchmark 配置文件 |
-| benchmark 是否内生包含经验 Taylor rule | 不包含；经验 Taylor rule 是外部比较规则，可被带入 benchmark 环境做对照 |
+| Phase 4 的最优规则是否直接来自经验 SVAR 环境 | 不是。它来自 `Phase 3` 理论 LQ benchmark 的 Riccati 解 |
+| benchmark 中是否内生包含经验 Taylor rule | 没有。经验 Taylor rule 是外部比较规则 |
+| 经验 Taylor rule 在 benchmark 中如何比较 | 先转成与 benchmark gap 状态一致的形式，再代入 benchmark 环境仿真 |
+| 当前 PPO 是否已经逼近理论最优 | 没有。Phase 5 只是可运行 baseline；Phase 6/7 也未支持“PPO 全局最好”的说法 |
+| 当前 ZLB 三档是否都是纯结构性的 ZLB | 严格说不是，应写作 `ZLB/ELB-tightness tiers` 或“逐步收紧的有效下界环境” |
+| 当前 nonlinear 环境下 Riccati 外推仍强是否意味着 RL 没价值 | 不是。更合理的解释是当前 nonlinear 扭曲尚未完全压倒线性参考结构 |
+| 单次 tuned PPO 与 Phase 7 多 seed 结果是否矛盾 | 不是。应区分“单次强化结果”和“多 seed 固定预算稳健性结果” |
+| 经验环境与 benchmark 的关系 | 两者必须严格分开；Phase 8 才进入经验环境反事实比较 |
+| Lucas critique | 必须在写作中明确说明，是经验转移环境的核心方法边界 |
 
-## 5. 当前已有数据与估计结果
+## 5. 已完成的关键结果
 
-### 5.1 数据
+### 5.1 Phase 2
 
-| 路径 | 内容 |
+| 模块 | 当前结果 |
 |---|---|
-| `data/raw/` | 用户手动下载的原始 FRED CSV |
-| `data/processed/macro_quarterly_full.csv` | 清洗后的完整季度数据 |
-| `data/processed/macro_quarterly_sample_1987Q3_2007Q2.csv` | 主样本数据 |
+| 样本 | `1987Q3-2007Q2`，`80` 个季度 |
+| 经验 Taylor rule | 已估计，长期通胀响应约 `1.4769` |
+| 经验环境 | `SVAR + ANN` 两套都已跑通 |
+| ANN 当前状态 | output gap 方程优于 SVAR；inflation 方程仍未优于 SVAR，后续需继续调优 |
 
-### 5.2 Phase 2 经验结果
+### 5.2 Phase 4
 
 | 项目 | 当前结果 |
 |---|---|
-| 主样本 | `1987Q3-2007Q2`，80 个季度 |
-| 线性环境 | 已按 Hinterlang 的递归 SVAR 结构估计 |
-| 经验 Taylor rule | 已估计，长期通胀响应约 `1.4769` |
-| ANN 环境 | 已跑通初版，但通胀方程尚未优于 SVAR |
+| Riccati 最优反馈矩阵 `K` | `[[1.089101, 1.078439, 0.434052]]` |
+| benchmark 定位 | 理论规范基准，不是经验环境结果 |
 
-## 6. 当前 benchmark 与理论最优结果
+### 5.3 Phase 6
 
-### 6.1 Phase 3 benchmark
-
-| 文件 | 作用 |
+| 事项 | 当前结果 |
 |---|---|
-| `src/monetary_rl/config/benchmark_lq.json` | benchmark 参数配置 |
-| `src/monetary_rl/models/lq_benchmark.py` | 状态转移、损失函数、仿真 |
+| benchmark 统一评价协议 | 已完成，避免了 Phase 4 固定初值例子与 Phase 5 随机起点评价口径混杂 |
+| PPO 关键修复 | 已改为 squashed Gaussian，优化分布与环境实际执行动作一致 |
+| 新增基线 | 已加入 `linear_policy_search` |
+| benchmark 对照结论 | `riccati_optimal` 最好，`linear_policy_search` 非常接近，`empirical_taylor` 明显弱于理论基准，PPO 仍与最优有较大差距 |
+| 结果文件 | `outputs/phase6/phase6_summary.md`、`policy_evaluation.csv`、`policy_coefficients.csv` |
 
-### 6.2 Phase 4 关键结果
+### 5.4 Phase 7
 
-| 项目 | 当前数值 |
+| 事项 | 当前结果 |
 |---|---|
-| 反馈矩阵 $K$ | `[[1.089101, 1.078439, 0.434052]]` |
-| 闭环最大特征值模 | `0.651192` |
-| 零政策折现总损失 | `20.261789`（单个固定初值例子） |
-| 最优政策折现总损失 | `10.096854`（单个固定初值例子） |
+| 扩展环境 | 已完成 `nonlinear` 三档、`zlb` 三档、`asymmetric` 三档 |
+| RL 算法 | 已完成 `PPO`、`TD3`、`SAC` 三算法矩阵 |
+| 多 seed | 每个环境-算法对运行 `3` 个 seeds：`7/29/43` |
+| 共享工具 | 已加入 `evaluation.py`、`experiment_utils.py`、`replay_buffer.py` |
+| 主矩阵脚本 | `scripts/phase7_matrix_experiments.py` |
+| 主结果汇总 | `outputs/phase7/matrix/phase7_matrix_summary.md` |
+| 图表产物 | `outputs/phase7/matrix/plots/` |
 
-注意：这些是 benchmark 世界中的规范基准，不是经验环境结果。
+## 6. 当前最值得记住的实证结论
 
-## 7. 当前 RL baseline 状态
-
-### 7.1 已完成的内容
-
-| 模块 | 文件 |
-|---|---|
-| RL 环境 | `src/monetary_rl/envs/benchmark_env.py` |
-| PPO 实现 | `src/monetary_rl/agents/ppo.py` |
-| PPO 配置 | `src/monetary_rl/config/benchmark_ppo.json` |
-| 训练脚本 | `scripts/phase5_train_ppo.py` |
-
-### 7.2 当前 baseline 结果
-
-以 `outputs/phase5/ppo_baseline_summary.md` 为准，当前 PPO baseline：
-
-| 指标 | 当前结果 |
-|---|---|
-| 相对零政策改善 | 约 `10%` |
-| 距 Riccati 最优差距 | 仍很大 |
-| 结论 | PPO 已跑通且优于零政策，但还不能视为最终可发表的 benchmark RL 结果 |
-
-### 7.3 正确解读
-
-| 事项 | 解读 |
-|---|---|
-| Phase 5 是否完成 | 完成了“环境与 baseline 训练”这一步 |
-| PPO 是否已达到理想 benchmark 水平 | 没有 |
-| 对 Phase 6 的含义 | Phase 6 需要把“系统比较”与“RL 继续调优”部分结合起来推进 |
-
-### 7.4 对 PPO 当前结果的具体判断
-
-| 问题 | 当前判断 |
-|---|---|
-| PPO 是否跑通 | 是 |
-| PPO 是否显著优于零政策 | 是，但改善幅度有限 |
-| PPO 是否逼近 Riccati 最优 | 远未达到 |
-| 结论 | 当前 PPO 只能算可运行 baseline，不是最终 benchmark RL 结果 |
-
-### 7.5 RL 后续扩展建议
-
-用户已明确同意：可以多跑几个算法、多调超参数，时间充足。
-
-建议优先级：
-
-| 优先级 | 任务 |
-|---|---|
-| 1 | 继续强化 PPO：更长训练、更多超参数搜索、reward/状态尺度调整 |
-| 2 | 新增 `SAC` baseline |
-| 3 | 新增 `TD3` baseline |
-| 4 | 新增线性策略参数化的连续控制基线 |
-| 5 | 若需要，再考虑 DDPG 作为与 Hinterlang 的方法对照 |
-
-说明：
-
-| 算法 | 建议 |
-|---|---|
-| PPO | 保留，但不要假定它是最适合当前 LQ benchmark 的算法 |
-| SAC | 连续控制优先推荐 |
-| TD3 | 可作为稳定的连续控制补充基线 |
-| 线性策略基线 | 对当前 LQ benchmark 很贴题，信息量高 |
-
-## 8. ANN 环境调优待办
-
-此项非常重要，不能丢。
-
-| 文档 | `docs/ann_tuning_plan.md` |
-|---|---|
-
-调优优先级已冻结为：
-
-| 优先级 | 任务 |
-|---|---|
-| 1 | 在相同输入集下继续调 MLP |
-| 2 | 在相同输入集下换更稳的训练策略 |
-| 3 | 增加 1 期额外滞后 |
-| 4 | 改成 RNN / LSTM / GRU |
-
-注意：用户明确接受这个优先级顺序。
-
-## 9. 下一阶段最合理的工作顺序
-
-建议下一位 agent 按如下顺序推进：
-
-| 顺序 | 任务 | 说明 |
+| 环境 | 当前最强 RL | 需要怎么表述 |
 |---|---|---|
-| 1 | 阅读本文件与关键文档 | 建立上下文 |
-| 2 | 复核 `Phase 5` PPO baseline | 确认为何距离最优仍远 |
-| 3 | 进入 `Phase 6` | 做 benchmark 下的系统对照实验 |
-| 4 | 在 `Phase 6` 内并行做 PPO 强化调优 | 时间充足，可系统搜索超参数 |
-| 5 | 新增 `SAC/TD3/线性策略` 几条 benchmark RL 线 | 不要只押 PPO |
-| 6 | 把经验 Taylor rule 带入 benchmark 环境做规则对照 | 这是 benchmark 比较的一部分 |
-| 7 | 保持 ANN 环境调优并行推进 | 不阻塞 benchmark 主线 |
+| `benchmark` | `SAC` | 仅指当前多 seed / 当前固定预算设置下的 Phase 7 主矩阵 |
+| `nonlinear_*` | `SAC` | 随非线性增强，`PPO` 相对掉队更明显 |
+| `zlb_mild` | `SAC` | mild tier 下 `SAC` 略优 |
+| `zlb_medium` | `TD3` | tighter bound 下 `TD3` 开始占优 |
+| `zlb_strong` | `TD3` | stronger bound 下 `TD3` 最强，`PPO` 最弱 |
+| `asymmetric_*` | `SAC` | 三档 asymmetric 中 `SAC` 都最稳、最强 |
 
-### 9.1 benchmark 中如何比较经验 Taylor rule
+更高层的结论：
 
-必须明确：
-
-| 问题 | 回答 |
+| 结论 | 当前支持程度 |
 |---|---|
-| benchmark 模型里有没有经验 Taylor rule | 没有，它不是 benchmark 内生部分 |
-| 那怎么比较 | 用 `Phase 2` 估计出的 Taylor 系数构造一个外部规则，再把它代入 benchmark 环境模拟 |
-| 这样做的意义 | 可以在同一 benchmark 世界里比较“理论最优 / PPO / 经验 Taylor / 零政策” |
+| RL 算法优劣排序具有明显环境依赖性 | 强支持 |
+| PPO 不是所有环境下最合适的算法 | 强支持 |
+| 约束型环境更偏向 off-policy 连续控制算法 | 强支持 |
+| 线性参考规则在当前 nonlinear 与 asymmetric 扩展下仍很鲁棒 | 强支持 |
+| 当前扩展环境已经完全推翻线性反馈结构 | 不支持 |
 
-可比较的经验 Taylor 规则基准形式：
+## 7. 重要文件索引
 
-$$
-i_t=\alpha+\phi_\pi \pi_t+\phi_x x_t+\phi_i i_{t-1}
-$$
+### 7.1 代码
 
-在 benchmark 中，需要先转成 gap 形式或保证与中心化状态定义一致后再代入。
+| 路径 | 作用 |
+|---|---|
+| `src/monetary_rl/agents/ppo.py` | 已修复为 squashed Gaussian PPO |
+| `src/monetary_rl/agents/sac.py` | SAC baseline |
+| `src/monetary_rl/agents/td3.py` | TD3 baseline |
+| `src/monetary_rl/agents/linear_policy.py` | benchmark 线性策略搜索基线 |
+| `src/monetary_rl/agents/replay_buffer.py` | off-policy 经验回放 |
+| `src/monetary_rl/envs/benchmark_env.py` | benchmark 与扩展环境执行层；已加入状态爆炸保护 |
+| `src/monetary_rl/models/asymmetric_benchmark.py` | 非对称损失扩展 |
+| `src/monetary_rl/evaluation.py` | 统一评估工具 |
+| `src/monetary_rl/experiment_utils.py` | 脚本辅助工具 |
 
-## 10. 推荐直接运行的命令
+### 7.2 配置
+
+| 路径 | 作用 |
+|---|---|
+| `src/monetary_rl/config/benchmark_lq.json` | benchmark 配置 |
+| `src/monetary_rl/config/nonlinear_phillips_mild.json` | nonlinear mild |
+| `src/monetary_rl/config/nonlinear_phillips_medium.json` | nonlinear medium |
+| `src/monetary_rl/config/nonlinear_phillips_strong.json` | nonlinear strong |
+| `src/monetary_rl/config/asymmetric_loss_mild.json` | asymmetric mild |
+| `src/monetary_rl/config/asymmetric_loss_medium.json` | asymmetric medium |
+| `src/monetary_rl/config/asymmetric_loss_strong.json` | asymmetric strong |
+
+### 7.3 结果
+
+| 路径 | 作用 |
+|---|---|
+| `outputs/phase6/phase6_summary.md` | Phase 6 benchmark 对照摘要 |
+| `outputs/phase7/matrix/phase7_matrix_summary.md` | Phase 7 主矩阵摘要 |
+| `outputs/phase7/matrix/rl_summary.csv` | RL 汇总表 |
+| `outputs/phase7/matrix/all_policy_summary.csv` | 含外部对照规则的汇总表 |
+| `outputs/phase7/matrix/policy_coefficients.csv` | 近似线性系数 |
+| `outputs/phase7/matrix/training_logs.csv` | 训练日志 |
+| `outputs/phase7/matrix/plots/` | 热图、箱线图、强度曲线、ZLB 图等 |
+| `docs/phase7_writing_findings.md` | 当前最值得写进论文的发现 |
+
+## 8. 当前不应该做什么
+
+| 不应该做的事 | 原因 |
+|---|---|
+| 把 `Phase 7` 说成未完成 | 已完成，矩阵结果已生成 |
+| 把 `PPO` 说成当前最强算法 | 当前主矩阵结果不支持 |
+| 把 `ZLB` 三档写成纯粹结构性 ZLB 约束 | 当前实现更准确地说是逐步收紧的 `ELB-tightness` 环境 |
+| 现在就重启 ANN 调优主线 | 用户明确要求延后 |
+| 在经验环境里混淆 benchmark 规则与经验环境规则 | 会破坏论文主线结构 |
+| 用“RL 已经全面击败线性规则”做结论 | 当前结果不支持，且与实际产出不一致 |
+
+## 9. Phase 8 的正确进入方式
+
+| 项目 | 要求 |
+|---|---|
+| 下一阶段名称 | 经验规则与历史反事实 |
+| 首要任务 | 把 `benchmark` 中形成的主要规则与 `Phase 2` 经验环境连接起来 |
+| 经验环境首选 | 先用 `SVAR` 环境完成主结果 |
+| ANN 经验环境 | 在当前阶段不作为主线；如要用，应明确其 inflation 方程尚未优于 SVAR |
+| 比较对象 | `Riccati reference`、`best RL rules`、`empirical Taylor rule`、`historical actual policy` |
+| 写作要求 | 必须同时报告福利损失、路径图、目标偏离、规则含义，并说明 Lucas critique |
+
+详细执行顺序见 `docs/phase8_execution_guide.md`。
+
+## 10. 可直接运行的命令
 
 | 目的 | 命令 |
 |---|---|
-| 重跑 Phase 2 | `C:\Users\Laplace\anaconda3\envs\tor\python.exe scripts\phase2_estimation.py` |
-| 重跑 Phase 3 | `C:\Users\Laplace\anaconda3\envs\tor\python.exe scripts\phase3_build_benchmark.py` |
-| 重跑 Phase 4 | `C:\Users\Laplace\anaconda3\envs\tor\python.exe scripts\phase4_solve_lq.py` |
-| 重跑 Phase 5 | `C:\Users\Laplace\anaconda3\envs\tor\python.exe scripts\phase5_train_ppo.py` |
+| 重跑 Phase 2 | `C:\Users\Laplace\anaconda3\envs\tor\python.exe scripts/phase2_estimation.py` |
+| 重跑 Phase 3 | `C:\Users\Laplace\anaconda3\envs\tor\python.exe scripts/phase3_build_benchmark.py` |
+| 重跑 Phase 4 | `C:\Users\Laplace\anaconda3\envs\tor\python.exe scripts/phase4_solve_lq.py` |
+| 重跑 Phase 5 | `C:\Users\Laplace\anaconda3\envs\tor\python.exe scripts/phase5_train_ppo.py` |
+| 重跑 Phase 6 | `C:\Users\Laplace\anaconda3\envs\tor\python.exe scripts/phase6_benchmark_compare.py` |
+| 重跑 Phase 7 全矩阵 | `C:\Users\Laplace\anaconda3\envs\tor\python.exe scripts/phase7_matrix_experiments.py --group all` |
+| 只跑 benchmark 组 | `C:\Users\Laplace\anaconda3\envs\tor\python.exe scripts/phase7_matrix_experiments.py --group benchmark` |
+| 只跑 nonlinear 组 | `C:\Users\Laplace\anaconda3\envs\tor\python.exe scripts/phase7_matrix_experiments.py --group nonlinear` |
+| 只跑 zlb 组 | `C:\Users\Laplace\anaconda3\envs\tor\python.exe scripts/phase7_matrix_experiments.py --group zlb` |
+| 只跑 asymmetric 组 | `C:\Users\Laplace\anaconda3\envs\tor\python.exe scripts/phase7_matrix_experiments.py --group asymmetric` |
 
-## 11. 需要避免的误解
+## 11. 一句话交接总结
 
-| 误解 | 正确认知 |
-|---|---|
-| “Phase 4 最优规则是用 SVAR 直接算出来的” | 错。它是理论 LQ benchmark 的 Riccati 解 |
-| “Phase 5 PPO 已经学到理论最优” | 错。当前只是一个能优于零政策的 baseline |
-| “ANN 现在只输入当期变量” | 错。当前 ANN 已使用与 SVAR 对齐的信息集 |
-| “ANN 调优会阻塞主线” | 不会。用户明确允许并行推进 |
-
-## 12. 用户偏好与协作注意事项
-
-| 事项 | 说明 |
-|---|---|
-| 输出语言 | 中文 |
-| 表格偏好 | 对总结、Plan、Task、长内容优先用表格 |
-| 文件引用 | 用户要求用相对路径表达即可 |
-| 协作方式 | 若需要用户补数据或文章，应立刻明确提出 |
-
----
-
-一句话总结：
-
-主线已经推进到“理论 benchmark 可解、经验环境已估、PPO baseline 已跑通但仍需增强”的状态；下一位 agent 应在不打断主线的前提下，一边做 `Phase 6` benchmark 对照，一边继续改进 PPO 和 ANN 两条学习线。
+当前项目已经完成从理论 benchmark、Riccati 规范解、PPO baseline、Phase 6 benchmark 系统对照到 Phase 7 的 `1 + 3 + 3 + 3` 环境乘 `PPO/TD3/SAC` 的完整稳健矩阵；下一位 agent 不应再回到“是否做扩展”的阶段，而应直接进入 `Phase 8`，在严格区分 benchmark 与经验环境的前提下，完成经验 Taylor rule、最佳 RL 规则与历史政策的反事实福利比较，并同步沉淀论文写作材料。
