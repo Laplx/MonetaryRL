@@ -8,7 +8,7 @@
 | 最终权威 | `Thesis Proposal.docx` |
 | 次级权威 | `ROADMAP.md` |
 | 辅助文档 | `docs/*.md`、`outputs/*/*_summary.md` |
-| 当前更新时间 | `2026-03-31` |
+| 当前更新时间 | `2026-04-01` |
 
 ## 1. 新 agent 必读顺序
 
@@ -40,17 +40,19 @@
 | Phase 5 | 完成基础版 | `scripts/phase5_train_ppo.py`、`src/monetary_rl/envs/benchmark_env.py`、`src/monetary_rl/agents/ppo.py`、`outputs/phase5/` |
 | Phase 6 | 完成 | `scripts/phase6_benchmark_compare.py`、`src/monetary_rl/agents/linear_policy.py`、`outputs/phase6/` |
 | Phase 7 | 完成 | `scripts/phase7_matrix_experiments.py`、`src/monetary_rl/agents/sac.py`、`src/monetary_rl/agents/td3.py`、`src/monetary_rl/models/asymmetric_benchmark.py`、`outputs/phase7/matrix/` |
-| Phase 8 | 待开始 | 经验规则与历史反事实 |
-| Phase 9 | 待开始 | 稳健性、解释与写作整合 |
+| Phase 8 | 完成 | `SVAR` 经验环境反事实、长期随机评估、主表主图、policy registry |
+| Phase 9 | 下一阶段 | 稳健性、解释与写作整合 |
 | Phase 10 | 待开始 | 论文组装与定稿 |
 
 ## 3. 当前主线与用户已冻结的优先级
 
 | 主题 | 当前结论 |
 |---|---|
-| 当前主线 | Phase 7 已完成，下一步进入 `Phase 8` |
+| 当前主线 | `Phase 8` 已完成，下一步进入 `Phase 9` |
 | ANN 调优 | 暂时延后，不作为当前主线 |
 | RL 主线 | 已完成 benchmark 与扩展矩阵，下一步是把规则带入经验环境做反事实比较 |
+| Phase 8 优先级 | 先完成 `SVAR` 主结果，再讨论补充环境 |
+| Phase 9 结构 | 先处理 `ANN` 补充资格，再做 `DSGE/model uncertainty` 扩展 |
 | 扩展环境矩阵 | 已冻结并完成为 `1 + 3 + 3 + 3` 个环境，即 `benchmark + 3 nonlinear + 3 ZLB/ELB-tightness + 3 asymmetric` |
 | RL 算法矩阵 | 已冻结并完成为 `PPO + TD3 + SAC` |
 | 重要参照 | `Hinterlang and Tänzer (2021)` 必须始终作为最重要相似工作记在脑中 |
@@ -68,6 +70,8 @@
 | 单次 tuned PPO 与 Phase 7 多 seed 结果是否矛盾 | 不是。应区分“单次强化结果”和“多 seed 固定预算稳健性结果” |
 | 经验环境与 benchmark 的关系 | 两者必须严格分开；Phase 8 才进入经验环境反事实比较 |
 | Lucas critique | 必须在写作中明确说明，是经验转移环境的核心方法边界 |
+| 是否在 Phase 8 先重启 ANN 调优 | 不应。应先完成 `SVAR` 主结果，再在 `Phase 9` 判断 ANN 是否达到补充结果门槛 |
+| 是否在 Phase 8 直接做 11 个 DSGE 比较 | 不应。应放入 `Phase 9`，作为 model uncertainty robustness extension |
 
 ## 5. 已完成的关键结果
 
@@ -179,6 +183,7 @@
 | 把 `PPO` 说成当前最强算法 | 当前主矩阵结果不支持 |
 | 把 `ZLB` 三档写成纯粹结构性 ZLB 约束 | 当前实现更准确地说是逐步收紧的 `ELB-tightness` 环境 |
 | 现在就重启 ANN 调优主线 | 用户明确要求延后 |
+| 在 `Phase 8` 中直接插入 `DSGE` 稳健性比较 | 会打断主线，应后置到 `Phase 9` |
 | 在经验环境里混淆 benchmark 规则与经验环境规则 | 会破坏论文主线结构 |
 | 用“RL 已经全面击败线性规则”做结论 | 当前结果不支持，且与实际产出不一致 |
 
@@ -190,6 +195,8 @@
 | 首要任务 | 把 `benchmark` 中形成的主要规则与 `Phase 2` 经验环境连接起来 |
 | 经验环境首选 | 先用 `SVAR` 环境完成主结果 |
 | ANN 经验环境 | 在当前阶段不作为主线；如要用，应明确其 inflation 方程尚未优于 SVAR |
+| ANN 的正确位置 | `Phase 8` 主结果完成后，再在 `Phase 9` 按门槛决定是否作为补充结果 |
+| DSGE 扩展 | 放入 `Phase 9`，不属于当前阶段的首要任务 |
 | 比较对象 | `Riccati reference`、`best RL rules`、`empirical Taylor rule`、`historical actual policy` |
 | 写作要求 | 必须同时报告福利损失、路径图、目标偏离、规则含义，并说明 Lucas critique |
 
@@ -212,4 +219,4 @@
 
 ## 11. 一句话交接总结
 
-当前项目已经完成从理论 benchmark、Riccati 规范解、PPO baseline、Phase 6 benchmark 系统对照到 Phase 7 的 `1 + 3 + 3 + 3` 环境乘 `PPO/TD3/SAC` 的完整稳健矩阵；下一位 agent 不应再回到“是否做扩展”的阶段，而应直接进入 `Phase 8`，在严格区分 benchmark 与经验环境的前提下，完成经验 Taylor rule、最佳 RL 规则与历史政策的反事实福利比较，并同步沉淀论文写作材料。
+当前项目已经完成从理论 benchmark、Riccati 规范解、PPO baseline、Phase 6 benchmark 系统对照到 Phase 7 的 `1 + 3 + 3 + 3` 环境乘 `PPO/TD3/SAC` 的完整稳健矩阵，并已完成 `Phase 8` 的 `SVAR` 经验环境反事实福利比较。下一位 agent 不应再回到“是否进入经验环境”的阶段，而应直接进入 `Phase 9`，先处理 `ANN` 补充资格，再做 `DSGE/model uncertainty` 稳健性与解释扩展。

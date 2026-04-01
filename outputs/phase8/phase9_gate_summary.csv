@@ -1,0 +1,3 @@
+module,status,reason,next_step
+ann_phase9_gate,not_passed_yet,inflation equation still underperforms SVAR in Phase 2 summary,keep ANN as Phase 9 supplementary module after SVAR main results
+dsge_phase9_gate,deferred,model uncertainty extension is intentionally placed in Phase 9,prepare transferable linear rule registry and coefficient table

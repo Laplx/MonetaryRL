@@ -1,0 +1,8 @@
+policy_name,rule_type,source,intercept,inflation_gap,output_gap,lagged_policy_rate_gap,fit_rmse,note,algo,seed,benchmark_mean_discounted_loss
+historical_actual_policy,historical_path,data,,,,,,Observed policy-rate path in the sample,,,
+empirical_taylor_rule,estimated_rule,phase2,0.2165731284960799,0.19317281148252752,0.2657685748665041,0.8691997672478173,0.0,Estimated Taylor rule converted to gap form,,,
+riccati_reference,theory_reference,phase4,0.0,1.0891005070444726,1.0784387943807843,0.43405223835275225,0.0,Theoretical Riccati benchmark rule,,,
+linear_policy_search_transfer,linear,phase6,0.0,1.1575903322849497,0.9236787036209644,0.3794835270496136,0.0,Phase 6 benchmark linear policy search coefficients,,,
+ppo_benchmark_transfer,linear_surrogate,phase7_benchmark_best_seed,-0.1015811830163002,0.4809672945737837,0.4771268858015537,0.2629074889123439,0.016043784507788,Transferred benchmark-trained RL rule represented by saved linear surrogate,ppo,7.0,20.668960474693822
+td3_benchmark_transfer,linear_surrogate,phase7_benchmark_best_seed,-0.082606230020523,0.968164929181337,1.178277175694704,0.4171051334440707,0.4364586103169762,Transferred benchmark-trained RL rule represented by saved linear surrogate,td3,29.0,17.743188868836697
+sac_benchmark_transfer,linear_surrogate,phase7_benchmark_best_seed,0.1954903414398433,1.1735575905740256,1.0213923824280504,0.3966722744554282,0.3576474759118441,Transferred benchmark-trained RL rule represented by saved linear surrogate,sac,43.0,16.49734152855089
