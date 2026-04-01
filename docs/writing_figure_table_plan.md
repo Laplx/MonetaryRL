@@ -44,8 +44,8 @@
 | 表 4 | 不同环境下最佳 RL 的近似线性系数 | `policy_coefficients.csv` |
 | 表 5 | Phase 8 经验环境反事实福利表 | `outputs/phase8/historical_welfare_summary.csv` |
 | 表 6 | Phase 8 目标偏离与利率波动分解表 | `outputs/phase8/historical_welfare_summary.csv` |
-| 表 7 | Phase 9 ANN 进入门槛与拟合/稳定性判断表 | 待 Phase 9 生成 |
-| 表 8 | Phase 9 DSGE 或 model uncertainty 稳健性汇总表 | 待 Phase 9 生成 |
+| 表 7 | Phase 9 ANN 进入门槛与拟合/稳定性判断表 | `outputs/phase9/ann_fit_comparison.csv` |
+| 表 8 | Phase 9 DSGE 或 model uncertainty 稳健性汇总表 | `outputs/phase9/local_model_uncertainty_aggregate.csv` |
 
 ## 4. 论文正文建议最少保留的主图
 
@@ -60,8 +60,8 @@
 | 图 7 | 代表性环境的政策面图 | 待补 |
 | 图 8 | Phase 8 历史与反事实路径图 | `outputs/phase8/plots/phase8_historical_paths_core.png` |
 | 图 9 | Phase 8 福利损失对比图 | `outputs/phase8/plots/phase8_historical_welfare.png` |
-| 图 10 | Phase 9 ANN 拟合与反事实稳定性补充图 | 待补 |
-| 图 11 | Phase 9 DSGE / model uncertainty 稳健性图 | 待补 |
+| 图 10 | Phase 9 ANN 拟合与反事实稳定性补充图 | `outputs/phase9/plots/phase9_ann_fit_comparison.png` 与 `outputs/phase9/plots/phase9_ann_historical_paths_core.png` |
+| 图 11 | Phase 9 DSGE / model uncertainty 稳健性图 | `outputs/phase9/plots/phase9_local_model_uncertainty_gaps.png` 与 `outputs/phase9/plots/phase9_local_model_uncertainty_heatmap.png` |
 
 ## 5. 为了“至少比 Hinterlang 多”的推荐补强项
 

@@ -41,15 +41,15 @@
 | Phase 6 | 完成 | `scripts/phase6_benchmark_compare.py`、`src/monetary_rl/agents/linear_policy.py`、`outputs/phase6/` |
 | Phase 7 | 完成 | `scripts/phase7_matrix_experiments.py`、`src/monetary_rl/agents/sac.py`、`src/monetary_rl/agents/td3.py`、`src/monetary_rl/models/asymmetric_benchmark.py`、`outputs/phase7/matrix/` |
 | Phase 8 | 完成 | `SVAR` 经验环境反事实、长期随机评估、主表主图、policy registry |
-| Phase 9 | 下一阶段 | 稳健性、解释与写作整合 |
-| Phase 10 | 待开始 | 论文组装与定稿 |
+| Phase 9 | 完成 | `ANN` 调优、ANN 补充反事实、本地 model uncertainty 汇总 |
+| Phase 10 | 下一阶段 | 论文组装与定稿 |
 
 ## 3. 当前主线与用户已冻结的优先级
 
 | 主题 | 当前结论 |
 |---|---|
-| 当前主线 | `Phase 8` 已完成，下一步进入 `Phase 9` |
-| ANN 调优 | 暂时延后，不作为当前主线 |
+| 当前主线 | `Phase 9` 已完成，下一步进入 `Phase 10` |
+| ANN 调优 | 已完成本轮调优，但仅通过补充结果门槛 |
 | RL 主线 | 已完成 benchmark 与扩展矩阵，下一步是把规则带入经验环境做反事实比较 |
 | Phase 8 优先级 | 先完成 `SVAR` 主结果，再讨论补充环境 |
 | Phase 9 结构 | 先处理 `ANN` 补充资格，再做 `DSGE/model uncertainty` 扩展 |
@@ -219,4 +219,4 @@
 
 ## 11. 一句话交接总结
 
-当前项目已经完成从理论 benchmark、Riccati 规范解、PPO baseline、Phase 6 benchmark 系统对照到 Phase 7 的 `1 + 3 + 3 + 3` 环境乘 `PPO/TD3/SAC` 的完整稳健矩阵，并已完成 `Phase 8` 的 `SVAR` 经验环境反事实福利比较。下一位 agent 不应再回到“是否进入经验环境”的阶段，而应直接进入 `Phase 9`，先处理 `ANN` 补充资格，再做 `DSGE/model uncertainty` 稳健性与解释扩展。
+当前项目已经完成从理论 benchmark、Riccati 规范解、PPO baseline、Phase 6 benchmark 系统对照到 Phase 7 的 `1 + 3 + 3 + 3` 环境乘 `PPO/TD3/SAC` 的完整稳健矩阵，并已完成 `Phase 8` 的 `SVAR` 经验环境反事实福利比较与 `Phase 9` 的 `ANN` 补充模块和本地 model uncertainty 汇总。下一位 agent 不应再回到“是否继续补跑经验环境”的阶段，而应直接进入 `Phase 10`，围绕现有主表主图推进论文正文写作与组装。

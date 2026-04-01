@@ -19,13 +19,13 @@
 | Phase 6 | 已完成 | benchmark 系统对照、经验 Taylor 外部规则对照、线性策略搜索基线均已完成 |
 | Phase 7 | 已完成 | `1 + 3 + 3 + 3` 环境乘 `PPO/TD3/SAC` 主矩阵已完成 |
 | Phase 8 | 已完成 | 经验规则与历史反事实 |
-| ANN 调优 | 转入 Phase 9 门槛判断 | 顺序已冻结，不属于主结果主线 |
+| ANN 调优 | 已完成本轮 Phase 9 | 结果定位为补充环境，不替代 SVAR 主结果 |
 
 说明：
 
 | 事项 | 当前结论 |
 |---|---|
-| 当前最重要下一步 | 进入 `Phase 9`，先处理 `ANN` 补充资格，再做 `DSGE/model uncertainty` 稳健性 |
+| 当前最重要下一步 | 进入 `Phase 10`，开始论文正文组装与写作整合 |
 | 当前最重要相似工作 | `Hinterlang and Tänzer (2021)` |
 | 当前 ZLB 三档 | 更准确地说是 `ZLB/ELB-tightness` 三档 |
 
@@ -97,8 +97,8 @@
 | Phase 6 | 完成 |
 | Phase 7 | 完成 |
 | Phase 8 | 完成 |
-| Phase 9 | 下一阶段 |
-| Phase 10 | 待开始 |
+| Phase 9 | 完成 |
+| Phase 10 | 下一阶段 |
 
 并行待办：
 

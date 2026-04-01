@@ -9,10 +9,10 @@
 | 项目 | 现状 |
 |---|---|
 | 输入信息集 | 当前 ANN 已与 SVAR 使用同一组输入，不是只看当期变量 |
-| output gap 方程 | ANN 初版优于 SVAR |
-| inflation 方程 | ANN 初版尚未优于 SVAR |
-| 当前阶段定位 | 不进入 `Phase 8` 主结果 |
-| 结论 | ANN 环境已跑通，但还未达到可作为主结果环境的标准 |
+| output gap 方程 | `Phase 9` 调优后仍略优于 `SVAR`，但弱于 `Phase 2` 初版 ANN |
+| inflation 方程 | `Phase 9` 调优后已优于 `SVAR` |
+| 当前阶段定位 | 已完成 `Phase 9` 补充模块 |
+| 结论 | ANN 适合作为补充结果，不替代 `SVAR` 主结果 |
 
 ## 1.1 当前冻结安排
 
@@ -74,6 +74,17 @@
 
 ---
 
+## 6. Phase 9 实际结果
+
+| 项目 | 结果 |
+|---|---|
+| 选中 output gap 规格 | `extra_lag + (3,) + relu + adam` |
+| 选中 inflation 规格 | `extra_lag + (3,) + tanh + lbfgs` |
+| inflation 门槛 | 通过 |
+| output gap 门槛 | 未完全保持 Phase 2 优势 |
+| 动态稳定性 | 通过 |
+| 最终定位 | supplementary only |
+
 一句话总结：
 
-ANN 环境已进入“可运行但待优化”状态；当前正确位置是 `Phase 9` 的补充模块，先完成 `Phase 8` 的 `SVAR` 主结果，再按 `MLP 调参 -> 训练策略 -> 适度增滞后 -> RNN` 的顺序推进。
+ANN 环境的 `Phase 9` 调优已完成：inflation 方程显著改善并优于 `SVAR`，但 output gap 方程未维持 `Phase 2` 的优势，因此当前最合理定位仍是补充结果而非经验主结果。

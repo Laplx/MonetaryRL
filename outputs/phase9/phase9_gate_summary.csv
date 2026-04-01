@@ -1,0 +1,4 @@
+module,status,reason,next_step
+ann_phase9_module,supplementary_only,"inflation gate, output gate, and dynamic stability are jointly evaluated under Phase 9 rules","report ANN fit comparison and limitations, but keep SVAR as empirical main result"
+local_model_uncertainty_module,completed,"frozen policy registry has been evaluated on benchmark, extension, and empirical local environments",use aggregate robustness table and gap distribution figure in writing
+external_dsge_source,not_available_locally,no external MMB/DSGE model files are present in the repository,"if needed later, plug user-supplied DSGE/MMB models into the frozen registry evaluator"
