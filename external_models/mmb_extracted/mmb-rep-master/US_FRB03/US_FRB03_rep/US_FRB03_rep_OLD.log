@@ -1,0 +1,5 @@
+Starting Dynare (version 7.0).
+Calling Dynare with arguments: noclearall
+Starting preprocessing of the model file ... 
+ERROR: US_FRB03_rep_OLD.mod: line 215, cols 1-5: syntax error, unexpected IDENTIFIER 
+Preprocessing time: 0h00m00s.

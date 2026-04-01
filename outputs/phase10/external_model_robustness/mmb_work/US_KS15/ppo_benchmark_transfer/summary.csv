@@ -1,0 +1,2 @@
+policy_name,model_id,rule_family,inflation_coeff,output_coeff,lagged_rate_coeff,total_discounted_loss,mean_period_loss,mean_sq_inflation_gap,mean_sq_output_gap,mean_sq_rate_change,mean_policy_rate,std_policy_rate
+ppo_benchmark_transfer,US_KS15,benchmark_transfer,0.480967294574,0.477126885802,0.262907488912,67.640388233501,0.582833223622902,0.502728857361115,0.158453600702669,0.00877565910452956,0.0113479540274181,0.194306660985297

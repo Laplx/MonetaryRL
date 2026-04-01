@@ -1,0 +1,25 @@
+Starting Dynare (version 7.0).
+Calling Dynare with arguments: noclearall nostrict
+Starting preprocessing of the model file ... 
+WARNING: Parameter(s) constebeta cbeta ccs cinvs crdpi crpi crdy cry crr cg clandap cr cpie cw cik clk cky cwly rstar cofintintb2 cofintintb3 cofintintb4 cofintinfb2 cofintinfb3 cofintinfb4 cofintinff1 cofintinff2 cofintinff3 cofintinff4 cofintoutb2 cofintoutb3 cofintoutb4 cofintoutf1 cofintoutf2 cofintoutf3 cofintoutf4 std_r_ std_r_quart  not used in the model 
+WARNING: dummy_G not used in model block, removed by nostrict command-line option 
+Found 56 equation(s). 
+Evaluating expressions... 
+Computing static model derivatives (order 1). 
+Normalizing the static model... 
+Finding the optimal block decomposition of the static model... 
+12 block(s) found: 
+  10 recursive block(s) and 2 simultaneous block(s). 
+  the largest simultaneous block has 19 equation(s) 
+                                 and 19 feedback variable(s). 
+Computing dynamic model derivatives (order 2). 
+Normalizing the dynamic model... 
+Finding the optimal block decomposition of the dynamic model... 
+4 block(s) found: 
+  2 recursive block(s) and 2 simultaneous block(s). 
+  the largest simultaneous block has 19 equation(s) 
+                                 and 15 feedback variable(s). 
+Preprocessing completed. 
+Preprocessing time: 0h00m01s.
+Total computing time : 0h00m01s
+Note: 2 warning(s) encountered in the preprocessor

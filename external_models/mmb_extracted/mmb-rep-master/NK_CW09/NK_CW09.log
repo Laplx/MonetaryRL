@@ -1,0 +1,24 @@
+Starting Dynare (version 7.0).
+Calling Dynare with arguments: noclearall
+Starting preprocessing of the model file ... 
+WARNING: Parameter(s) std_r_quart phi pi_s phi_pi phi_y rho_epsilon_m rho_b_g Omega_bar rho_b s_Xi Pi_bar B_bar s_diff  not used in the model 
+Substitution of endo leads >= 2: added 9 auxiliary variables and equations. 
+Substitution of endo lags >= 2: added 14 auxiliary variables and equations. 
+Found 79 equation(s). 
+Evaluating expressions... 
+Computing static model derivatives (order 1). 
+Normalizing the static model... 
+Finding the optimal block decomposition of the static model... 
+34 block(s) found: 
+  33 recursive block(s) and 1 simultaneous block(s). 
+  the largest simultaneous block has 41 equation(s) 
+                                 and 41 feedback variable(s). 
+Computing dynamic model derivatives (order 2). 
+Normalizing the dynamic model... 
+Finding the optimal block decomposition of the dynamic model... 
+25 block(s) found: 
+  24 recursive block(s) and 1 simultaneous block(s). 
+  the largest simultaneous block has 41 equation(s) 
+                                 and 38 feedback variable(s). 
+Preprocessing completed. 
+Preprocessing time: 0h00m01s.

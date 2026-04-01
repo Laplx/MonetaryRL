@@ -1,0 +1,7 @@
+policy_name,evaluation_env,mean_discounted_loss,std_discounted_loss,mean_reward,mean_abs_action,clip_rate,explosion_rate,source_env,rule_family
+sac_ann_revealed_direct,ann_revealed,255.24118505647047,56.871227524270324,-429.6740044463947,3.2621938021853567,0.0,0.0,ann,ann_revealed_direct
+td3_ann_revealed_direct,ann_revealed,315.6347977855864,58.15011007881885,-535.9802449958237,3.2143018991789885,0.0,0.0,ann,ann_revealed_direct
+ppo_ann_revealed_direct,ann_revealed,664.2385999141038,190.59865992698295,-1047.5610546388953,7.641037386883464,0.0,0.0,ann,ann_revealed_direct
+sac_svar_revealed_direct,svar_revealed,199.48636763461323,64.82178776746949,-349.99104133533746,2.970167208959659,0.0,0.0,svar,svar_revealed_direct
+td3_svar_revealed_direct,svar_revealed,441.62376573091734,115.53348642766328,-778.3064947828724,0.8722169968092607,0.0,0.0,svar,svar_revealed_direct
+ppo_svar_revealed_direct,svar_revealed,653.9759015869942,212.6721474251279,-1044.873712174386,7.642738685218824,0.0,0.0,svar,svar_revealed_direct

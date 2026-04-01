@@ -1,0 +1,40 @@
+function [y, T, residual, g1] = static_6(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
+residual=NaN(9, 1);
+  residual(1)=(y(14))-(y(7)+y(12));
+  residual(2)=(y(14))-(y(2)*(1-params(11))+y(13));
+  residual(3)=(y(10))-(y(10)*params(18)+y(4)*params(9)+y(14)*params(10)+x(6));
+  residual(4)=(y(3))-(y(4)+y(10)*(-params(17))+y(2)*params(3)-y(5));
+  residual(5)=(y(4))-(y(4)*params(7)+y(11)*(1-params(8))*(1-params(7)*params(8))/params(8));
+  residual(6)=(y(1))-((-(params(1)+params(4)))*y(2)+params(2)*(y(3)-y(4)+y(5))+y(2)*params(4)*params(5)+y(6));
+  residual(7)=(y(1))-(params(6)*y(7)+y(8)-y(9));
+  residual(8)=(y(1))-(y(1)+y(10)-y(4));
+  residual(9)=(y(9))-(y(11)+y(12));
+if nargout > 3
+    g1_v = NaN(24, 1);
+g1_v(1)=(-1);
+g1_v(2)=(-params(6));
+g1_v(3)=(-(1-params(11)));
+g1_v(4)=(-params(3));
+g1_v(5)=(-(params(4)*params(5)-(params(1)+params(4))));
+g1_v(6)=1;
+g1_v(7)=1;
+g1_v(8)=(-params(10));
+g1_v(9)=1-params(18);
+g1_v(10)=params(17);
+g1_v(11)=(-1);
+g1_v(12)=(-((1-params(8))*(1-params(7)*params(8))/params(8)));
+g1_v(13)=(-1);
+g1_v(14)=1;
+g1_v(15)=(-params(2));
+g1_v(16)=1;
+g1_v(17)=1;
+g1_v(18)=(-params(9));
+g1_v(19)=(-1);
+g1_v(20)=1-params(7);
+g1_v(21)=params(2);
+g1_v(22)=1;
+g1_v(23)=1;
+g1_v(24)=1;
+    g1 = sparse(sparse_rowval, sparse_colval, g1_v, 9, 9);
+end
+end

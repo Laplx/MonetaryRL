@@ -1,23 +1,32 @@
-Starting Dynare (version 4.5.7).
-Starting preprocessing of the model file ...
-Found 17 equation(s).
-Evaluating expressions...done
-Computing static model derivatives:
- - order 1
-Computing dynamic model derivatives:
- - order 1
- - order 2
-Processing outputs ...
-done
-Preprocessing completed.
+Starting Dynare (version 7.0).
+Calling Dynare with arguments: noclearall
+Starting preprocessing of the model file ... 
+Found 15 equation(s). 
+Evaluating expressions... 
+Computing static model derivatives (order 1). 
+Normalizing the static model... 
+Finding the optimal block decomposition of the static model... 
+7 block(s) found: 
+  6 recursive block(s) and 1 simultaneous block(s). 
+  the largest simultaneous block has 9 equation(s) 
+                                 and 9 feedback variable(s). 
+Computing dynamic model derivatives (order 2). 
+Normalizing the dynamic model... 
+Finding the optimal block decomposition of the dynamic model... 
+3 block(s) found: 
+  2 recursive block(s) and 1 simultaneous block(s). 
+  the largest simultaneous block has 9 equation(s) 
+                                 and 8 feedback variable(s). 
+Preprocessing completed. 
+Preprocessing time: 0h00m01s.
 
 MODEL SUMMARY
 
-  Number of variables:         17
+  Number of variables:         15
   Number of stochastic shocks: 6
   Number of state variables:   8
   Number of jumpers:           4
-  Number of static variables:  7
+  Number of static variables:  5
 
 
 MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
@@ -68,22 +77,22 @@ R        0.00    0.01    0.00    0.00   99.98    0.00
 
 
 MATRIX OF CORRELATIONS
-Variables         c       y       m     pit      RR       R
-c            1.0000  0.4601  0.6096 -0.5820  0.2665 -0.5820
-y            0.4601  1.0000  0.9842 -0.9897  0.9783 -0.9897
-m            0.6096  0.9842  1.0000 -0.9994  0.9265 -0.9994
-pit         -0.5820 -0.9897 -0.9994  1.0000 -0.9388  1.0000
-RR           0.2665  0.9783  0.9265 -0.9388  1.0000 -0.9388
-R           -0.5820 -0.9897 -0.9994  1.0000 -0.9388  1.0000
+Variables          c        y        m      pit       RR        R
+c             1.0000   0.4601   0.6096  -0.5820   0.2665  -0.5820
+y             0.4601   1.0000   0.9842  -0.9897   0.9783  -0.9897
+m             0.6096   0.9842   1.0000  -0.9994   0.9265  -0.9994
+pit          -0.5820  -0.9897  -0.9994   1.0000  -0.9388   1.0000
+RR            0.2665   0.9783   0.9265  -0.9388   1.0000  -0.9388
+R            -0.5820  -0.9897  -0.9994   1.0000  -0.9388   1.0000
 
 
 
 COEFFICIENTS OF AUTOCORRELATION
-Order         1       2       3       4       5
-c        0.7048  0.5512  0.4686  0.4218  0.3929
-y        0.9618  0.9293  0.9000  0.8728  0.8468
-m        0.9902  0.9711  0.9477  0.9226  0.8970
-pit      0.9871  0.9665  0.9425  0.9172  0.8915
-RR       0.8930  0.8281  0.7846  0.7520  0.7253
-R        0.9872  0.9666  0.9426  0.9172  0.8916
-Total computing time : 0h00m01s
+Order          1       2       3       4       5
+c         0.7048  0.5512  0.4686  0.4218  0.3929
+y         0.9618  0.9293  0.9000  0.8728  0.8468
+m         0.9902  0.9711  0.9477  0.9226  0.8970
+pit       0.9871  0.9665  0.9425  0.9172  0.8915
+RR        0.8930  0.8281  0.7846  0.7520  0.7253
+R         0.9872  0.9666  0.9426  0.9172  0.8916
+Total computing time : 0h00m02s

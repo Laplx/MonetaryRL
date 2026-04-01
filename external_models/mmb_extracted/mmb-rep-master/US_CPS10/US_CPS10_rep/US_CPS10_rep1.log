@@ -1,0 +1,5 @@
+Starting Dynare (version 7.0).
+Calling Dynare with arguments: noclearall
+Starting preprocessing of the model file ... 
+ERROR: US_CPS10_rep1.mod: line 183, col 7: syntax error, unexpected INT_NUMBER, expecting NON_ZERO 
+Preprocessing time: 0h00m00s.

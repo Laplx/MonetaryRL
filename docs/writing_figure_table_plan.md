@@ -6,7 +6,7 @@
 |---|---|
 | 目标 | 为论文正文与附录准备图表清单，至少做到不弱于 `Hinterlang and Tänzer (2021)` |
 | 参考文献 | `literature/hinterlang2021rl_optim_i_reaction.pdf` |
-| 当前基础 | Phase 6、Phase 7 与 Phase 8 主表主图已形成一批可直接用于正文的图表 |
+| 当前基础 | Phase 6、Phase 7、Phase 8 与 Phase 9 已形成一批可直接用于正文或附录的图表；`Phase 10A` 增强轮将补 direct-trained empirical RL 与反推福利资产 |
 
 ## 1. Hinterlang 可参考的图表类型
 
@@ -46,6 +46,7 @@
 | 表 6 | Phase 8 目标偏离与利率波动分解表 | `outputs/phase8/historical_welfare_summary.csv` |
 | 表 7 | Phase 9 ANN 进入门槛与拟合/稳定性判断表 | `outputs/phase9/ann_fit_comparison.csv` |
 | 表 8 | Phase 9 DSGE 或 model uncertainty 稳健性汇总表 | `outputs/phase9/local_model_uncertainty_aggregate.csv` |
+| 表 9 | Phase 10A transfer vs direct-trained empirical RL 汇总表 | `outputs/phase10/` 下对应汇总文件 |
 
 ## 4. 论文正文建议最少保留的主图
 
@@ -62,6 +63,7 @@
 | 图 9 | Phase 8 福利损失对比图 | `outputs/phase8/plots/phase8_historical_welfare.png` |
 | 图 10 | Phase 9 ANN 拟合与反事实稳定性补充图 | `outputs/phase9/plots/phase9_ann_fit_comparison.png` 与 `outputs/phase9/plots/phase9_ann_historical_paths_core.png` |
 | 图 11 | Phase 9 DSGE / model uncertainty 稳健性图 | `outputs/phase9/plots/phase9_local_model_uncertainty_gaps.png` 与 `outputs/phase9/plots/phase9_local_model_uncertainty_heatmap.png` |
+| 图 12 | Phase 10A direct-trained empirical RL 与反推福利对照图 | `outputs/phase10/` 下对应历史、随机与排序变化图 |
 
 ## 5. 为了“至少比 Hinterlang 多”的推荐补强项
 

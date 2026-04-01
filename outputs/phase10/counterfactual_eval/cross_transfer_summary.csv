@@ -1,0 +1,15 @@
+policy_name,evaluation_env,mean_discounted_loss,std_discounted_loss,mean_reward,mean_abs_action,clip_rate,explosion_rate,rule_family,source_env,training_env,policy_parameterization
+td3_svar_direct,ann,139.69932263896715,27.124229229082495,-241.9126919872824,3.817528142655889,0.0,0.0,svar_direct,svar,svar,standard_nonlinear
+td3_benchmark_transfer,ann,143.35811547021572,19.01593940856974,-245.52561518941573,2.785482969917423,0.04027777777777778,0.0,benchmark_transfer,benchmark,benchmark,linear_surrogate
+sac_benchmark_transfer,ann,156.72918797570802,17.275028541764378,-271.00764463088404,3.105924966084196,0.027777777777777776,0.0,benchmark_transfer,benchmark,benchmark,linear_surrogate
+linear_policy_search_transfer,ann,181.76121813556952,21.81125905214825,-315.6999613717344,2.7970907985474036,0.013628472222222222,0.0,benchmark_transfer,benchmark,benchmark,fixed_rule
+sac_svar_direct,ann,191.38530532860486,20.53709852129768,-333.3996036419401,4.712002258809904,0.0,0.0,svar_direct,svar,svar,standard_nonlinear
+ppo_svar_direct,ann,200.36990928773253,21.370361046243367,-350.23970401751893,4.965187640198403,0.0,0.0,svar_direct,svar,svar,linear_policy
+ppo_benchmark_transfer,ann,327.93487147481306,36.96452897750036,-583.8909723132357,1.7570704231814989,8.680555555555556e-05,0.0,benchmark_transfer,benchmark,benchmark,linear_surrogate
+sac_benchmark_transfer,svar,131.1486985745429,33.53869215888802,-227.18694705611588,2.666317312467906,0.04487847222222222,0.0,benchmark_transfer,benchmark,benchmark,linear_surrogate
+linear_policy_search_transfer,svar,149.46307683881085,38.71407603413115,-258.1168189656413,2.480968550426143,0.03515625,0.0,benchmark_transfer,benchmark,benchmark,fixed_rule
+td3_benchmark_transfer,svar,150.6584904857864,41.50345395359406,-257.88181985608117,2.5231683475599778,0.08932291666666667,0.0,benchmark_transfer,benchmark,benchmark,linear_surrogate
+ppo_ann_direct,svar,206.1052500481269,145.3041689539289,-375.85902005881894,2.5071906053875055,0.0,0.0,ann_direct,ann,ann,linear_policy
+ppo_benchmark_transfer,svar,228.30254172610339,78.70417885262947,-412.0836373263216,1.1225917083358428,0.0019097222222222222,0.0,benchmark_transfer,benchmark,benchmark,linear_surrogate
+td3_ann_direct,svar,315.0110867806508,165.0489968466305,-585.8657778798705,2.1117824057324066,0.0,0.0,ann_direct,ann,ann,standard_nonlinear
+sac_ann_direct,svar,490.1036666428593,237.12600779544326,-940.694565218478,2.815227860853904,0.0,0.0,ann_direct,ann,ann,standard_nonlinear

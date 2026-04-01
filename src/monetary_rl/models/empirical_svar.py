@@ -27,6 +27,14 @@ class EmpiricalSVARModel:
         self.config = config
 
     @property
+    def state_dim(self) -> int:
+        return self.observation_dim
+
+    @property
+    def action_dim(self) -> int:
+        return 1
+
+    @property
     def observation_dim(self) -> int:
         return 3
 

@@ -1,0 +1,2 @@
+policy_name,model_id,rule_family,inflation_coeff,output_coeff,lagged_rate_coeff,total_discounted_loss,mean_period_loss,mean_sq_inflation_gap,mean_sq_output_gap,mean_sq_rate_change,mean_policy_rate,std_policy_rate
+ppo_ann_revealed_direct,US_KS15,ann_revealed_direct,0.53685979978,-0.250778224863,0.558572561736,72.4647949730931,0.691117322856914,0.437814579044358,0.496652311840174,0.0497658789246975,-0.00310264257113612,0.147278787898632

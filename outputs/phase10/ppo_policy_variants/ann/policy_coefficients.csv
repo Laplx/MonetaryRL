@@ -1,0 +1,3 @@
+policy,intercept,inflation_gap,output_gap,lagged_policy_rate_gap,fit_rmse,training_env,algo,seed,policy_parameterization
+ppo_ann_direct_linear,2.608578855909003,-0.959321270308328,0.5472183921980825,0.1080788892883044,0.0435823832400213,ann,ppo,43,linear_policy
+ppo_ann_direct_nonlinear,2.941332242849689,0.5999405734711161,0.5990150366658124,0.04912312282833242,0.26465625051623076,ann,ppo,43,nonlinear_policy

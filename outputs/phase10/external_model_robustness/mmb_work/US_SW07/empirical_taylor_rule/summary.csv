@@ -1,0 +1,2 @@
+policy_name,model_id,rule_family,inflation_coeff,output_coeff,lagged_rate_coeff,total_discounted_loss,mean_period_loss,mean_sq_inflation_gap,mean_sq_output_gap,mean_sq_rate_change,mean_policy_rate,std_policy_rate
+empirical_taylor_rule,US_SW07,empirical_rule,0.193172811483,0.265768574867,0.869199767248,18015.1404707723,222.122720542844,220.85297415461,1.81925040262516,3.60121186921302,5.97975152252025,12.6004828377552

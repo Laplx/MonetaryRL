@@ -1,0 +1,29 @@
+{
+  "environment": "ann",
+  "sample_start": "1988Q2",
+  "sample_end": "2007Q2",
+  "state_observation_low": [
+    -0.759412670135498,
+    -1.9808927297592163,
+    -0.7993333339691161
+  ],
+  "state_observation_high": [
+    1.7564216375350954,
+    1.7650268316268922,
+    6.498666477203369
+  ],
+  "initial_state_count": 77,
+  "shock_pool_size": 77,
+  "shock_covariance": [
+    [
+      0.207885,
+      -0.009016
+    ],
+    [
+      -0.009016,
+      0.027957
+    ]
+  ],
+  "action_low": -2.0,
+  "action_high": 8.0
+}

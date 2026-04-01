@@ -1,0 +1,31 @@
+{
+  "svar_support": {
+    "environment": "svar",
+    "sample_start": "1988Q1",
+    "sample_end": "2007Q2",
+    "state_observation_low": [
+      -0.7534870684146882,
+      -1.980179214477539,
+      -0.7878333330154419
+    ],
+    "state_observation_high": [
+      1.7548085689544675,
+      1.7634407758712767,
+      6.491499805450438
+    ],
+    "initial_state_count": 78,
+    "shock_pool_size": 78,
+    "shock_covariance": [
+      [
+        0.213123,
+        -0.002088
+      ],
+      [
+        -0.002088,
+        0.029924
+      ]
+    ],
+    "action_low": -2.0,
+    "action_high": 8.0
+  }
+}

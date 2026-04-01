@@ -1,0 +1,13 @@
+{
+  "inflation_weight": 1.0,
+  "output_gap_weight": 0.881712848620661,
+  "rate_smoothing_weight": 20.085536923187668,
+  "objective": 0.8302219378187313,
+  "success": true,
+  "implied_phi_pi": -0.013952784201268742,
+  "implied_phi_x": -0.040073197247396546,
+  "implied_phi_i": 0.9814905306365797,
+  "target_phi_pi": 0.19317281148252752,
+  "target_phi_x": 0.2657685748665041,
+  "target_phi_i": 0.8691997672478173
+}

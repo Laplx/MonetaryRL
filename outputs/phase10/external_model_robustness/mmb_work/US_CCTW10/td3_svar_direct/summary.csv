@@ -1,0 +1,2 @@
+policy_name,model_id,rule_family,inflation_coeff,output_coeff,lagged_rate_coeff,total_discounted_loss,mean_period_loss,mean_sq_inflation_gap,mean_sq_output_gap,mean_sq_rate_change,mean_policy_rate,std_policy_rate
+td3_svar_direct,US_CCTW10,svar_direct,1.59612453235,1.16730785948,-0.058737516184,1.44854005669525e-29,1.44854005942225e-31,4.93038065763132e-32,1.91100398731823e-31,0,3.12250225675825e-16,0
