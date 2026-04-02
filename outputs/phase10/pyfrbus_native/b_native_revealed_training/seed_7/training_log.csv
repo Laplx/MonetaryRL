@@ -1,0 +1,2 @@
+step,eval_mean_reward,eval_mean_discounted_loss,eval_clip_rate
+1800,-13.475993818324133,11.484289057812619,0.0

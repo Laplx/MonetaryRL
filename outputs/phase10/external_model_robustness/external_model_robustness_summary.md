@@ -2,61 +2,69 @@
 
 ## Preferred Rules
 
-| evaluation_env   | rule_family        | policy_name            | source_env   | policy_parameterization   |   total_discounted_loss |
-|:-----------------|:-------------------|:-----------------------|:-------------|:--------------------------|------------------------:|
-| ann              | ann_direct         | ppo_ann_direct         | ann          | linear_policy             |                 69.2297 |
-| ann              | benchmark_transfer | td3_benchmark_transfer | benchmark    | linear_surrogate          |                155.226  |
-| ann              | svar_direct        | td3_svar_direct        | svar         | standard_nonlinear        |                111.444  |
-| svar             | ann_direct         | ppo_ann_direct         | ann          | linear_policy             |                150.19   |
-| svar             | benchmark_transfer | sac_benchmark_transfer | benchmark    | linear_surrogate          |                114.455  |
-| svar             | svar_direct        | sac_svar_direct        | svar         | standard_nonlinear        |                 92.1016 |
+| evaluation_env   | rule_family          | policy_name               | source_env   | policy_parameterization   |   total_discounted_loss |
+|:-----------------|:---------------------|:--------------------------|:-------------|:--------------------------|------------------------:|
+| ann              | ann_direct           | ppo_ann_direct            | ann          | linear_policy             |                 69.2297 |
+| ann              | ann_revealed_direct  | td3_ann_revealed_direct   | ann          | standard_nonlinear        |                114.154  |
+| ann              | benchmark_transfer   | td3_benchmark_transfer    | benchmark    | linear_surrogate          |                155.226  |
+| ann              | svar_direct          | td3_svar_direct           | svar         | standard_nonlinear        |                111.444  |
+| ann              | svar_revealed_direct | sac_svar_revealed_direct  | svar         | standard_nonlinear        |                172.599  |
+| svar             | ann_direct           | ppo_ann_direct_nonlinear  | ann          | nonlinear_policy          |                 87.3361 |
+| svar             | ann_revealed_direct  | sac_ann_revealed_direct   | ann          | standard_nonlinear        |                110.788  |
+| svar             | benchmark_transfer   | sac_benchmark_transfer    | benchmark    | linear_surrogate          |                114.455  |
+| svar             | svar_direct          | ppo_svar_direct_nonlinear | svar         | nonlinear_policy          |                 90.7985 |
+| svar             | svar_revealed_direct | sac_svar_revealed_direct  | svar         | standard_nonlinear        |                105.451  |
 
 ## PyFRBUS Results
 
-| policy_name              | model_id   |   total_discounted_loss |   mean_period_loss |   mean_sq_inflation_gap |   mean_sq_output_gap |   mean_sq_rate_change |   mean_policy_rate |   std_policy_rate |   improvement_vs_pyfrbus_baseline_pct |
-|:-------------------------|:-----------|------------------------:|-------------------:|------------------------:|---------------------:|----------------------:|-------------------:|------------------:|--------------------------------------:|
-| pyfrbus_baseline         | pyfrbus    |                0.014138 |           0.000647 |                0.00039  |             0.000515 |              0        |            3.00003 |          2.4e-05  |                           0           |
-| sac_svar_revealed_direct | pyfrbus    |                0.027163 |           0.001276 |                0.00053  |             0.001476 |              8.1e-05  |            3.00463 |          0.043821 |                         -92.1257      |
-| empirical_taylor_rule    | pyfrbus    |                0.80597  |           0.038684 |                0.001614 |             0.073919 |              0.001105 |            3.10403 |          0.113153 |                       -5600.71        |
-| sac_benchmark_transfer   | pyfrbus    |                1.18525  |           0.056032 |                9.7e-05  |             0.110219 |              0.008256 |            2.87521 |          0.126559 |                       -8283.36        |
-| riccati_reference        | pyfrbus    |                2.09249  |           0.09879  |                0.000274 |             0.193747 |              0.016425 |            2.83452 |          0.181575 |                      -14700.4         |
-| td3_benchmark_transfer   | pyfrbus    |                2.48128  |           0.117058 |                0.000372 |             0.228904 |              0.02234  |            2.81984 |          0.204532 |                      -17450.4         |
-| sac_svar_direct          | pyfrbus    |               12.5555   |           0.582159 |                0.010681 |             1.04344  |              0.497603 |            3.41147 |          0.829165 |                      -88706.1         |
-| td3_svar_revealed_direct | pyfrbus    |               22.0892   |           1.06155  |                0.008129 |             2.09687  |              0.049888 |            2.4335  |          0.374777 |                     -156139           |
-| td3_svar_direct          | pyfrbus    |               24.1411   |           1.14707  |                0.018991 |             2.20016  |              0.280054 |            3.65251 |          0.58423  |                     -170652           |
-| td3_ann_revealed_direct  | pyfrbus    |               26.3842   |           1.25496  |                0.019294 |             2.45944  |              0.059479 |            3.40972 |          0.969153 |                     -186518           |
-| ppo_ann_direct           | pyfrbus    |               38.7951   |           1.87938  |                0.028058 |             3.67652  |              0.130598 |            3.94736 |          0.361957 |                     -274302           |
-| sac_ann_revealed_direct  | pyfrbus    |               91.1481   |           4.5302   |                0.054495 |             8.94435  |              0.035337 |            4.71209 |          0.572325 |                     -644600           |
-| ppo_svar_revealed_direct | pyfrbus    |              673.659    |          32.9264   |                0.472159 |            64.7644   |              0.719735 |            8.61419 |          0.555495 |                          -4.76476e+06 |
-| ppo_ann_revealed_direct  | pyfrbus    |              795.656    |          39.0196   |                0.56682  |            76.7772   |              0.641535 |            9.52754 |          0.794862 |                          -5.62766e+06 |
+| policy_name                        | model_id   |   total_discounted_loss |   mean_period_loss |   total_discounted_revealed_loss |   mean_period_revealed_loss |   mean_sq_inflation_gap |   mean_sq_output_gap |   mean_sq_rate_change |   mean_policy_rate |   std_policy_rate |   improvement_vs_pyfrbus_baseline_pct |   improvement_vs_pyfrbus_baseline_revealed_pct |
+|:-----------------------------------|:-----------|------------------------:|-------------------:|---------------------------------:|----------------------------:|------------------------:|---------------------:|----------------------:|-------------------:|------------------:|--------------------------------------:|-----------------------------------------------:|
+| pyfrbus_baseline                   | pyfrbus    |                0.014138 |           0.000647 |                         0.018558 |                    0.000844 |                0.00039  |             0.000515 |              0        |            3.00003 |          2.4e-05  |                           0           |                                    0           |
+| sac_svar_revealed_direct           | pyfrbus    |                0.027163 |           0.001276 |                         0.074471 |                    0.003462 |                0.00053  |             0.001476 |              8.1e-05  |            3.00463 |          0.043821 |                         -92.1257      |                                 -301.296       |
+| empirical_taylor_rule              | pyfrbus    |                0.80597  |           0.038684 |                         1.90248  |                    0.088981 |                0.001614 |             0.073919 |              0.001105 |            3.10403 |          0.113153 |                       -5600.71        |                               -10151.8         |
+| sac_benchmark_transfer             | pyfrbus    |                1.18525  |           0.056032 |                         6.00916  |                    0.263102 |                9.7e-05  |             0.110219 |              0.008256 |            2.87521 |          0.126559 |                       -8283.36        |                               -32281.3         |
+| riccati_reference                  | pyfrbus    |                2.09249  |           0.09879  |                        11.4796   |                    0.501016 |                0.000274 |             0.193747 |              0.016425 |            2.83452 |          0.181575 |                      -14700.4         |                               -61759.7         |
+| td3_benchmark_transfer             | pyfrbus    |                2.48128  |           0.117058 |                        14.9726   |                    0.650903 |                0.000372 |             0.228904 |              0.02234  |            2.81984 |          0.204532 |                      -17450.4         |                               -80581.9         |
+| td3_svar_revealed_direct           | pyfrbus    |               22.0892   |           1.06155  |                        62.5016   |                    2.85899  |                0.008129 |             2.09687  |              0.049888 |            2.4335  |          0.374777 |                     -156139           |                              -336699           |
+| td3_svar_direct                    | pyfrbus    |               24.1411   |           1.14707  |                       175.674    |                    7.58394  |                0.018991 |             2.20016  |              0.280054 |            3.65251 |          0.58423  |                     -170652           |                              -946546           |
+| td3_ann_revealed_direct            | pyfrbus    |               26.3842   |           1.25496  |                        72.8468   |                    3.38247  |                0.019294 |             2.45944  |              0.059479 |            3.40972 |          0.969153 |                     -186518           |                              -392446           |
+| ppo_ann_direct                     | pyfrbus    |               38.7951   |           1.87938  |                       130.278    |                    5.89283  |                0.028058 |             3.67652  |              0.130598 |            3.94736 |          0.361957 |                     -274302           |                              -701923           |
+| ppo_ann_direct_nonlinear           | pyfrbus    |               51.9825   |           2.5482   |                       142.61     |                    6.61253  |                0.035371 |             5.0041   |              0.107788 |            4.21827 |          0.121217 |                     -367578           |                              -768377           |
+| sac_ann_revealed_direct            | pyfrbus    |               91.1481   |           4.5302   |                       175.218    |                    8.65061  |                0.054495 |             8.94435  |              0.035337 |            4.71209 |          0.572325 |                     -644600           |                              -944091           |
+| ppo_svar_direct_nonlinear          | pyfrbus    |              157.646    |           7.66523  |                       488.438    |                   22.2802   |                0.105025 |            15.0316   |              0.444184 |            5.14149 |          0.502437 |                          -1.11495e+06 |                                   -2.63192e+06 |
+| ppo_svar_revealed_direct           | pyfrbus    |              673.659    |          32.9264   |                      1523.47     |                   72.0321   |                0.472159 |            64.7644   |              0.719735 |            8.61419 |          0.555495 |                          -4.76476e+06 |                                   -8.20932e+06 |
+| ppo_ann_revealed_direct            | pyfrbus    |              795.656    |          39.0196   |                      1699.6      |                   81.1478   |                0.56682  |            76.7772   |              0.641535 |            9.52754 |          0.794862 |                          -5.62766e+06 |                                   -9.15845e+06 |
+| ppo_svar_revealed_direct_nonlinear | pyfrbus    |              834.218    |          40.7484   |                      2329.13     |                  107.536    |                0.603451 |            79.9268   |              1.81522  |            9.60052 |          0.000127 |                          -5.90041e+06 |                                   -1.25508e+07 |
+| ppo_ann_revealed_direct_nonlinear  | pyfrbus    |              866.979    |          42.3409   |                      2434.39     |                  112.319    |                0.630409 |            83.0379   |              1.91547  |            9.7803  |          0        |                          -6.13213e+06 |                                   -1.3118e+07  |
 
 ## PyFRBUS Fixed-Point Status
 
-| policy_name              | model_id   | converged   |   iterations |   max_fixed_point_gap |   clip_rate | start   | end    |
-|:-------------------------|:-----------|:------------|-------------:|----------------------:|------------:|:--------|:-------|
-| empirical_taylor_rule    | pyfrbus    | True        |           13 |                     0 |           0 | 2040Q1  | 2045Q4 |
-| ppo_ann_direct           | pyfrbus    | True        |           10 |                     0 |           0 | 2040Q1  | 2045Q4 |
-| ppo_ann_revealed_direct  | pyfrbus    | True        |           11 |                     0 |           0 | 2040Q1  | 2045Q4 |
-| ppo_svar_revealed_direct | pyfrbus    | True        |           10 |                     0 |           0 | 2040Q1  | 2045Q4 |
-| pyfrbus_baseline         | pyfrbus    | True        |            0 |                     0 |           0 | 2040Q1  | 2045Q4 |
-| riccati_reference        | pyfrbus    | True        |           18 |                     0 |           0 | 2040Q1  | 2045Q4 |
-| sac_ann_revealed_direct  | pyfrbus    | True        |           12 |                     0 |           0 | 2040Q1  | 2045Q4 |
-| sac_benchmark_transfer   | pyfrbus    | True        |           16 |                     0 |           0 | 2040Q1  | 2045Q4 |
-| sac_svar_direct          | pyfrbus    | False       |           20 |                     0 |           0 | 2040Q1  | 2045Q4 |
-| sac_svar_revealed_direct | pyfrbus    | True        |           12 |                     0 |           0 | 2040Q1  | 2045Q4 |
-| td3_ann_revealed_direct  | pyfrbus    | True        |           15 |                     0 |           0 | 2040Q1  | 2045Q4 |
-| td3_benchmark_transfer   | pyfrbus    | True        |           18 |                     0 |           0 | 2040Q1  | 2045Q4 |
-| td3_svar_direct          | pyfrbus    | False       |           20 |                     0 |           0 | 2040Q1  | 2045Q4 |
-| td3_svar_revealed_direct | pyfrbus    | True        |           14 |                     0 |           0 | 2040Q1  | 2045Q4 |
+| policy_name                        | model_id   | converged   |   iterations |   max_fixed_point_gap |   clip_rate | start   | end    |
+|:-----------------------------------|:-----------|:------------|-------------:|----------------------:|------------:|:--------|:-------|
+| empirical_taylor_rule              | pyfrbus    | True        |           13 |                     0 |           0 | 2040Q1  | 2045Q4 |
+| ppo_ann_direct                     | pyfrbus    | True        |           10 |                     0 |           0 | 2040Q1  | 2045Q4 |
+| ppo_ann_direct_nonlinear           | pyfrbus    | True        |           10 |                     0 |           0 | 2040Q1  | 2045Q4 |
+| ppo_ann_revealed_direct            | pyfrbus    | True        |           11 |                     0 |           0 | 2040Q1  | 2045Q4 |
+| ppo_ann_revealed_direct_nonlinear  | pyfrbus    | True        |           11 |                     0 |           0 | 2040Q1  | 2045Q4 |
+| ppo_svar_direct_nonlinear          | pyfrbus    | True        |           10 |                     0 |           0 | 2040Q1  | 2045Q4 |
+| ppo_svar_revealed_direct           | pyfrbus    | True        |           10 |                     0 |           0 | 2040Q1  | 2045Q4 |
+| ppo_svar_revealed_direct_nonlinear | pyfrbus    | True        |           11 |                     0 |           0 | 2040Q1  | 2045Q4 |
+| pyfrbus_baseline                   | pyfrbus    | True        |            0 |                     0 |           0 | 2040Q1  | 2045Q4 |
+| riccati_reference                  | pyfrbus    | True        |           18 |                     0 |           0 | 2040Q1  | 2045Q4 |
+| sac_ann_revealed_direct            | pyfrbus    | True        |           12 |                     0 |           0 | 2040Q1  | 2045Q4 |
+| sac_benchmark_transfer             | pyfrbus    | True        |           16 |                     0 |           0 | 2040Q1  | 2045Q4 |
+| sac_svar_revealed_direct           | pyfrbus    | True        |           12 |                     0 |           0 | 2040Q1  | 2045Q4 |
+| td3_ann_revealed_direct            | pyfrbus    | True        |           15 |                     0 |           0 | 2040Q1  | 2045Q4 |
+| td3_benchmark_transfer             | pyfrbus    | True        |           18 |                     0 |           0 | 2040Q1  | 2045Q4 |
+| td3_svar_direct                    | pyfrbus    | False       |           20 |                     0 |           0 | 2040Q1  | 2045Q4 |
+| td3_svar_revealed_direct           | pyfrbus    | True        |           14 |                     0 |           0 | 2040Q1  | 2045Q4 |
 
 ## Runtime Status
 
 | component              | status               | detail                                                                                       |
 |:-----------------------|:---------------------|:---------------------------------------------------------------------------------------------|
 | dynare_preprocessor    | available            | C:\dynare\7.0\matlab\preprocessor64\dynare_m.exe                                             |
-| matlab_runtime_for_mmb | available_via_escalated | Current shell still reports license error `-9/57` but external user context can run MATLAB batch and complete selected MMB runs. |
-| mmb_selected_models    | completed            | Completed external evaluation for `US_SW07`、`US_CCTW10`、`US_KS15`、`NK_CW09`.             |
-| mmb_legacy_models      | legacy_incompatible  | `US_FRB03`、`US_CPS10`、`US_RA07` remain blocked by legacy Dynare/MMB compatibility issues. |
+| matlab_runtime_for_mmb | license_check_failed | Current shell still reports MATLAB license error -9/57; MMB numerical solve remains blocked. |
 
 ## Model Inventory
 
@@ -76,6 +84,5 @@
 
 ## Notes
 
-- `pyfrbus` 已完成闭环固定点评估；新增的 `Dynare/MMB` 外部批次见 `outputs/phase10/external_model_robustness/mmb_external_summary.md` 与 `outputs/phase10/external_model_robustness/mmb_summary.csv`。
-- `Dynare/MMB` 口径只能接 simple rule，因此所有 RL 规则在这些模型里统一用线性 surrogate 系数接入；`benchmark transfer`、`empirical direct-trained`、`revealed direct-trained` 仍严格分开汇报。
+- 本文件汇报 `pyfrbus` 闭环固定点评估；`Dynare/MMB` 批次见 `mmb_summary.csv` 与 `all_external_summary.csv`。
 - `pyfrbus` 中使用的状态映射是 `picxfe - pitarg`、`xgap`、`rff(-1) - 2`，并对规则路径做固定点迭代。

@@ -1,0 +1,20 @@
+{
+  "total_steps": 1800,
+  "warmup_steps": 200,
+  "batch_size": 128,
+  "gamma": 0.99,
+  "tau": 0.01,
+  "actor_lr": 0.0002,
+  "critic_lr": 0.0004,
+  "alpha": 0.05,
+  "hidden_size": 64,
+  "replay_capacity": 20000,
+  "eval_episodes": 6,
+  "eval_interval": 999999,
+  "state_scale": [
+    0.25,
+    0.5,
+    1.25
+  ],
+  "seed": 99
+}

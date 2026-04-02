@@ -1,0 +1,17 @@
+{
+  "seed": 7,
+  "checkpoint_path": "C:\\Users\\Laplace\\Documents\\Code\\MonetaryRL\\outputs\\phase10\\pyfrbus_native\\b_native_revealed_training\\seed_7\\sac_pyfrbus_revealed_native.pt",
+  "mean_discounted_loss_env": NaN,
+  "mean_reward_env": NaN,
+  "clip_rate_env": NaN,
+  "explosion_rate_env": NaN,
+  "fixed_point_artificial_loss": 6.013362118561691,
+  "fixed_point_revealed_loss": 11.490387978740037,
+  "fixed_point_revealed_improvement_vs_baseline_pct": -61817.682409002206,
+  "fixed_point_artificial_improvement_vs_baseline_pct": -42433.15277682683,
+  "surrogate_intercept": 0.0309591709324576,
+  "surrogate_inflation_coeff": -0.4207712666614998,
+  "surrogate_output_coeff": 0.0892382017898978,
+  "surrogate_lagged_rate_coeff": 0.8039541336634952,
+  "surrogate_fit_rmse": 0.0001102832849448
+}

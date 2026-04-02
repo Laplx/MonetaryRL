@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import re
+import shutil
 import subprocess
 import textwrap
 from dataclasses import dataclass
@@ -9,6 +10,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+from scipy.io import loadmat
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -16,8 +18,10 @@ OUTPUT_DIR = ROOT / "outputs" / "phase10" / "external_model_robustness"
 WORK_ROOT = OUTPUT_DIR / "mmb_work"
 COUNTERFACTUAL_DIR = ROOT / "outputs" / "phase10" / "counterfactual_eval"
 REVEALED_TRAIN_DIR = ROOT / "outputs" / "phase10" / "revealed_policy_training"
+REVEALED_DIR = ROOT / "outputs" / "phase10" / "revealed_welfare"
 MMB_ROOT = ROOT / "external_models" / "mmb_extracted" / "mmb-rep-master"
 BENCHMARK_CONFIG = json.loads((ROOT / "src" / "monetary_rl" / "config" / "benchmark_lq.json").read_text(encoding="utf-8"))
+REVEALED_WEIGHTS = json.loads((REVEALED_DIR / "revealed_weights.json").read_text(encoding="utf-8"))
 DYNARE_MATLAB_PATH = Path(r"C:\dynare\7.0\matlab")
 MATLAB_BIN = "matlab"
 
@@ -27,20 +31,110 @@ SIM_PERIODS = 3000
 BURN_IN = 500
 MATLAB_TIMEOUT_SEC = 1200
 
+
+def _extract_cached_series(spec: "ModelSpec", results_mat: Path) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    payload = loadmat(results_mat, squeeze_me=True, struct_as_record=False)
+    endo_names = np.asarray(payload["M_"].endo_names).reshape(-1)
+    names = [str(name).strip() for name in endo_names.tolist()]
+    sim = np.asarray(payload["oo_"].endo_simul, dtype=float)
+    sim = np.atleast_2d(sim)
+    if sim.shape[0] != len(names) and sim.shape[1] == len(names):
+        sim = sim.T
+    if sim.shape[0] != len(names):
+        raise ValueError(f"Unexpected simulation shape {sim.shape} for model {spec.model_id}")
+    sim = sim[:, max(0, sim.shape[1] - 2500) :]
+    loc = {name: idx for idx, name in enumerate(names)}
+
+    if spec.model_id in {"US_SW07", "US_CCTW10"}:
+        rate_series = 4.0 * sim[loc["r"], :]
+        inflation_gap = 4.0 * sim[loc["pinf"], :]
+        output_gap = sim[loc["y"], :] - sim[loc["yf"], :]
+    elif spec.model_id == "US_KS15":
+        rate_series = sim[loc["R"], :]
+        inflation_gap = sim[loc["pit"], :]
+        output_gap = sim[loc["y"], :]
+    elif spec.model_id == "NK_CW09":
+        rate_series = 4.0 * sim[loc["i_d_hat"], :]
+        inflation_gap = 4.0 * sim[loc["Pi_hat"], :]
+        output_gap = sim[loc["Y_hat"], :] - sim[loc["Y_n_hat"], :]
+    else:
+        raise ValueError(f"Unsupported cached extraction for model {spec.model_id}")
+    return inflation_gap.astype(float), output_gap.astype(float), rate_series.astype(float)
+
+
+def cached_summary_frame(spec: "ModelSpec", policy: "PolicySpec", model_work: Path) -> pd.DataFrame | None:
+    results = list(model_work.glob("*/Output/*_results.mat"))
+    if not results:
+        return None
+    try:
+        inflation_gap, output_gap, rate_series = _extract_cached_series(spec, results[0])
+    except Exception:
+        return None
+    if rate_series.size <= BURN_IN:
+        return None
+    inflation_gap = inflation_gap[BURN_IN:]
+    output_gap = output_gap[BURN_IN:]
+    rate_series = rate_series[BURN_IN:]
+    rate_change = np.concatenate([[np.nan], np.diff(rate_series)])
+    valid = np.isfinite(inflation_gap) & np.isfinite(output_gap) & np.isfinite(rate_series) & np.isfinite(rate_change)
+    inflation_gap = inflation_gap[valid]
+    output_gap = output_gap[valid]
+    rate_series = rate_series[valid]
+    rate_change = rate_change[valid]
+    if inflation_gap.size == 0:
+        return None
+
+    per_loss = (
+        LOSS_WEIGHTS["inflation"] * inflation_gap**2
+        + LOSS_WEIGHTS["output_gap"] * output_gap**2
+        + LOSS_WEIGHTS["rate_smoothing"] * rate_change**2
+    )
+    per_revealed_loss = (
+        float(REVEALED_WEIGHTS["inflation_weight"]) * inflation_gap**2
+        + float(REVEALED_WEIGHTS["output_gap_weight"]) * output_gap**2
+        + float(REVEALED_WEIGHTS["rate_smoothing_weight"]) * rate_change**2
+    )
+    discounts = DISCOUNT ** np.arange(per_loss.size, dtype=float)
+    return pd.DataFrame(
+        [
+            {
+                "policy_name": policy.policy_name,
+                "model_id": spec.model_id,
+                "rule_family": policy.rule_family,
+                "inflation_coeff": policy.inflation_gap,
+                "output_coeff": policy.output_gap,
+                "lagged_rate_coeff": policy.lagged_policy_rate_gap,
+                "total_discounted_loss": float(np.sum(per_loss * discounts)),
+                "mean_period_loss": float(np.mean(per_loss)),
+                "total_discounted_revealed_loss": float(np.sum(per_revealed_loss * discounts)),
+                "mean_period_revealed_loss": float(np.mean(per_revealed_loss)),
+                "mean_sq_inflation_gap": float(np.mean(inflation_gap**2)),
+                "mean_sq_output_gap": float(np.mean(output_gap**2)),
+                "mean_sq_rate_change": float(np.mean(rate_change**2)),
+                "mean_policy_rate": float(np.mean(rate_series)),
+                "std_policy_rate": float(np.std(rate_series, ddof=0)),
+            }
+        ]
+    )
+
 MAIN_POLICY_ORDER = [
     "ppo_benchmark_transfer",
     "td3_benchmark_transfer",
     "sac_benchmark_transfer",
     "ppo_svar_direct",
+    "ppo_svar_direct_nonlinear",
     "td3_svar_direct",
     "sac_svar_direct",
     "ppo_ann_direct",
+    "ppo_ann_direct_nonlinear",
     "td3_ann_direct",
     "sac_ann_direct",
     "ppo_svar_revealed_direct",
+    "ppo_svar_revealed_direct_nonlinear",
     "td3_svar_revealed_direct",
     "sac_svar_revealed_direct",
     "ppo_ann_revealed_direct",
+    "ppo_ann_revealed_direct_nonlinear",
     "td3_ann_revealed_direct",
     "sac_ann_revealed_direct",
     "empirical_taylor_rule",
@@ -229,6 +323,12 @@ def read_text_any(path: Path) -> str:
     return path.read_bytes().decode("latin-1", errors="replace")
 
 
+def cleanup_generated_package_dirs(workdir: Path) -> None:
+    for path in workdir.iterdir():
+        if path.is_dir() and path.name.startswith("+"):
+            shutil.rmtree(path, ignore_errors=True)
+
+
 def patch_model_text(spec: ModelSpec, template: str, policy: PolicySpec, use_original: bool) -> str:
     text = template
     if spec.patch_style == "us_sw07":
@@ -364,8 +464,12 @@ def build_runner_script(spec: ModelSpec, mod_path: Path, summary_path: Path, pol
         per_loss = {LOSS_WEIGHTS["inflation"]:.12f} .* (inflation_gap .^ 2) ...
             + {LOSS_WEIGHTS["output_gap"]:.12f} .* (output_gap .^ 2) ...
             + {LOSS_WEIGHTS["rate_smoothing"]:.12f} .* (rate_change .^ 2);
+        per_revealed_loss = {float(REVEALED_WEIGHTS["inflation_weight"]):.12f} .* (inflation_gap .^ 2) ...
+            + {float(REVEALED_WEIGHTS["output_gap_weight"]):.12f} .* (output_gap .^ 2) ...
+            + {float(REVEALED_WEIGHTS["rate_smoothing_weight"]):.12f} .* (rate_change .^ 2);
         discounts = ({DISCOUNT:.12f}) .^ (0:(numel(per_loss)-1))';
         total_discounted_loss = sum(per_loss .* discounts);
+        total_discounted_revealed_loss = sum(per_revealed_loss .* discounts);
         row = table( ...
             string('{policy.policy_name}'), ...
             string('{spec.model_id}'), ...
@@ -375,6 +479,8 @@ def build_runner_script(spec: ModelSpec, mod_path: Path, summary_path: Path, pol
             {policy.lagged_policy_rate_gap:.12f}, ...
             total_discounted_loss, ...
             mean(per_loss), ...
+            total_discounted_revealed_loss, ...
+            mean(per_revealed_loss), ...
             mean(inflation_gap .^ 2), ...
             mean(output_gap .^ 2), ...
             mean(rate_change .^ 2), ...
@@ -382,7 +488,7 @@ def build_runner_script(spec: ModelSpec, mod_path: Path, summary_path: Path, pol
             std(rate_series, 1), ...
             'VariableNames', {{ ...
                 'policy_name', 'model_id', 'rule_family', 'inflation_coeff', 'output_coeff', 'lagged_rate_coeff', ...
-                'total_discounted_loss', 'mean_period_loss', 'mean_sq_inflation_gap', 'mean_sq_output_gap', ...
+                'total_discounted_loss', 'mean_period_loss', 'total_discounted_revealed_loss', 'mean_period_revealed_loss', 'mean_sq_inflation_gap', 'mean_sq_output_gap', ...
                 'mean_sq_rate_change', 'mean_policy_rate', 'std_policy_rate' ...
             }} ...
         );
@@ -412,6 +518,7 @@ def run_model_policy(spec: ModelSpec, policy: PolicySpec, template_text: str) ->
         errors="replace",
         timeout=MATLAB_TIMEOUT_SEC,
     )
+    cleanup_generated_package_dirs(model_work)
     status = {
         "model_id": spec.model_id,
         "policy_name": policy.policy_name,
@@ -423,6 +530,10 @@ def run_model_policy(spec: ModelSpec, policy: PolicySpec, template_text: str) ->
         "status": "ok" if completed.returncode == 0 and summary_path.exists() else "failed",
     }
     if status["status"] != "ok":
+        cached = cached_summary_frame(spec, policy, model_work)
+        if cached is not None:
+            status["status"] = "cached"
+            return status, cached
         return status, None
     return status, pd.read_csv(summary_path)
 
@@ -439,6 +550,8 @@ def failure_placeholder(spec: ModelSpec, policy: PolicySpec) -> pd.DataFrame:
                 "lagged_rate_coeff": policy.lagged_policy_rate_gap,
                 "total_discounted_loss": np.inf,
                 "mean_period_loss": np.inf,
+                "total_discounted_revealed_loss": np.inf,
+                "mean_period_revealed_loss": np.inf,
                 "mean_sq_inflation_gap": np.nan,
                 "mean_sq_output_gap": np.nan,
                 "mean_sq_rate_change": np.nan,
@@ -460,8 +573,12 @@ def supported_policies_for_model(spec: ModelSpec, policies: list[PolicySpec]) ->
 def summarise_model(df: pd.DataFrame, spec: ModelSpec) -> pd.DataFrame:
     baseline_name = f"{spec.model_id}_baseline"
     baseline_loss = float(df.loc[df["policy_name"] == baseline_name, "total_discounted_loss"].iloc[0])
+    baseline_revealed_loss = float(df.loc[df["policy_name"] == baseline_name, "total_discounted_revealed_loss"].iloc[0])
     df = df.sort_values("total_discounted_loss").reset_index(drop=True)
     df[f"improvement_vs_{baseline_name}_pct"] = (baseline_loss - df["total_discounted_loss"]) / baseline_loss * 100.0
+    df[f"improvement_vs_{baseline_name}_revealed_pct"] = (
+        (baseline_revealed_loss - df["total_discounted_revealed_loss"]) / baseline_revealed_loss * 100.0
+    )
     return df
 
 

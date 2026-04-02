@@ -1,7 +1,11 @@
 evaluation_env,rule_family,policy_name,source_env,policy_parameterization,total_discounted_loss
 ann,ann_direct,ppo_ann_direct,ann,linear_policy,69.22967798608991
+ann,ann_revealed_direct,td3_ann_revealed_direct,ann,standard_nonlinear,114.15438596210474
 ann,benchmark_transfer,td3_benchmark_transfer,benchmark,linear_surrogate,155.2257644317758
 ann,svar_direct,td3_svar_direct,svar,standard_nonlinear,111.44381979259724
-svar,ann_direct,ppo_ann_direct,ann,linear_policy,150.18957947330867
+ann,svar_revealed_direct,sac_svar_revealed_direct,svar,standard_nonlinear,172.5985579204927
+svar,ann_direct,ppo_ann_direct_nonlinear,ann,nonlinear_policy,87.33608756001983
+svar,ann_revealed_direct,sac_ann_revealed_direct,ann,standard_nonlinear,110.78835860905636
 svar,benchmark_transfer,sac_benchmark_transfer,benchmark,linear_surrogate,114.45485212077917
-svar,svar_direct,sac_svar_direct,svar,standard_nonlinear,92.10155185694455
+svar,svar_direct,ppo_svar_direct_nonlinear,svar,nonlinear_policy,90.798474691546
+svar,svar_revealed_direct,sac_svar_revealed_direct,svar,standard_nonlinear,105.45070201428906

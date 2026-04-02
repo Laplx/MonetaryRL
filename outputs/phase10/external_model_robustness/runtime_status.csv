@@ -1,5 +1,3 @@
 component,status,detail
 dynare_preprocessor,available,C:\dynare\7.0\matlab\preprocessor64\dynare_m.exe
-matlab_runtime_for_mmb,available_via_escalated,Current shell still reports license error -9/57 but external user context can run MATLAB batch and complete selected MMB runs.
-mmb_selected_models,completed,Completed external evaluation for US_SW07 US_CCTW10 US_KS15 and NK_CW09 via scripts/phase10_external_mmb_eval.py.
-mmb_legacy_models,legacy_incompatible,US_FRB03 US_CPS10 and US_RA07 remain blocked by legacy Dynare/MMB compatibility issues in the current environment.
+matlab_runtime_for_mmb,license_check_failed,Current shell still reports MATLAB license error -9/57; MMB numerical solve remains blocked.

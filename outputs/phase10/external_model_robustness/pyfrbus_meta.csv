@@ -1,13 +1,16 @@
 policy_name,model_id,converged,iterations,max_fixed_point_gap,clip_rate,start,end
 empirical_taylor_rule,pyfrbus,True,13,0.0,0.0,2040Q1,2045Q4
 ppo_ann_direct,pyfrbus,True,10,0.0,0.0,2040Q1,2045Q4
+ppo_ann_direct_nonlinear,pyfrbus,True,10,0.0,0.0,2040Q1,2045Q4
 ppo_ann_revealed_direct,pyfrbus,True,11,0.0,0.0,2040Q1,2045Q4
+ppo_ann_revealed_direct_nonlinear,pyfrbus,True,11,0.0,0.0,2040Q1,2045Q4
+ppo_svar_direct_nonlinear,pyfrbus,True,10,0.0,0.0,2040Q1,2045Q4
 ppo_svar_revealed_direct,pyfrbus,True,10,0.0,0.0,2040Q1,2045Q4
+ppo_svar_revealed_direct_nonlinear,pyfrbus,True,11,0.0,0.0,2040Q1,2045Q4
 pyfrbus_baseline,pyfrbus,True,0,0.0,0.0,2040Q1,2045Q4
 riccati_reference,pyfrbus,True,18,0.0,0.0,2040Q1,2045Q4
 sac_ann_revealed_direct,pyfrbus,True,12,0.0,0.0,2040Q1,2045Q4
 sac_benchmark_transfer,pyfrbus,True,16,0.0,0.0,2040Q1,2045Q4
-sac_svar_direct,pyfrbus,False,20,0.0,0.0,2040Q1,2045Q4
 sac_svar_revealed_direct,pyfrbus,True,12,0.0,0.0,2040Q1,2045Q4
 td3_ann_revealed_direct,pyfrbus,True,15,0.0,0.0,2040Q1,2045Q4
 td3_benchmark_transfer,pyfrbus,True,18,0.0,0.0,2040Q1,2045Q4

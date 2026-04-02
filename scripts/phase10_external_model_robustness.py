@@ -32,6 +32,8 @@ from pyfrbus.load_data import load_data
 OUTPUT_DIR = ROOT / "outputs" / "phase10" / "external_model_robustness"
 COUNTERFACTUAL_DIR = ROOT / "outputs" / "phase10" / "counterfactual_eval"
 REVEALED_DIR = ROOT / "outputs" / "phase10" / "revealed_welfare"
+REVEALED_TRAIN_ROOT = ROOT / "outputs" / "phase10" / "revealed_policy_training"
+PPO_VARIANT_DIR = ROOT / "outputs" / "phase10" / "ppo_policy_variants"
 MMB_ROOT = EXTERNAL_ROOT / "mmb_extracted" / "mmb-rep-master"
 PYFRBUS_MODEL = PYFRBUS_ROOT / "models" / "model.xml"
 PYFRBUS_DATA = PYFRBUS_ROOT / "data" / "LONGBASE.TXT"
@@ -39,6 +41,7 @@ PYFRBUS_DATA = PYFRBUS_ROOT / "data" / "LONGBASE.TXT"
 PRIORITY_MODELS = ["pyfrbus", "US_FRB03", "US_SW07", "US_CCTW10", "US_CPS10", "US_KS15", "US_RA07"]
 FALLBACK_MODELS = ["NK_CW09", "NK_CFP10", "NK_GLSV07", "NK_GK13"]
 BENCHMARK_CONFIG = json.loads((ROOT / "src" / "monetary_rl" / "config" / "benchmark_lq.json").read_text(encoding="utf-8"))
+REVEALED_WEIGHTS = json.loads((REVEALED_DIR / "revealed_weights.json").read_text(encoding="utf-8"))
 
 
 def pick_preferred_rules() -> pd.DataFrame:
@@ -51,7 +54,17 @@ def pick_preferred_rules() -> pd.DataFrame:
         on="policy_name",
         how="left",
     )
-    merged = merged[merged["rule_family"].isin(["benchmark_transfer", "svar_direct", "ann_direct"])]
+    merged = merged[
+        merged["rule_family"].isin(
+            [
+                "benchmark_transfer",
+                "svar_direct",
+                "ann_direct",
+                "svar_revealed_direct",
+                "ann_revealed_direct",
+            ]
+        )
+    ]
     preferred = (
         merged.sort_values("total_discounted_loss")
         .groupby(["evaluation_env", "rule_family"], as_index=False)
@@ -155,8 +168,20 @@ def build_revealed_policy_callable_map() -> dict[str, object]:
     return policies
 
 
+def _registry_policy_names(path: Path, *, parameterization: str | None = None) -> list[str]:
+    if not path.exists():
+        return []
+    registry = pd.read_csv(path)
+    if parameterization is not None and "policy_parameterization" in registry.columns:
+        registry = registry.loc[registry["policy_parameterization"] == parameterization]
+    return registry["policy_name"].astype(str).tolist()
+
+
 def pyfrbus_policy_names(preferred_rules: pd.DataFrame) -> list[str]:
-    ordered = list(preferred_rules["policy_name"].tolist()) + ["empirical_taylor_rule", "riccati_reference"]
+    ordered = list(preferred_rules["policy_name"].tolist())
+    ordered.extend(_registry_policy_names(REVEALED_TRAIN_ROOT / "policy_registry.csv"))
+    ordered.extend(_registry_policy_names(PPO_VARIANT_DIR / "policy_registry.csv", parameterization="nonlinear_policy"))
+    ordered.extend(["empirical_taylor_rule", "riccati_reference"])
     unique = list(dict.fromkeys(ordered))
     return unique
 
@@ -172,17 +197,30 @@ def baseline_loss_frame(sim: pd.DataFrame, start: pd.Period, end: pd.Period) -> 
 def welfare_summary(window: pd.DataFrame, policy_name: str) -> dict[str, float | str]:
     discount = float(BENCHMARK_CONFIG["discount_factor"])
     weights = BENCHMARK_CONFIG["loss_weights"]
+    revealed_weights = {
+        "inflation": float(REVEALED_WEIGHTS["inflation_weight"]),
+        "output_gap": float(REVEALED_WEIGHTS["output_gap_weight"]),
+        "rate_smoothing": float(REVEALED_WEIGHTS["rate_smoothing_weight"]),
+    }
     per_loss = (
         weights["inflation"] * window["inflation_gap"] ** 2
         + weights["output_gap"] * window["xgap"] ** 2
         + weights["rate_smoothing"] * window["rate_change"] ** 2
     )
+    per_revealed_loss = (
+        revealed_weights["inflation"] * window["inflation_gap"] ** 2
+        + revealed_weights["output_gap"] * window["xgap"] ** 2
+        + revealed_weights["rate_smoothing"] * window["rate_change"] ** 2
+    )
     discounted = per_loss.to_numpy(dtype=float) * (discount ** np.arange(len(window)))
+    discounted_revealed = per_revealed_loss.to_numpy(dtype=float) * (discount ** np.arange(len(window)))
     return {
         "policy_name": policy_name,
         "model_id": "pyfrbus",
         "total_discounted_loss": float(discounted.sum()),
         "mean_period_loss": float(per_loss.mean()),
+        "total_discounted_revealed_loss": float(discounted_revealed.sum()),
+        "mean_period_revealed_loss": float(per_revealed_loss.mean()),
         "mean_sq_inflation_gap": float(np.mean(np.square(window["inflation_gap"]))),
         "mean_sq_output_gap": float(np.mean(np.square(window["xgap"]))),
         "mean_sq_rate_change": float(np.mean(np.square(window["rate_change"]))),
@@ -254,16 +292,6 @@ def run_pyfrbus_bundle(preferred_rules: pd.DataFrame) -> tuple[pd.DataFrame, pd.
     policy_map = build_policy_callable_map()
     policy_map.update(build_revealed_policy_callable_map())
     policy_names = pyfrbus_policy_names(preferred_rules)
-    policy_names.extend(
-        [
-            "ppo_svar_revealed_direct",
-            "td3_svar_revealed_direct",
-            "sac_svar_revealed_direct",
-            "ppo_ann_revealed_direct",
-            "td3_ann_revealed_direct",
-            "sac_ann_revealed_direct",
-        ]
-    )
     policy_names = list(dict.fromkeys([name for name in policy_names if name in policy_map]))
     path_frames: list[pd.DataFrame] = []
     summary_rows: list[dict[str, object]] = []
@@ -295,6 +323,12 @@ def run_pyfrbus_bundle(preferred_rules: pd.DataFrame) -> tuple[pd.DataFrame, pd.
     path_df = pd.concat(path_frames, ignore_index=True)
     baseline_loss = float(summary_df.loc[summary_df["policy_name"] == "pyfrbus_baseline", "total_discounted_loss"].iloc[0])
     summary_df["improvement_vs_pyfrbus_baseline_pct"] = (baseline_loss - summary_df["total_discounted_loss"]) / baseline_loss * 100.0
+    baseline_revealed_loss = float(
+        summary_df.loc[summary_df["policy_name"] == "pyfrbus_baseline", "total_discounted_revealed_loss"].iloc[0]
+    )
+    summary_df["improvement_vs_pyfrbus_baseline_revealed_pct"] = (
+        (baseline_revealed_loss - summary_df["total_discounted_revealed_loss"]) / baseline_revealed_loss * 100.0
+    )
     return summary_df, meta_df, path_df
 
 
@@ -415,8 +449,7 @@ def write_phase10_summary(
         "",
         "## Notes",
         "",
-        "- `pyfrbus` 已实际跑通；当前外部数值结果先来自 `pyfrbus` 闭环固定点评估。",
-        "- MMB/Dynare 模型文件已确认在本地，但当前 shell 下 MATLAB 许可证仍报错，因此未能完成数值求解阶段。",
+        "- `pyfrbus` 已实际跑通；`Dynare/MMB` 批次由 `phase10_external_mmb_eval.py` 单独维护并汇总。",
         "- `Phase 8/9` 仍是 benchmark-transfer baseline，本轮新增的核心是 `SVAR direct` 与 `ANN direct` 的外部接口延伸。",
         "- Lucas critique 仍是经验环境与外部模型迁移时必须明确的边界。",
     ]
@@ -476,7 +509,7 @@ def main() -> None:
         "",
         "## Notes",
         "",
-        "- 本轮外部数值结果先完成 `pyfrbus`；MMB 数值求解仍等待当前 shell 的 MATLAB 许可证问题解除。",
+        "- 本文件汇报 `pyfrbus` 闭环固定点评估；`Dynare/MMB` 批次见 `mmb_summary.csv` 与 `all_external_summary.csv`。",
         "- `pyfrbus` 中使用的状态映射是 `picxfe - pitarg`、`xgap`、`rff(-1) - 2`，并对规则路径做固定点迭代。",
     ]
     (OUTPUT_DIR / "external_model_robustness_summary.md").write_text("\n".join(lines), encoding="utf-8")

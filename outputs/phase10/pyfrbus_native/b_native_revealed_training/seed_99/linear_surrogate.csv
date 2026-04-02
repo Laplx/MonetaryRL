@@ -1,0 +1,2 @@
+policy,intercept,inflation_gap,output_gap,lagged_policy_rate_gap,fit_rmse
+sac_pyfrbus_revealed_native_seed_99,0.09800130717073974,-0.23422221866008508,-0.38638233074850403,0.7845585907232044,0.00013132106090009245

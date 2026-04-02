@@ -60,14 +60,25 @@ def load_unified_registry() -> pd.DataFrame:
     base_df["checkpoint_path"] = ""
     base_df["config_path"] = ""
 
-    svar_direct = pd.read_csv(ROOT / "outputs" / "phase10" / "svar_direct" / "policy_registry.csv")
-    ann_direct = pd.read_csv(ROOT / "outputs" / "phase10" / "ann_direct" / "policy_registry.csv")
+    frames = [
+        base_df,
+        pd.read_csv(ROOT / "outputs" / "phase10" / "svar_direct" / "policy_registry.csv"),
+        pd.read_csv(ROOT / "outputs" / "phase10" / "ann_direct" / "policy_registry.csv"),
+    ]
+    ppo_variant_path = ROOT / "outputs" / "phase10" / "ppo_policy_variants" / "policy_registry.csv"
+    if ppo_variant_path.exists():
+        ppo_variants = pd.read_csv(ppo_variant_path)
+        if "policy_parameterization" in ppo_variants.columns:
+            ppo_variants = ppo_variants.loc[ppo_variants["policy_parameterization"] == "nonlinear_policy"].copy()
+        frames.append(ppo_variants)
 
-    columns = sorted(set(base_df.columns) | set(svar_direct.columns) | set(ann_direct.columns))
-    return pd.concat(
-        [base_df.reindex(columns=columns), svar_direct.reindex(columns=columns), ann_direct.reindex(columns=columns)],
-        ignore_index=True,
-    )
+    revealed_training_path = ROOT / "outputs" / "phase10" / "revealed_policy_training" / "policy_registry.csv"
+    if revealed_training_path.exists():
+        frames.append(pd.read_csv(revealed_training_path))
+
+    columns = sorted(set().union(*(set(frame.columns) for frame in frames)))
+    unified = pd.concat([frame.reindex(columns=columns) for frame in frames], ignore_index=True)
+    return unified.drop_duplicates(subset=["policy_name"], keep="last").reset_index(drop=True)
 
 
 def build_policy_map(context, unified_registry: pd.DataFrame) -> dict[str, object]:

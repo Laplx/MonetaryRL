@@ -1,0 +1,5 @@
+variant,group,artificial_loss,revealed_loss,artificial_improvement_vs_baseline_pct,revealed_improvement_vs_baseline_pct
+pyfrbus_baseline,existing_external_eval,0.0141380587282444,0.018557522716757,0.0,0.0
+sac_svar_revealed_direct,existing_external_eval,0.0271628383780964,0.0744706067746312,-92.1256581275299,-301.2960561130613
+fine_05,A_tuned_linear,0.0125957570739695,0.0159505405636571,10.908864391642098,14.048115111538234
+sac_pyfrbus_revealed_native_best,B_native_rl,6.013362118561691,11.490387978740037,-42433.15277682683,-61817.68240900219
