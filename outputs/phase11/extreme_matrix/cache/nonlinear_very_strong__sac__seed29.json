@@ -1,0 +1,743 @@
+{
+  "env_id": "nonlinear_very_strong",
+  "group": "nonlinear",
+  "tier": "very_strong",
+  "algo": "sac",
+  "seed": 29,
+  "row": {
+    "policy": "sac",
+    "mean_reward": -43.530131778873866,
+    "std_reward": 30.40623582205623,
+    "mean_discounted_loss": 35.70786428816007,
+    "std_discounted_loss": 28.235182824324504,
+    "mean_abs_action": 1.1994590979550896,
+    "clip_rate": 0.0,
+    "explosion_rate": 0.0,
+    "first_trajectory": [
+      {
+        "period": 0,
+        "inflation_gap": 0.22490951418876648,
+        "output_gap": -0.8406651616096497,
+        "lagged_policy_rate_gap": 1.4779911041259766,
+        "action": -0.3563630282878876,
+        "loss": 0.7404287548550982
+      },
+      {
+        "period": 1,
+        "inflation_gap": -0.20271363854408264,
+        "output_gap": -0.739680290222168,
+        "lagged_policy_rate_gap": -0.3563630282878876,
+        "action": -0.7782836556434631,
+        "loss": 0.33245798670216853
+      },
+      {
+        "period": 2,
+        "inflation_gap": -0.07357214391231537,
+        "output_gap": -0.3392549455165863,
+        "lagged_policy_rate_gap": -0.7782836556434631,
+        "action": -1.265364170074463,
+        "loss": 0.08668456214242215
+      },
+      {
+        "period": 3,
+        "inflation_gap": -0.37365373969078064,
+        "output_gap": -0.920623779296875,
+        "lagged_policy_rate_gap": -1.265364170074463,
+        "action": -1.5324656963348389,
+        "loss": 0.5705255112213985
+      },
+      {
+        "period": 4,
+        "inflation_gap": -0.43389180302619934,
+        "output_gap": -0.5604840517044067,
+        "lagged_policy_rate_gap": -1.5324656963348389,
+        "action": -1.0888992547988892,
+        "loss": 0.3650084016465067
+      },
+      {
+        "period": 5,
+        "inflation_gap": -0.45624327659606934,
+        "output_gap": -0.6787870526313782,
+        "lagged_policy_rate_gap": -1.0888992547988892,
+        "action": -0.78366619348526,
+        "loss": 0.44785058102100306
+      },
+      {
+        "period": 6,
+        "inflation_gap": -0.6710718274116516,
+        "output_gap": 0.11737125366926193,
+        "lagged_policy_rate_gap": -0.78366619348526,
+        "action": -1.071121335029602,
+        "loss": 0.4654884489795884
+      },
+      {
+        "period": 7,
+        "inflation_gap": -0.5080319046974182,
+        "output_gap": -0.25688087940216064,
+        "lagged_policy_rate_gap": -1.071121335029602,
+        "action": -1.1218713521957397,
+        "loss": 0.2913478657159366
+      },
+      {
+        "period": 8,
+        "inflation_gap": -0.2584761083126068,
+        "output_gap": -0.03521241247653961,
+        "lagged_policy_rate_gap": -1.1218713521957397,
+        "action": -1.1608959436416626,
+        "loss": 0.06758214743839155
+      },
+      {
+        "period": 9,
+        "inflation_gap": -0.06314760446548462,
+        "output_gap": -0.9966767430305481,
+        "lagged_policy_rate_gap": -1.1608959436416626,
+        "action": -2.525641441345215,
+        "loss": 0.6869229123489315
+      },
+      {
+        "period": 10,
+        "inflation_gap": -0.06387469172477722,
+        "output_gap": -0.3498985171318054,
+        "lagged_policy_rate_gap": -2.525641441345215,
+        "action": -1.4356878995895386,
+        "loss": 0.18409433470702777
+      },
+      {
+        "period": 11,
+        "inflation_gap": 0.006129646208137274,
+        "output_gap": 0.5939738750457764,
+        "lagged_policy_rate_gap": -1.4356878995895386,
+        "action": -0.719831109046936,
+        "loss": 0.22768514913768026
+      },
+      {
+        "period": 12,
+        "inflation_gap": 0.3915252983570099,
+        "output_gap": 0.29763495922088623,
+        "lagged_policy_rate_gap": -0.719831109046936,
+        "action": -0.2203252911567688,
+        "loss": 0.2225359499393674
+      },
+      {
+        "period": 13,
+        "inflation_gap": 0.10742419958114624,
+        "output_gap": -0.3913387060165405,
+        "lagged_policy_rate_gap": -0.2203252911567688,
+        "action": -1.1526613235473633,
+        "loss": 0.1750379977983837
+      },
+      {
+        "period": 14,
+        "inflation_gap": -0.2483590990304947,
+        "output_gap": -0.3729702830314636,
+        "lagged_policy_rate_gap": -1.1526613235473633,
+        "action": -1.2894248962402344,
+        "loss": 0.13310608556509593
+      },
+      {
+        "period": 15,
+        "inflation_gap": -0.149274542927742,
+        "output_gap": 0.41207414865493774,
+        "lagged_policy_rate_gap": -1.2894248962402344,
+        "action": -0.5062798261642456,
+        "loss": 0.1685170612395647
+      },
+      {
+        "period": 16,
+        "inflation_gap": 0.2063993513584137,
+        "output_gap": 0.975970983505249,
+        "lagged_policy_rate_gap": -0.5062798261642456,
+        "action": 3.139478921890259,
+        "loss": 1.8480160574648703
+      },
+      {
+        "period": 17,
+        "inflation_gap": 0.4015972316265106,
+        "output_gap": -0.3103398084640503,
+        "lagged_policy_rate_gap": 3.139478921890259,
+        "action": 0.8745757937431335,
+        "loss": 0.7224143527978922
+      },
+      {
+        "period": 18,
+        "inflation_gap": 0.18419043719768524,
+        "output_gap": -1.3294398784637451,
+        "lagged_policy_rate_gap": 0.8745757937431335,
+        "action": -0.4919670820236206,
+        "loss": 1.1043752555108102
+      },
+      {
+        "period": 19,
+        "inflation_gap": -0.18565967679023743,
+        "output_gap": -1.2762696743011475,
+        "lagged_policy_rate_gap": -0.4919670820236206,
+        "action": -3.3564188480377197,
+        "loss": 1.6694100483383632
+      },
+      {
+        "period": 20,
+        "inflation_gap": -0.1743137240409851,
+        "output_gap": -1.402660846710205,
+        "lagged_policy_rate_gap": -3.3564188480377197,
+        "action": -3.499680519104004,
+        "loss": 1.0161663904756018
+      },
+      {
+        "period": 21,
+        "inflation_gap": -0.30286678671836853,
+        "output_gap": -0.860396146774292,
+        "lagged_policy_rate_gap": -3.499680519104004,
+        "action": -3.483032703399658,
+        "loss": 0.4618967701659068
+      },
+      {
+        "period": 22,
+        "inflation_gap": -0.19921989738941193,
+        "output_gap": -1.1079636812210083,
+        "lagged_policy_rate_gap": -3.483032703399658,
+        "action": -3.4977691173553467,
+        "loss": 0.6535020431578792
+      },
+      {
+        "period": 23,
+        "inflation_gap": -0.1959858238697052,
+        "output_gap": -0.6235532760620117,
+        "lagged_policy_rate_gap": -3.4977691173553467,
+        "action": -3.3521127700805664,
+        "loss": 0.23494136435186394
+      },
+      {
+        "period": 24,
+        "inflation_gap": -0.11677635461091995,
+        "output_gap": 0.49537843465805054,
+        "lagged_policy_rate_gap": -3.3521127700805664,
+        "action": -1.4630907773971558,
+        "loss": 0.4931770226425059
+      },
+      {
+        "period": 25,
+        "inflation_gap": -0.220190167427063,
+        "output_gap": 0.4630950689315796,
+        "lagged_policy_rate_gap": -1.4630907773971558,
+        "action": -0.6218909025192261,
+        "loss": 0.22647395421539473
+      },
+      {
+        "period": 26,
+        "inflation_gap": -0.027642546221613884,
+        "output_gap": 0.49399110674858093,
+        "lagged_policy_rate_gap": -0.6218909025192261,
+        "action": -0.217283695936203,
+        "loss": 0.1391484162968497
+      },
+      {
+        "period": 27,
+        "inflation_gap": 0.1422790288925171,
+        "output_gap": 0.10016030073165894,
+        "lagged_policy_rate_gap": -0.217283695936203,
+        "action": 0.06904929876327515,
+        "loss": 0.03345802336928303
+      },
+      {
+        "period": 28,
+        "inflation_gap": 0.2115996778011322,
+        "output_gap": 0.3930928707122803,
+        "lagged_policy_rate_gap": 0.06904929876327515,
+        "action": 0.06303906440734863,
+        "loss": 0.12203903843965502
+      },
+      {
+        "period": 29,
+        "inflation_gap": 0.2610478103160858,
+        "output_gap": -0.03154526650905609,
+        "lagged_policy_rate_gap": 0.06303906440734863,
+        "action": 0.11056682467460632,
+        "loss": 0.068869399989989
+      },
+      {
+        "period": 30,
+        "inflation_gap": 0.22097863256931305,
+        "output_gap": 0.28650185465812683,
+        "lagged_policy_rate_gap": 0.11056682467460632,
+        "action": 0.20018115639686584,
+        "loss": 0.0906762852584794
+      },
+      {
+        "period": 31,
+        "inflation_gap": -0.1330847293138504,
+        "output_gap": -0.5185405611991882,
+        "lagged_policy_rate_gap": 0.20018115639686584,
+        "action": -0.8575637936592102,
+        "loss": 0.2640361399178385
+      },
+      {
+        "period": 32,
+        "inflation_gap": -0.09919705986976624,
+        "output_gap": -0.8584652543067932,
+        "lagged_policy_rate_gap": -0.8575637936592102,
+        "action": -0.9797172546386719,
+        "loss": 0.37981349991574564
+      },
+      {
+        "period": 33,
+        "inflation_gap": -0.2019723504781723,
+        "output_gap": -0.9022881984710693,
+        "lagged_policy_rate_gap": -0.9797172546386719,
+        "action": -0.826710045337677,
+        "loss": 0.4501959475175694
+      },
+      {
+        "period": 34,
+        "inflation_gap": -0.0671999529004097,
+        "output_gap": -0.6729826927185059,
+        "lagged_policy_rate_gap": -0.826710045337677,
+        "action": -1.1970595121383667,
+        "loss": 0.24468455877509823
+      },
+      {
+        "period": 35,
+        "inflation_gap": 0.1860799640417099,
+        "output_gap": -0.0199891310185194,
+        "lagged_policy_rate_gap": -1.1970595121383667,
+        "action": -0.4601977467536926,
+        "loss": 0.08912206182578367
+      },
+      {
+        "period": 36,
+        "inflation_gap": 0.18666474521160126,
+        "output_gap": -0.6835258603096008,
+        "lagged_policy_rate_gap": -0.4601977467536926,
+        "action": -1.3227332830429077,
+        "loss": 0.3428442830970744
+      },
+      {
+        "period": 37,
+        "inflation_gap": 0.17556563019752502,
+        "output_gap": 0.5832595825195312,
+        "lagged_policy_rate_gap": -1.3227332830429077,
+        "action": -0.6576353311538696,
+        "loss": 0.24515468936778237
+      },
+      {
+        "period": 38,
+        "inflation_gap": 0.44029510021209717,
+        "output_gap": 0.13107475638389587,
+        "lagged_policy_rate_gap": -0.6576353311538696,
+        "action": -0.08500407636165619,
+        "loss": 0.23524072654782
+      },
+      {
+        "period": 39,
+        "inflation_gap": 0.14355942606925964,
+        "output_gap": -0.22337853908538818,
+        "lagged_policy_rate_gap": -0.08500407636165619,
+        "action": -0.659994900226593,
+        "loss": 0.07861973942818426
+      },
+      {
+        "period": 40,
+        "inflation_gap": 0.36978763341903687,
+        "output_gap": 0.14357851445674896,
+        "lagged_policy_rate_gap": -0.659994900226593,
+        "action": -0.08467081189155579,
+        "loss": 0.1801500693983096
+      },
+      {
+        "period": 41,
+        "inflation_gap": 0.30165183544158936,
+        "output_gap": -0.00396130234003067,
+        "lagged_policy_rate_gap": -0.08467081189155579,
+        "action": 0.1630491316318512,
+        "loss": 0.09713819282531827
+      },
+      {
+        "period": 42,
+        "inflation_gap": 0.33987823128700256,
+        "output_gap": 0.2257595658302307,
+        "lagged_policy_rate_gap": 0.1630491316318512,
+        "action": 0.18917466700077057,
+        "loss": 0.1410691572445396
+      },
+      {
+        "period": 43,
+        "inflation_gap": 0.30668774247169495,
+        "output_gap": -0.7750695943832397,
+        "lagged_policy_rate_gap": 0.18917466700077057,
+        "action": -1.1740630865097046,
+        "loss": 0.5802655267107133
+      },
+      {
+        "period": 44,
+        "inflation_gap": -0.15403063595294952,
+        "output_gap": -0.2664717733860016,
+        "lagged_policy_rate_gap": -1.1740630865097046,
+        "action": -1.2596899271011353,
+        "loss": 0.059962235400777386
+      },
+      {
+        "period": 45,
+        "inflation_gap": 0.00034243124537169933,
+        "output_gap": 0.42632901668548584,
+        "lagged_policy_rate_gap": -1.2596899271011353,
+        "action": -0.5343942642211914,
+        "loss": 0.14348371235241014
+      },
+      {
+        "period": 46,
+        "inflation_gap": 0.18627482652664185,
+        "output_gap": 0.12219881266355515,
+        "lagged_policy_rate_gap": -0.5343942642211914,
+        "action": -0.011973483487963676,
+        "loss": 0.06945693311991336
+      },
+      {
+        "period": 47,
+        "inflation_gap": -0.11697226017713547,
+        "output_gap": 0.287511944770813,
+        "lagged_policy_rate_gap": -0.011973483487963676,
+        "action": 0.05921356752514839,
+        "loss": 0.05552082846708932
+      },
+      {
+        "period": 48,
+        "inflation_gap": -0.17859677970409393,
+        "output_gap": 0.47726261615753174,
+        "lagged_policy_rate_gap": 0.05921356752514839,
+        "action": 0.20567047595977783,
+        "loss": 0.14793157471426133
+      },
+      {
+        "period": 49,
+        "inflation_gap": 0.10968424379825592,
+        "output_gap": 0.4489060640335083,
+        "lagged_policy_rate_gap": 0.20567047595977783,
+        "action": 0.10602317005395889,
+        "loss": 0.11378191905805216
+      },
+      {
+        "period": 50,
+        "inflation_gap": 0.5098661184310913,
+        "output_gap": 0.11282189935445786,
+        "lagged_policy_rate_gap": 0.10602317005395889,
+        "action": 0.17600834369659424,
+        "loss": 0.2668176416639403
+      },
+      {
+        "period": 51,
+        "inflation_gap": 0.5003931522369385,
+        "output_gap": 0.6822866201400757,
+        "lagged_policy_rate_gap": 0.17600834369659424,
+        "action": 3.435182809829712,
+        "loss": 1.5453726428861132
+      },
+      {
+        "period": 52,
+        "inflation_gap": 0.6713703274726868,
+        "output_gap": -0.2149275839328766,
+        "lagged_policy_rate_gap": 3.435182809829712,
+        "action": 1.1800588369369507,
+        "loss": 0.9823934630899577
+      },
+      {
+        "period": 53,
+        "inflation_gap": 0.4254581034183502,
+        "output_gap": -0.01705397106707096,
+        "lagged_policy_rate_gap": 1.1800588369369507,
+        "action": 0.7269811630249023,
+        "loss": 0.20168795458867309
+      },
+      {
+        "period": 54,
+        "inflation_gap": 0.22859783470630646,
+        "output_gap": -0.053272586315870285,
+        "lagged_policy_rate_gap": 0.7269811630249023,
+        "action": 0.33294081687927246,
+        "loss": 0.06920273369785951
+      },
+      {
+        "period": 55,
+        "inflation_gap": 0.4619811773300171,
+        "output_gap": 0.7910757064819336,
+        "lagged_policy_rate_gap": 0.33294081687927246,
+        "action": 3.4767117500305176,
+        "loss": 1.514656562912839
+      },
+      {
+        "period": 56,
+        "inflation_gap": 0.5114149451255798,
+        "output_gap": 0.4432215094566345,
+        "lagged_policy_rate_gap": 3.4767117500305176,
+        "action": 1.1107487678527832,
+        "loss": 0.9195459826238445
+      },
+      {
+        "period": 57,
+        "inflation_gap": 0.33780205249786377,
+        "output_gap": 0.2163883000612259,
+        "lagged_policy_rate_gap": 1.1107487678527832,
+        "action": 0.46921807527542114,
+        "loss": 0.17867833782534207
+      },
+      {
+        "period": 58,
+        "inflation_gap": 0.5192379355430603,
+        "output_gap": 0.2943481504917145,
+        "lagged_policy_rate_gap": 0.46921807527542114,
+        "action": 0.03559856116771698,
+        "loss": 0.3317310388574659
+      },
+      {
+        "period": 59,
+        "inflation_gap": 0.5283018350601196,
+        "output_gap": 0.06413762271404266,
+        "lagged_policy_rate_gap": 0.03559856116771698,
+        "action": 0.20293256640434265,
+        "loss": 0.2839597131824474
+      }
+    ]
+  },
+  "coeff": {
+    "policy": "sac",
+    "intercept": -0.11237980967760093,
+    "inflation_gap": 1.0082078494760724,
+    "output_gap": 1.1883178338474698,
+    "lagged_policy_rate_gap": 0.16457023897767065,
+    "fit_rmse": 1.3723824641905156
+  },
+  "training_log": [
+    {
+      "algo": "sac",
+      "seed": 29,
+      "step": 3000,
+      "eval_mean_reward": -27.827969314493487,
+      "eval_mean_discounted_loss": 22.527841206052464,
+      "eval_clip_rate": 0.0
+    },
+    {
+      "algo": "sac",
+      "seed": 29,
+      "step": 6000,
+      "eval_mean_reward": -84.31729314267409,
+      "eval_mean_discounted_loss": 70.91445187389259,
+      "eval_clip_rate": 0.0
+    },
+    {
+      "algo": "sac",
+      "seed": 29,
+      "step": 9000,
+      "eval_mean_reward": -31.285400087328114,
+      "eval_mean_discounted_loss": 25.304041537914177,
+      "eval_clip_rate": 0.0
+    },
+    {
+      "algo": "sac",
+      "seed": 29,
+      "step": 12000,
+      "eval_mean_reward": -35.80899830204989,
+      "eval_mean_discounted_loss": 29.06018472449248,
+      "eval_clip_rate": 0.0
+    }
+  ],
+  "trajectory": [
+    {
+      "policy": "sac",
+      "period": 0,
+      "inflation_gap": 1.2,
+      "output_gap": -1.4,
+      "lagged_policy_rate_gap": 0.0,
+      "action": -3.3819587230682373,
+      "loss": 3.5637644804537345
+    },
+    {
+      "policy": "sac",
+      "period": 1,
+      "inflation_gap": 1.0096594825279253,
+      "output_gap": -0.7576873884976779,
+      "lagged_policy_rate_gap": -3.3819587230682373,
+      "action": -3.4488208293914795,
+      "loss": 1.3069044141289714
+    },
+    {
+      "policy": "sac",
+      "period": 2,
+      "inflation_gap": 0.5335409064354533,
+      "output_gap": 0.18446567288817445,
+      "lagged_policy_rate_gap": -3.4488208293914795,
+      "action": -0.9894379377365112,
+      "loss": 0.9065361118535239
+    },
+    {
+      "policy": "sac",
+      "period": 3,
+      "inflation_gap": 0.555054037086497,
+      "output_gap": 0.7714593706756405,
+      "lagged_policy_rate_gap": -0.9894379377365112,
+      "action": 3.497819423675537,
+      "loss": 2.619207627142308
+    },
+    {
+      "policy": "sac",
+      "period": 4,
+      "inflation_gap": 0.39266781624321023,
+      "output_gap": -0.3364749194816859,
+      "lagged_policy_rate_gap": 3.497819423675537,
+      "action": 0.910591185092926,
+      "loss": 0.8801706954852431
+    },
+    {
+      "policy": "sac",
+      "period": 5,
+      "inflation_gap": 0.38899186719325124,
+      "output_gap": 0.4656348105601359,
+      "lagged_policy_rate_gap": 0.910591185092926,
+      "action": 0.04453827440738678,
+      "loss": 0.3347273255558683
+    },
+    {
+      "policy": "sac",
+      "period": 6,
+      "inflation_gap": 0.22648067021877694,
+      "output_gap": 0.44564179174991553,
+      "lagged_policy_rate_gap": 0.04453827440738678,
+      "action": -0.02192768082022667,
+      "loss": 0.15103356958021585
+    },
+    {
+      "policy": "sac",
+      "period": 7,
+      "inflation_gap": 0.3098861242315716,
+      "output_gap": 1.3855425425671228,
+      "lagged_policy_rate_gap": -0.02192768082022667,
+      "action": 3.499971866607666,
+      "loss": 2.2962711208402284
+    },
+    {
+      "policy": "sac",
+      "period": 8,
+      "inflation_gap": 0.6396368586045477,
+      "output_gap": 1.0924373508082224,
+      "lagged_policy_rate_gap": 3.499971866607666,
+      "action": 3.499964714050293,
+      "loss": 1.0058449936110536
+    },
+    {
+      "policy": "sac",
+      "period": 9,
+      "inflation_gap": 0.7224224066944942,
+      "output_gap": 0.08936185088653487,
+      "lagged_policy_rate_gap": 3.499964714050293,
+      "action": 1.2054142951965332,
+      "loss": 1.0523830663573954
+    },
+    {
+      "policy": "sac",
+      "period": 10,
+      "inflation_gap": 0.46136089301723454,
+      "output_gap": 0.048351534316551814,
+      "lagged_policy_rate_gap": 1.2054142951965332,
+      "action": 0.628226101398468,
+      "loss": 0.24733743014702977
+    },
+    {
+      "policy": "sac",
+      "period": 11,
+      "inflation_gap": 0.421203702647412,
+      "output_gap": -0.7397090063205538,
+      "lagged_policy_rate_gap": 0.628226101398468,
+      "action": -0.8173400163650513,
+      "loss": 0.6599634062223494
+    },
+    {
+      "policy": "sac",
+      "period": 12,
+      "inflation_gap": 0.12431276992342,
+      "output_gap": -0.8897723302840896,
+      "lagged_policy_rate_gap": -0.8173400163650513,
+      "action": -1.2742706537246704,
+      "loss": 0.43217962537140947
+    },
+    {
+      "policy": "sac",
+      "period": 13,
+      "inflation_gap": 0.06363762094963643,
+      "output_gap": -0.757150662196552,
+      "lagged_policy_rate_gap": -1.2742706537246704,
+      "action": -1.4139729738235474,
+      "loss": 0.2926399832565691
+    },
+    {
+      "policy": "sac",
+      "period": 14,
+      "inflation_gap": -0.18577342559942372,
+      "output_gap": -0.48158415094877033,
+      "lagged_policy_rate_gap": -1.4139729738235474,
+      "action": -1.3456919193267822,
+      "loss": 0.15093964312178765
+    },
+    {
+      "policy": "sac",
+      "period": 15,
+      "inflation_gap": -0.07785695433676794,
+      "output_gap": -0.5432385264393504,
+      "lagged_policy_rate_gap": -1.3456919193267822,
+      "action": -1.3602086305618286,
+      "loss": 0.15363682713310417
+    },
+    {
+      "policy": "sac",
+      "period": 16,
+      "inflation_gap": 0.2958419101215203,
+      "output_gap": -0.22078336995753117,
+      "lagged_policy_rate_gap": -1.3602086305618286,
+      "action": -0.7316381931304932,
+      "loss": 0.15140516349051375
+    },
+    {
+      "policy": "sac",
+      "period": 17,
+      "inflation_gap": 0.10285699811180304,
+      "output_gap": 0.23175020243168853,
+      "lagged_policy_rate_gap": -0.7316381931304932,
+      "action": -0.1070132851600647,
+      "loss": 0.07644926778984239
+    },
+    {
+      "policy": "sac",
+      "period": 18,
+      "inflation_gap": 0.11615481972595329,
+      "output_gap": 0.47208661970216725,
+      "lagged_policy_rate_gap": -0.1070132851600647,
+      "action": 0.005117261782288551,
+      "loss": 0.12618215635223717
+    },
+    {
+      "policy": "sac",
+      "period": 19,
+      "inflation_gap": 0.4067810178453216,
+      "output_gap": 0.8396189555550264,
+      "lagged_policy_rate_gap": 0.005117261782288551,
+      "action": 3.4708352088928223,
+      "loss": 1.7190708806353379
+    }
+  ],
+  "config": {
+    "total_steps": 12000,
+    "warmup_steps": 1000,
+    "batch_size": 256,
+    "gamma": 0.99,
+    "tau": 0.005,
+    "actor_lr": 0.0003,
+    "critic_lr": 0.0003,
+    "alpha": 0.1,
+    "hidden_size": 64,
+    "replay_capacity": 100000,
+    "eval_episodes": 32,
+    "eval_interval": 3000,
+    "state_scale": [
+      2.5,
+      2.5,
+      3.0
+    ],
+    "seed": 29
+  }
+}

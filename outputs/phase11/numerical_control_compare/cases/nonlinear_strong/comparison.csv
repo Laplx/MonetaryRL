@@ -1,0 +1,6 @@
+case_id,policy_name,source,mean_discounted_loss,std_discounted_loss,mean_abs_action,clip_rate,explosion_rate,solve_seconds,gap_vs_dp_pct
+nonlinear_strong,finite_horizon_dp,phase11_numerical_dp,14.464656343365718,4.3398201384504675,0.8765308105860803,0.0,0.0,42.52179840000463,0.0
+nonlinear_strong,riccati_reference,phase11_re_eval,14.433754700631916,4.559420518182687,0.8572875897748686,0.0026041666666666665,0.0,,-0.21363551266100345
+nonlinear_strong,linear_policy_search,phase11_re_eval,14.623795849017942,4.827768017170685,0.7797830406805902,0.0015625,0.0,,1.1001955516573014
+nonlinear_strong,best_rl_actual_sac_seed7,phase7_cached_actual,16.479926318694723,3.75622525325284,1.0163623599734517,0.0,0.0,,13.932373694127321
+nonlinear_strong,best_rl_surrogate,phase11_re_eval_from_phase7_linear_fit,16.851214754608815,4.955215586426686,0.803532178718245,0.0015625,0.0,,16.499240317850372

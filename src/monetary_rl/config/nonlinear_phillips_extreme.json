@@ -1,0 +1,41 @@
+{
+  "name": "nonlinear_phillips_extreme",
+  "state_names": [
+    "inflation_gap",
+    "output_gap",
+    "lagged_policy_rate_gap"
+  ],
+  "action_name": "policy_rate_gap",
+  "inflation_target": 2.0,
+  "neutral_rate": 2.0,
+  "discount_factor": 0.99,
+  "loss_weights": {
+    "inflation": 1.0,
+    "output_gap": 0.5,
+    "rate_smoothing": 0.1
+  },
+  "A": [
+    [0.77, 0.18, 0.0],
+    [0.05, 0.77, 0.0],
+    [0.0, 0.0, 0.0]
+  ],
+  "B": [
+    [-0.072],
+    [-0.115],
+    [1.0]
+  ],
+  "Sigma": [
+    [0.1719, 0.0, 0.0],
+    [0.0, 0.4587, 0.0],
+    [0.0, 0.0, 0.0]
+  ],
+  "inflation_gap_sq": 0.16,
+  "output_gap_sq": 0.36,
+  "inflation_output_cross": 0.16,
+  "calibration_notes": {
+    "dynamic_structure": "phase11 extreme nonlinear Phillips extension",
+    "nonlinearity": "large nonlinear response intended to overturn simple linear extrapolation",
+    "shock_scales": "same as benchmark",
+    "status": "Phase 11 extra distortion tier"
+  }
+}

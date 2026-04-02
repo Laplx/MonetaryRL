@@ -1,0 +1,30 @@
+{
+  "case_id": "zlb_strong",
+  "dp_config": {
+    "horizon": 60,
+    "discount_factor": 0.99,
+    "action_low": -0.5,
+    "action_high": 6.0,
+    "action_points": 53,
+    "state_low": [
+      -4.5,
+      -4.5,
+      -0.5
+    ],
+    "state_high": [
+      4.5,
+      4.5,
+      6.0
+    ],
+    "state_points": [
+      17,
+      17,
+      17
+    ],
+    "state_abs_limit": 25.0,
+    "terminal_penalty": 50.0
+  },
+  "solve_seconds": 59.675633300008485,
+  "phase7_best_rl_algo": "td3",
+  "phase7_best_rl_seed": 43
+}

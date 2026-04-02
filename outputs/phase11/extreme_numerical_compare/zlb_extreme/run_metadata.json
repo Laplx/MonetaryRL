@@ -1,0 +1,21 @@
+{
+  "solve_seconds": 39.64956200000597,
+  "dp_config": {
+    "state_low": [
+      -5.5,
+      -5.5,
+      0.25
+    ],
+    "state_high": [
+      1.0,
+      1.0,
+      4.0
+    ],
+    "state_points": [
+      17,
+      17,
+      17
+    ],
+    "action_points": 37
+  }
+}

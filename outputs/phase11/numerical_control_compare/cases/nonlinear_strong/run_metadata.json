@@ -1,0 +1,30 @@
+{
+  "case_id": "nonlinear_strong",
+  "dp_config": {
+    "horizon": 60,
+    "discount_factor": 0.99,
+    "action_low": -4.0,
+    "action_high": 4.0,
+    "action_points": 41,
+    "state_low": [
+      -4.5,
+      -4.5,
+      -4.0
+    ],
+    "state_high": [
+      4.5,
+      4.5,
+      4.0
+    ],
+    "state_points": [
+      17,
+      17,
+      17
+    ],
+    "state_abs_limit": 18.0,
+    "terminal_penalty": 100.0
+  },
+  "solve_seconds": 42.52179840000463,
+  "phase7_best_rl_algo": "sac",
+  "phase7_best_rl_seed": 7
+}
