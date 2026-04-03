@@ -1,0 +1,22 @@
+{
+  "variant": "residual_u4_lr1e5",
+  "name": "residual_u4_lr1e5",
+  "clone_steps": 2600,
+  "clone_lr": 0.0007,
+  "jitter_scale": 0.18,
+  "total_updates": 4,
+  "policy_lr": 1e-05,
+  "clip_ratio": 0.05,
+  "clone_rmse": 1.9131144313178083e-07,
+  "clone_loss_mean": 1.1636664679135147e-07,
+  "clone_loss_last": 3.557570904533236e-14,
+  "init_artificial_loss": 0.01259575450781912,
+  "init_revealed_loss": 0.015950544215354814,
+  "init_beats_fine05": false,
+  "trained_artificial_loss": 0.012532422275119425,
+  "trained_revealed_loss": 0.01599044030644344,
+  "trained_beats_fine05": false,
+  "trained_gap_vs_fine05_bp": -0.3989974278634234,
+  "trained_revealed_improvement_vs_baseline_pct": 13.833109351365874,
+  "trained_surrogate_rmse": 4.933144846845364e-08
+}

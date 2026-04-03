@@ -1,0 +1,7 @@
+env_id,group,tier,riccati_loss,best_rl_algo,best_rl_loss,rl_beats_riccati,riccati_gap_vs_best_rl_pct
+asymmetric_threshold_very_strong,asymmetric,very_strong_v2,104.26516296690208,ppo,92.93534666591113,True,12.191073372459638
+asymmetric_threshold_extreme,asymmetric,extreme_v2,315.53802563151106,sac,268.82333275872844,True,17.377469579513583
+nonlinear_extreme_v2,nonlinear,extreme_v2,820.7837981338065,td3,471.19039313480215,True,74.19366143549317
+nonlinear_hyper,nonlinear,hyper,756.0337639073474,td3,730.4512015411025,True,3.5022958840057905
+zlb_trap_very_strong,zlb,very_strong_v2,72.638636278526,td3,72.52027537015057,True,0.16321078177281567
+zlb_trap_extreme,zlb,extreme_v2,117.81852545707154,td3,107.63680442947827,True,9.45933046002323

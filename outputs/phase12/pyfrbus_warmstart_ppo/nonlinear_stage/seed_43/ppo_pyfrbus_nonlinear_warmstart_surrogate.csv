@@ -1,0 +1,2 @@
+policy,intercept,inflation_gap,output_gap,lagged_policy_rate_gap,fit_rmse
+ppo_pyfrbus_nonlinear_warmstart_seed_43,0.79426357924385,-2.0585471559889776,0.015443339594255541,0.16867368656889692,0.0002715293311204045

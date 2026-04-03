@@ -1,0 +1,19 @@
+{
+  "seed": 43,
+  "stage": "linear",
+  "clone_rmse": 0.0005890000029467046,
+  "clone_loss_last": 3.339955014780571e-07,
+  "clone_loss_mean": 0.00028203098741307997,
+  "init_checkpoint_path": "C:\\Users\\Laplace\\Documents\\Code\\MonetaryRL\\outputs\\phase12\\pyfrbus_warmstart_ppo\\linear_stage\\seed_43\\ppo_pyfrbus_linear_warmstart_init.pt",
+  "init_config_path": "C:\\Users\\Laplace\\Documents\\Code\\MonetaryRL\\outputs\\phase12\\pyfrbus_warmstart_ppo\\linear_stage\\seed_43\\ppo_pyfrbus_linear_warmstart_init_config.json",
+  "init_fixed_point_artificial_loss": 0.012778502262771146,
+  "init_fixed_point_revealed_loss": 0.016184057494356138,
+  "init_revealed_improvement_vs_baseline_pct": 12.789774037337864,
+  "trained_checkpoint_path": "C:\\Users\\Laplace\\Documents\\Code\\MonetaryRL\\outputs\\phase12\\pyfrbus_warmstart_ppo\\linear_stage\\seed_43\\ppo_pyfrbus_linear_warmstart.pt",
+  "trained_config_path": "C:\\Users\\Laplace\\Documents\\Code\\MonetaryRL\\outputs\\phase12\\pyfrbus_warmstart_ppo\\linear_stage\\seed_43\\ppo_pyfrbus_linear_warmstart_config.json",
+  "trained_env_discounted_loss": 0.01947682423530037,
+  "trained_fixed_point_artificial_loss": 0.014434827878246567,
+  "trained_fixed_point_revealed_loss": 0.019467696173931237,
+  "trained_revealed_improvement_vs_baseline_pct": -4.904606455647074,
+  "trained_surrogate_rmse": 1.4832391988839544e-07
+}

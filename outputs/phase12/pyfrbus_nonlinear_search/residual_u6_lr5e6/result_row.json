@@ -1,0 +1,22 @@
+{
+  "variant": "residual_u6_lr5e6",
+  "name": "residual_u6_lr5e6",
+  "clone_steps": 2600,
+  "clone_lr": 0.0006,
+  "jitter_scale": 0.15,
+  "total_updates": 6,
+  "policy_lr": 5e-06,
+  "clip_ratio": 0.04,
+  "clone_rmse": 1.0762531928776298e-05,
+  "clone_loss_mean": 7.119447024499824e-08,
+  "clone_loss_last": 3.108998836154342e-09,
+  "init_artificial_loss": 0.012596928096558269,
+  "init_revealed_loss": 0.015951366568701233,
+  "init_beats_fine05": false,
+  "trained_artificial_loss": 0.01254108566271218,
+  "trained_revealed_loss": 0.015953999947513484,
+  "trained_beats_fine05": false,
+  "trained_gap_vs_fine05_bp": -0.03459383856384973,
+  "trained_revealed_improvement_vs_baseline_pct": 14.029473701748982,
+  "trained_surrogate_rmse": 5.6302661597777884e-08
+}

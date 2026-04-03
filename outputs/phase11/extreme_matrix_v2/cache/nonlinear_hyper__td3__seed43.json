@@ -1,0 +1,322 @@
+{
+  "env_id": "nonlinear_hyper",
+  "group": "nonlinear",
+  "tier": "hyper",
+  "algo": "td3",
+  "seed": 43,
+  "row": {
+    "policy": "td3",
+    "mean_reward": -791.5469077988146,
+    "std_reward": 461.6384268289002,
+    "mean_discounted_loss": 730.4512015411025,
+    "std_discounted_loss": 445.04651881168564,
+    "mean_abs_action": 1.8309640792281827,
+    "clip_rate": 0.0,
+    "explosion_rate": 0.9791666666666666,
+    "first_trajectory": [
+      {
+        "period": 0,
+        "inflation_gap": 2.7794084548950195,
+        "output_gap": 0.29412832856178284,
+        "lagged_policy_rate_gap": 0.1788795441389084,
+        "action": 2.6971611976623535,
+        "loss": 8.40254134462047
+      },
+      {
+        "period": 1,
+        "inflation_gap": 4.419306755065918,
+        "output_gap": 0.05257474631071091,
+        "lagged_policy_rate_gap": 2.6971611976623535,
+        "action": 2.170825481414795,
+        "loss": 19.559357175965854
+      },
+      {
+        "period": 2,
+        "inflation_gap": 8.842899322509766,
+        "output_gap": 0.1214762032032013,
+        "lagged_policy_rate_gap": 2.170825481414795,
+        "action": 0.36855819821357727,
+        "loss": 78.52906339802576
+      },
+      {
+        "period": 3,
+        "inflation_gap": 29.23383140563965,
+        "output_gap": 0.4524105191230774,
+        "lagged_policy_rate_gap": 0.36855819821357727,
+        "action": -2.7499983310699463,
+        "loss": 855.6917757749034
+      }
+    ]
+  },
+  "coeff": {
+    "policy": "td3",
+    "intercept": 0.35469362075626865,
+    "inflation_gap": 0.17419702245295038,
+    "output_gap": 0.8533353646447266,
+    "lagged_policy_rate_gap": -0.13240508451461785,
+    "fit_rmse": 1.4480852324748794
+  },
+  "training_log": [
+    {
+      "algo": "td3",
+      "seed": 43,
+      "step": 4000,
+      "eval_mean_reward": -909.7958721362301,
+      "eval_mean_discounted_loss": 865.6118974430466,
+      "eval_clip_rate": 0.0
+    },
+    {
+      "algo": "td3",
+      "seed": 43,
+      "step": 8000,
+      "eval_mean_reward": -820.8957080181596,
+      "eval_mean_discounted_loss": 769.6002632577947,
+      "eval_clip_rate": 0.0
+    },
+    {
+      "algo": "td3",
+      "seed": 43,
+      "step": 12000,
+      "eval_mean_reward": -932.6924652602896,
+      "eval_mean_discounted_loss": 865.8858964979627,
+      "eval_clip_rate": 0.0
+    },
+    {
+      "algo": "td3",
+      "seed": 43,
+      "step": 16000,
+      "eval_mean_reward": -883.2907559361674,
+      "eval_mean_discounted_loss": 811.2979760872405,
+      "eval_clip_rate": 0.0
+    },
+    {
+      "algo": "td3",
+      "seed": 43,
+      "step": 20000,
+      "eval_mean_reward": -813.4230097724707,
+      "eval_mean_discounted_loss": 750.1527564607655,
+      "eval_clip_rate": 0.0
+    },
+    {
+      "algo": "td3",
+      "seed": 43,
+      "step": 24000,
+      "eval_mean_reward": -913.3585302602911,
+      "eval_mean_discounted_loss": 797.409379362109,
+      "eval_clip_rate": 0.0
+    },
+    {
+      "algo": "td3",
+      "seed": 43,
+      "step": 28000,
+      "eval_mean_reward": -827.6719013274054,
+      "eval_mean_discounted_loss": 780.6663842091881,
+      "eval_clip_rate": 0.0
+    }
+  ],
+  "trajectory": [
+    {
+      "policy": "td3",
+      "period": 0,
+      "inflation_gap": 1.6,
+      "output_gap": -2.0,
+      "lagged_policy_rate_gap": 0.0,
+      "action": -2.7422611713409424,
+      "loss": 5.311999633184421
+    },
+    {
+      "policy": "td3",
+      "period": 1,
+      "inflation_gap": -2.6630111657362123,
+      "output_gap": -1.3315158449345585,
+      "lagged_policy_rate_gap": -2.7422611713409424,
+      "action": 0.7863754630088806,
+      "loss": 9.223223341219201
+    },
+    {
+      "policy": "td3",
+      "period": 2,
+      "inflation_gap": -4.446616191647953,
+      "output_gap": -1.6696229479227525,
+      "lagged_policy_rate_gap": 0.7863754630088806,
+      "action": 2.7246835231781006,
+      "loss": 21.541919763552574
+    },
+    {
+      "policy": "td3",
+      "period": 3,
+      "inflation_gap": -8.88610369899385,
+      "output_gap": -1.498364113553405,
+      "lagged_policy_rate_gap": 2.7246835231781006,
+      "action": 2.7499985694885254,
+      "loss": 80.08545054282149
+    },
+    {
+      "policy": "td3",
+      "period": 4,
+      "inflation_gap": -26.709492453330725,
+      "output_gap": -1.3632038303314986,
+      "lagged_policy_rate_gap": 2.7499985694885254,
+      "action": 2.75,
+      "loss": 714.3261494560464
+    },
+    {
+      "policy": "td3",
+      "period": 5,
+      "inflation_gap": -209.9291064930407,
+      "output_gap": -2.7552025300363825,
+      "lagged_policy_rate_gap": 2.75,
+      "action": 2.75,
+      "loss": 44074.02532345719
+    },
+    {
+      "policy": "td3",
+      "period": 6,
+      "inflation_gap": -12311.5074712619,
+      "output_gap": -13.403052617802338,
+      "lagged_policy_rate_gap": 2.75,
+      "action": 2.75,
+      "loss": 151573306.03584734
+    },
+    {
+      "policy": "td3",
+      "period": 7,
+      "inflation_gap": -42394026.18503243,
+      "output_gap": -626.6892163783101,
+      "lagged_policy_rate_gap": 2.75,
+      "action": 2.75,
+      "loss": 1797253456373584.8
+    },
+    {
+      "policy": "td3",
+      "period": 8,
+      "inflation_gap": -503221967616303.06,
+      "output_gap": -2120184.059453442,
+      "lagged_policy_rate_gap": 2.75,
+      "action": 2.75,
+      "loss": 2.5323234869162355e+29
+    },
+    {
+      "policy": "td3",
+      "period": 9,
+      "inflation_gap": -7.090505727090111e+28,
+      "output_gap": -25161100013357.336,
+      "lagged_policy_rate_gap": 2.75,
+      "action": 2.75,
+      "loss": 5.027527146589766e+57
+    },
+    {
+      "policy": "td3",
+      "period": 10,
+      "inflation_gap": -1.407707601045134e+57,
+      "output_gap": -3.5452528635450746e+27,
+      "lagged_policy_rate_gap": 2.75,
+      "action": NaN,
+      "loss": NaN
+    },
+    {
+      "policy": "td3",
+      "period": 11,
+      "inflation_gap": NaN,
+      "output_gap": NaN,
+      "lagged_policy_rate_gap": NaN,
+      "action": NaN,
+      "loss": NaN
+    },
+    {
+      "policy": "td3",
+      "period": 12,
+      "inflation_gap": NaN,
+      "output_gap": NaN,
+      "lagged_policy_rate_gap": NaN,
+      "action": NaN,
+      "loss": NaN
+    },
+    {
+      "policy": "td3",
+      "period": 13,
+      "inflation_gap": NaN,
+      "output_gap": NaN,
+      "lagged_policy_rate_gap": NaN,
+      "action": NaN,
+      "loss": NaN
+    },
+    {
+      "policy": "td3",
+      "period": 14,
+      "inflation_gap": NaN,
+      "output_gap": NaN,
+      "lagged_policy_rate_gap": NaN,
+      "action": NaN,
+      "loss": NaN
+    },
+    {
+      "policy": "td3",
+      "period": 15,
+      "inflation_gap": NaN,
+      "output_gap": NaN,
+      "lagged_policy_rate_gap": NaN,
+      "action": NaN,
+      "loss": NaN
+    },
+    {
+      "policy": "td3",
+      "period": 16,
+      "inflation_gap": NaN,
+      "output_gap": NaN,
+      "lagged_policy_rate_gap": NaN,
+      "action": NaN,
+      "loss": NaN
+    },
+    {
+      "policy": "td3",
+      "period": 17,
+      "inflation_gap": NaN,
+      "output_gap": NaN,
+      "lagged_policy_rate_gap": NaN,
+      "action": NaN,
+      "loss": NaN
+    },
+    {
+      "policy": "td3",
+      "period": 18,
+      "inflation_gap": NaN,
+      "output_gap": NaN,
+      "lagged_policy_rate_gap": NaN,
+      "action": NaN,
+      "loss": NaN
+    },
+    {
+      "policy": "td3",
+      "period": 19,
+      "inflation_gap": NaN,
+      "output_gap": NaN,
+      "lagged_policy_rate_gap": NaN,
+      "action": NaN,
+      "loss": NaN
+    }
+  ],
+  "config": {
+    "total_steps": 28000,
+    "warmup_steps": 1500,
+    "batch_size": 256,
+    "gamma": 0.99,
+    "tau": 0.005,
+    "actor_lr": 0.0003,
+    "critic_lr": 0.0003,
+    "hidden_size": 64,
+    "replay_capacity": 100000,
+    "exploration_noise": 0.2,
+    "target_noise": 0.15,
+    "target_noise_clip": 0.3,
+    "policy_delay": 2,
+    "eval_episodes": 48,
+    "eval_interval": 4000,
+    "state_scale": [
+      2.5,
+      2.5,
+      3.0
+    ],
+    "seed": 43
+  }
+}
