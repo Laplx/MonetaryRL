@@ -1,0 +1,7 @@
+variant,revealed_improvement_pct
+fine_05,14.048115111538346
+ppo_linear_best_init,12.812583740989036
+ppo_nonlinear_warmstart_best,13.486763563889935
+residual_init_only,14.048165834568104
+residual_u2_lr5e6,14.094156151788695
+residual_u4_lr5e6,14.07778863501282

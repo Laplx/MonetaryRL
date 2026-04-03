@@ -1,0 +1,6 @@
+model_id,best_policy,best_revealed_improvement_pct
+US_CCTW10,td3_svar_direct,96.8274505112702
+NK_CW09,sac_svar_revealed_direct,61.70379131230356
+US_KS15,td3_svar_direct,38.2079260545116
+pyfrbus,sac_svar_revealed_direct,-301.2960561130613
+US_SW07,sac_svar_revealed_direct,-373.9818934610439
