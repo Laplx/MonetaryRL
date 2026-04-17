@@ -1,7 +1,7 @@
 # Phase 13 图表目录
 
 | 图名 | 论文位置 | 核心信息 | 数据来源 |
-|---|---|---|---|
+|:--|---|---|---|
 | `phase13_theory_heatmap.png` | 理论基准与人工损失 benchmark | 用一张图展示 benchmark 与三类早期扩展里 RL 排序如何变化，建立“RL 在核心环境中具有系统竞争力”的总览。 | `outputs/phase7/matrix/rl_summary.csv` |
 | `phase13_theory_strength_curves.png` | 理论基准与人工损失 benchmark | 把 benchmark 外推、线性搜索和最优 RL 放到同一扭曲强度轴上，直接展示 RL 优势如何随非线性/约束增强而扩大。 | `outputs/phase7/matrix/all_policy_summary.csv + outputs/phase7/matrix/rl_summary.csv` |
 | `phase13_extreme_v2_advantage.png` | 三类非线性扩展 | 六个最终保留的强扭曲环境里，原始 RL 全部压过 Riccati 外推，说明 RL 的优势在真正非 benchmark 场景中是系统性的而不是个例。 | `outputs/phase11/extreme_matrix_v2/riccati_vs_best_rl.csv` |

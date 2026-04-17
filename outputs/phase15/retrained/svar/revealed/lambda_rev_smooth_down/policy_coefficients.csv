@@ -1,0 +1,4 @@
+policy,intercept,inflation_gap,output_gap,lagged_policy_rate_gap,fit_rmse,training_env,loss_function,scenario_id,algo,seed,policy_parameterization
+ppo_svar_revealed_lambda_rev_smooth_down_phase15,3.9415195936340535,-0.2916390295465664,0.24145110737453362,0.579830014304095,0.2744102268243186,svar,revealed,lambda_rev_smooth_down,ppo,43,linear_policy
+td3_svar_revealed_lambda_rev_smooth_down_phase15,0.4142151725176495,0.040328111771750774,0.011251474845626823,0.8470250358662168,0.24160879878301206,svar,revealed,lambda_rev_smooth_down,td3,43,standard_nonlinear
+sac_svar_revealed_lambda_rev_smooth_down_phase15,0.348706206981508,0.08836784246417173,0.09874491280005543,0.8861875509821068,0.20145841505565673,svar,revealed,lambda_rev_smooth_down,sac,43,standard_nonlinear

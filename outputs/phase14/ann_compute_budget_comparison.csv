@@ -1,0 +1,10 @@
+policy_name,training_context,method_family,training_env_steps,wall_seconds
+ann_affine_search_artificial,ann_artificial,numerical_search,376320,567.9691128999693
+ann_affine_search_revealed,ann_revealed,numerical_search,376320,569.618783300044
+ppo_ann_direct,ann,PPO,225280,
+td3_ann_direct,ann,TD3,16000,
+sac_ann_direct,ann,SAC,16000,
+ppo_ann_direct_nonlinear,ann,PPO,225280,
+ppo_ann_revealed_direct,ann,PPO,225280,
+td3_ann_revealed_direct,ann,TD3,16000,
+sac_ann_revealed_direct,ann,SAC,16000,

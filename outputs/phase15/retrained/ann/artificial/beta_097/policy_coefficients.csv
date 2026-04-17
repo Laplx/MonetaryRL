@@ -1,0 +1,4 @@
+policy,intercept,inflation_gap,output_gap,lagged_policy_rate_gap,fit_rmse,training_env,loss_function,scenario_id,algo,seed,policy_parameterization
+ppo_ann_artificial_beta_097_phase15,2.4710547108261958,-1.3395142252770524,0.5935776411538032,0.13423337960945103,0.09497367287558946,ann,artificial,beta_097,ppo,43,linear_policy
+td3_ann_artificial_beta_097_phase15,1.2209172479548867,-1.3384442466460988,1.0046040940445402,0.4152344206644576,0.9335273122027374,ann,artificial,beta_097,td3,43,standard_nonlinear
+sac_ann_artificial_beta_097_phase15,0.44622435722100173,-1.2490328516233824,1.1754215110847033,0.5860945120064579,0.9849531110083195,ann,artificial,beta_097,sac,43,standard_nonlinear
