@@ -1,0 +1,5 @@
+model_id,best_rl_policy,best_rl_rule_family,best_revealed_improvement_pct,is_positive
+US_CCTW10,td3_svar_direct,svar_direct,96.8274505112702,True
+NK_CW09,sac_svar_revealed_direct,svar_revealed_direct,61.70379131230356,True
+US_KS15,td3_svar_direct,svar_direct,38.2079260545116,True
+US_SW07,sac_svar_revealed_direct,svar_revealed_direct,-373.9818934610439,False

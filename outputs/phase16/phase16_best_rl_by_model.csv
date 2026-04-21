@@ -1,0 +1,3 @@
+model_id,best_rl_policy,best_rl_rule_family,total_discounted_revealed_loss,best_revealed_improvement_pct
+NK_CFP10,sac_svar_direct,svar_direct,7075.46850987847,20.563370616935114
+US_FRB03,sac_svar_revealed_direct,svar_revealed_direct,2837.79236643931,2.468839426713397
