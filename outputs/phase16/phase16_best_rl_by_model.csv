@@ -1,3 +1,6 @@
 model_id,best_rl_policy,best_rl_rule_family,total_discounted_revealed_loss,best_revealed_improvement_pct
+US_CPS10,td3_benchmark_transfer,benchmark_transfer,8660.49805927517,58.50974187491632
+US_RA07,sac_svar_direct,svar_direct,39001.001783995,52.074884302169636
 NK_CFP10,sac_svar_direct,svar_direct,7075.46850987847,20.563370616935114
 US_FRB03,sac_svar_revealed_direct,svar_revealed_direct,2837.79236643931,2.468839426713397
+G7_TAY93,td3_benchmark_transfer,benchmark_transfer,2438.40211906782,-35.20255360817621

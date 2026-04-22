@@ -1,117 +1,12 @@
 model_id,policy_name,returncode,runner_path,summary_path,stdout_tail,stderr_tail,status
-US_CPS10,US_CPS10_baseline,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_CPS10\US_CPS10_baseline\run_US_CPS10_US_CPS10_baseline.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_CPS10\US_CPS10_baseline\summary.csv,"Starting Dynare (version 7.0).
-Calling Dynare with arguments: noclearall nolog
-Starting preprocessing of the model file ... 
-ERROR: US_CPS10_US_CPS10_baseline.mod: line 183, col 7: syntax error, unexpected INT_NUMBER, expecting NON_ZERO 
-Preprocessing time: 0h00m01s.
-","{����ʹ�� dynare
-Dynare: preprocessing failed
-
-���� run_US_CPS10_US_CPS10_baseline (�� 4 ��)
-        dynare('US_CPS10_US_CPS10_baseline.mod', 'noclearall', 'nolog');
-
-���� run (�� 91 ��)
-evalin('caller', strcat(script, ';'));
-} 
-ERROR: MATLAB error Exit Status: 0x00000001
-",failed
-US_CPS10,empirical_taylor_rule,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_CPS10\empirical_taylor_rule\run_US_CPS10_empirical_taylor_rule.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_CPS10\empirical_taylor_rule\summary.csv,"Starting Dynare (version 7.0).
-Calling Dynare with arguments: noclearall nolog
-Starting preprocessing of the model file ... 
-ERROR: US_CPS10_empirical_taylor_rule.mod: line 181, col 7: syntax error, unexpected INT_NUMBER, expecting NON_ZERO 
-Preprocessing time: 0h00m00s.
-","{����ʹ�� dynare
-Dynare: preprocessing failed
-
-���� run_US_CPS10_empirical_taylor_rule (�� 4 ��)
-        dynare('US_CPS10_empirical_taylor_rule.mod', 'noclearall', 'nolog');
-
-���� run (�� 91 ��)
-evalin('caller', strcat(script, ';'));
-} 
-ERROR: MATLAB error Exit Status: 0x00000001
-",failed
-US_CPS10,td3_benchmark_transfer,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_CPS10\td3_benchmark_transfer\run_US_CPS10_td3_benchmark_transfer.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_CPS10\td3_benchmark_transfer\summary.csv,"Starting Dynare (version 7.0).
-Calling Dynare with arguments: noclearall nolog
-Starting preprocessing of the model file ... 
-ERROR: US_CPS10_td3_benchmark_transfer.mod: line 181, col 7: syntax error, unexpected INT_NUMBER, expecting NON_ZERO 
-Preprocessing time: 0h00m00s.
-","{����ʹ�� dynare
-Dynare: preprocessing failed
-
-���� run_US_CPS10_td3_benchmark_transfer (�� 4 ��)
-        dynare('US_CPS10_td3_benchmark_transfer.mod', 'noclearall', 'nolog');
-
-���� run (�� 91 ��)
-evalin('caller', strcat(script, ';'));
-} 
-ERROR: MATLAB error Exit Status: 0x00000001
-",failed
-US_CPS10,sac_benchmark_transfer,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_CPS10\sac_benchmark_transfer\run_US_CPS10_sac_benchmark_transfer.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_CPS10\sac_benchmark_transfer\summary.csv,"Starting Dynare (version 7.0).
-Calling Dynare with arguments: noclearall nolog
-Starting preprocessing of the model file ... 
-ERROR: US_CPS10_sac_benchmark_transfer.mod: line 181, col 7: syntax error, unexpected INT_NUMBER, expecting NON_ZERO 
-Preprocessing time: 0h00m00s.
-","{����ʹ�� dynare
-Dynare: preprocessing failed
-
-���� run_US_CPS10_sac_benchmark_transfer (�� 4 ��)
-        dynare('US_CPS10_sac_benchmark_transfer.mod', 'noclearall', 'nolog');
-
-���� run (�� 91 ��)
-evalin('caller', strcat(script, ';'));
-} 
-ERROR: MATLAB error Exit Status: 0x00000001
-",failed
-US_CPS10,td3_svar_direct,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_CPS10\td3_svar_direct\run_US_CPS10_td3_svar_direct.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_CPS10\td3_svar_direct\summary.csv,"Starting Dynare (version 7.0).
-Calling Dynare with arguments: noclearall nolog
-Starting preprocessing of the model file ... 
-ERROR: US_CPS10_td3_svar_direct.mod: line 181, col 7: syntax error, unexpected INT_NUMBER, expecting NON_ZERO 
-Preprocessing time: 0h00m00s.
-","{����ʹ�� dynare
-Dynare: preprocessing failed
-
-���� run_US_CPS10_td3_svar_direct (�� 4 ��)
-        dynare('US_CPS10_td3_svar_direct.mod', 'noclearall', 'nolog');
-
-���� run (�� 91 ��)
-evalin('caller', strcat(script, ';'));
-} 
-ERROR: MATLAB error Exit Status: 0x00000001
-",failed
-US_CPS10,sac_svar_direct,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_CPS10\sac_svar_direct\run_US_CPS10_sac_svar_direct.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_CPS10\sac_svar_direct\summary.csv,"Starting Dynare (version 7.0).
-Calling Dynare with arguments: noclearall nolog
-Starting preprocessing of the model file ... 
-ERROR: US_CPS10_sac_svar_direct.mod: line 181, col 7: syntax error, unexpected INT_NUMBER, expecting NON_ZERO 
-Preprocessing time: 0h00m00s.
-","{����ʹ�� dynare
-Dynare: preprocessing failed
-
-���� run_US_CPS10_sac_svar_direct (�� 4 ��)
-        dynare('US_CPS10_sac_svar_direct.mod', 'noclearall', 'nolog');
-
-���� run (�� 91 ��)
-evalin('caller', strcat(script, ';'));
-} 
-ERROR: MATLAB error Exit Status: 0x00000001
-",failed
-US_CPS10,sac_svar_revealed_direct,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_CPS10\sac_svar_revealed_direct\run_US_CPS10_sac_svar_revealed_direct.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_CPS10\sac_svar_revealed_direct\summary.csv,"Starting Dynare (version 7.0).
-Calling Dynare with arguments: noclearall nolog
-Starting preprocessing of the model file ... 
-ERROR: US_CPS10_sac_svar_revealed_direct.mod: line 181, col 7: syntax error, unexpected INT_NUMBER, expecting NON_ZERO 
-Preprocessing time: 0h00m00s.
-","{����ʹ�� dynare
-Dynare: preprocessing failed
-
-���� run_US_CPS10_sac_svar_revealed_direct (�� 4 ��)
-        dynare('US_CPS10_sac_svar_revealed_direct.mod', 'noclearall', 'nolog');
-
-���� run (�� 91 ��)
-evalin('caller', strcat(script, ';'));
-} 
-ERROR: MATLAB error Exit Status: 0x00000001
-",failed
-US_RA07,US_RA07_baseline,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_RA07\US_RA07_baseline\run_US_RA07_US_RA07_baseline.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_RA07\US_RA07_baseline\summary.csv,"Starting Dynare (version 7.0).
+US_CPS10,US_CPS10_baseline,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_CPS10\US_CPS10_baseline\run_US_CPS10_US_CPS10_baseline.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_CPS10\US_CPS10_baseline\summary.csv,cached summary.csv,,ok
+US_CPS10,empirical_taylor_rule,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_CPS10\empirical_taylor_rule\run_US_CPS10_empirical_taylor_rule.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_CPS10\empirical_taylor_rule\summary.csv,cached summary.csv,,ok
+US_CPS10,td3_benchmark_transfer,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_CPS10\td3_benchmark_transfer\run_US_CPS10_td3_benchmark_transfer.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_CPS10\td3_benchmark_transfer\summary.csv,cached summary.csv,,ok
+US_CPS10,sac_benchmark_transfer,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_CPS10\sac_benchmark_transfer\run_US_CPS10_sac_benchmark_transfer.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_CPS10\sac_benchmark_transfer\summary.csv,cached summary.csv,,ok
+US_CPS10,td3_svar_direct,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_CPS10\td3_svar_direct\run_US_CPS10_td3_svar_direct.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_CPS10\td3_svar_direct\summary.csv,cached summary.csv,,ok
+US_CPS10,sac_svar_direct,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_CPS10\sac_svar_direct\run_US_CPS10_sac_svar_direct.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_CPS10\sac_svar_direct\summary.csv,cached summary.csv,,ok
+US_CPS10,sac_svar_revealed_direct,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_CPS10\sac_svar_revealed_direct\run_US_CPS10_sac_svar_revealed_direct.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_CPS10\sac_svar_revealed_direct\summary.csv,cached summary.csv,,ok
+US_RA07,US_RA07_baseline,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_RA07\US_RA07_baseline\run_US_RA07_US_RA07_baseline.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_RA07\US_RA07_baseline\summary.csv,"Starting Dynare (version 7.0).
 Calling Dynare with arguments: noclearall nolog
 Starting preprocessing of the model file ... 
 WARNING: Parameter(s) omegap thetap phi thetaw  not used in the model 
@@ -172,23 +67,10 @@ EIGENVALUES:
 There are 6 eigenvalue(s) larger than 1 in modulus for 6 forward-looking variable(s).
 The order and rank conditions are verified.
 
-","{��������� 'pi_epsz' �޷�ʶ��
-
-���� US_RA07_US_RA07_baseline/driver (�� 600 ��)
-pi_epsz_baseline = pi_epsz;
-
-���� dynare (�� 300 ��)
-    evalin('base',[fname(1:end-4) '.driver']);
-
-���� run_US_RA07_US_RA07_baseline (�� 4 ��)
-        dynare('US_RA07_US_RA07_baseline.mod', 'noclearall', 'nolog');
-
-���� run (�� 91 ��)
-evalin('caller', strcat(script, ';'));
-} 
-ERROR: MATLAB error Exit Status: 0x00000001
-",failed
-US_RA07,empirical_taylor_rule,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_RA07\empirical_taylor_rule\run_US_RA07_empirical_taylor_rule.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_RA07\empirical_taylor_rule\summary.csv,"Starting Dynare (version 7.0).
+Total computing time : 0h00m01s
+Note: 1 warning(s) encountered in the preprocessor
+",,ok
+US_RA07,empirical_taylor_rule,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_RA07\empirical_taylor_rule\run_US_RA07_empirical_taylor_rule.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_RA07\empirical_taylor_rule\summary.csv,"Starting Dynare (version 7.0).
 Calling Dynare with arguments: noclearall nolog
 Starting preprocessing of the model file ... 
 WARNING: Parameter(s) omegap thetap phi rhor gammap gammay thetaw  not used in the model 
@@ -249,23 +131,10 @@ EIGENVALUES:
 There are 6 eigenvalue(s) larger than 1 in modulus for 6 forward-looking variable(s).
 The order and rank conditions are verified.
 
-","{��������� 'pi_epsz' �޷�ʶ��
-
-���� US_RA07_empirical_taylor_rule/driver (�� 600 ��)
-pi_epsz_baseline = pi_epsz;
-
-���� dynare (�� 300 ��)
-    evalin('base',[fname(1:end-4) '.driver']);
-
-���� run_US_RA07_empirical_taylor_rule (�� 4 ��)
-        dynare('US_RA07_empirical_taylor_rule.mod', 'noclearall', 'nolog');
-
-���� run (�� 91 ��)
-evalin('caller', strcat(script, ';'));
-} 
-ERROR: MATLAB error Exit Status: 0x00000001
-",failed
-US_RA07,td3_benchmark_transfer,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_RA07\td3_benchmark_transfer\run_US_RA07_td3_benchmark_transfer.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_RA07\td3_benchmark_transfer\summary.csv,"Starting Dynare (version 7.0).
+Total computing time : 0h00m01s
+Note: 1 warning(s) encountered in the preprocessor
+",,ok
+US_RA07,td3_benchmark_transfer,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_RA07\td3_benchmark_transfer\run_US_RA07_td3_benchmark_transfer.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_RA07\td3_benchmark_transfer\summary.csv,"Starting Dynare (version 7.0).
 Calling Dynare with arguments: noclearall nolog
 Starting preprocessing of the model file ... 
 WARNING: Parameter(s) omegap thetap phi rhor gammap gammay thetaw  not used in the model 
@@ -326,23 +195,10 @@ EIGENVALUES:
 There are 6 eigenvalue(s) larger than 1 in modulus for 6 forward-looking variable(s).
 The order and rank conditions are verified.
 
-","{��������� 'pi_epsz' �޷�ʶ��
-
-���� US_RA07_td3_benchmark_transfer/driver (�� 600 ��)
-pi_epsz_baseline = pi_epsz;
-
-���� dynare (�� 300 ��)
-    evalin('base',[fname(1:end-4) '.driver']);
-
-���� run_US_RA07_td3_benchmark_transfer (�� 4 ��)
-        dynare('US_RA07_td3_benchmark_transfer.mod', 'noclearall', 'nolog');
-
-���� run (�� 91 ��)
-evalin('caller', strcat(script, ';'));
-} 
-ERROR: MATLAB error Exit Status: 0x00000001
-",failed
-US_RA07,sac_benchmark_transfer,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_RA07\sac_benchmark_transfer\run_US_RA07_sac_benchmark_transfer.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_RA07\sac_benchmark_transfer\summary.csv,"Starting Dynare (version 7.0).
+Total computing time : 0h00m01s
+Note: 1 warning(s) encountered in the preprocessor
+",,ok
+US_RA07,sac_benchmark_transfer,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_RA07\sac_benchmark_transfer\run_US_RA07_sac_benchmark_transfer.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_RA07\sac_benchmark_transfer\summary.csv,"Starting Dynare (version 7.0).
 Calling Dynare with arguments: noclearall nolog
 Starting preprocessing of the model file ... 
 WARNING: Parameter(s) omegap thetap phi rhor gammap gammay thetaw  not used in the model 
@@ -403,23 +259,10 @@ EIGENVALUES:
 There are 6 eigenvalue(s) larger than 1 in modulus for 6 forward-looking variable(s).
 The order and rank conditions are verified.
 
-","{��������� 'pi_epsz' �޷�ʶ��
-
-���� US_RA07_sac_benchmark_transfer/driver (�� 600 ��)
-pi_epsz_baseline = pi_epsz;
-
-���� dynare (�� 300 ��)
-    evalin('base',[fname(1:end-4) '.driver']);
-
-���� run_US_RA07_sac_benchmark_transfer (�� 4 ��)
-        dynare('US_RA07_sac_benchmark_transfer.mod', 'noclearall', 'nolog');
-
-���� run (�� 91 ��)
-evalin('caller', strcat(script, ';'));
-} 
-ERROR: MATLAB error Exit Status: 0x00000001
-",failed
-US_RA07,td3_svar_direct,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_RA07\td3_svar_direct\run_US_RA07_td3_svar_direct.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_RA07\td3_svar_direct\summary.csv,"Starting Dynare (version 7.0).
+Total computing time : 0h00m01s
+Note: 1 warning(s) encountered in the preprocessor
+",,ok
+US_RA07,td3_svar_direct,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_RA07\td3_svar_direct\run_US_RA07_td3_svar_direct.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_RA07\td3_svar_direct\summary.csv,"Starting Dynare (version 7.0).
 Calling Dynare with arguments: noclearall nolog
 Starting preprocessing of the model file ... 
 WARNING: Parameter(s) omegap thetap phi rhor gammap gammay thetaw  not used in the model 
@@ -480,23 +323,10 @@ EIGENVALUES:
 There are 6 eigenvalue(s) larger than 1 in modulus for 6 forward-looking variable(s).
 The order and rank conditions are verified.
 
-","{��������� 'pi_epsz' �޷�ʶ��
-
-���� US_RA07_td3_svar_direct/driver (�� 600 ��)
-pi_epsz_baseline = pi_epsz;
-
-���� dynare (�� 300 ��)
-    evalin('base',[fname(1:end-4) '.driver']);
-
-���� run_US_RA07_td3_svar_direct (�� 4 ��)
-        dynare('US_RA07_td3_svar_direct.mod', 'noclearall', 'nolog');
-
-���� run (�� 91 ��)
-evalin('caller', strcat(script, ';'));
-} 
-ERROR: MATLAB error Exit Status: 0x00000001
-",failed
-US_RA07,sac_svar_direct,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_RA07\sac_svar_direct\run_US_RA07_sac_svar_direct.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_RA07\sac_svar_direct\summary.csv,"Starting Dynare (version 7.0).
+Total computing time : 0h00m01s
+Note: 1 warning(s) encountered in the preprocessor
+",,ok
+US_RA07,sac_svar_direct,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_RA07\sac_svar_direct\run_US_RA07_sac_svar_direct.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_RA07\sac_svar_direct\summary.csv,"Starting Dynare (version 7.0).
 Calling Dynare with arguments: noclearall nolog
 Starting preprocessing of the model file ... 
 WARNING: Parameter(s) omegap thetap phi rhor gammap gammay thetaw  not used in the model 
@@ -557,22 +387,9 @@ EIGENVALUES:
 There are 6 eigenvalue(s) larger than 1 in modulus for 6 forward-looking variable(s).
 The order and rank conditions are verified.
 
-","{��������� 'pi_epsz' �޷�ʶ��
-
-���� US_RA07_sac_svar_direct/driver (�� 600 ��)
-pi_epsz_baseline = pi_epsz;
-
-���� dynare (�� 300 ��)
-    evalin('base',[fname(1:end-4) '.driver']);
-
-���� run_US_RA07_sac_svar_direct (�� 4 ��)
-        dynare('US_RA07_sac_svar_direct.mod', 'noclearall', 'nolog');
-
-���� run (�� 91 ��)
-evalin('caller', strcat(script, ';'));
-} 
-ERROR: MATLAB error Exit Status: 0x00000001
-",failed
+Total computing time : 0h00m01s
+Note: 1 warning(s) encountered in the preprocessor
+",,ok
 US_RA07,sac_svar_revealed_direct,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_RA07\sac_svar_revealed_direct\run_US_RA07_sac_svar_revealed_direct.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_RA07\sac_svar_revealed_direct\summary.csv,"Starting Dynare (version 7.0).
 Calling Dynare with arguments: noclearall nolog
 Starting preprocessing of the model file ... 
@@ -634,588 +451,29 @@ EIGENVALUES:
 There are 5 eigenvalue(s) larger than 1 in modulus for 6 forward-looking variable(s).
 The order condition is NOT verified.
 
-","{��������� 'pi_epsz' �޷�ʶ��
+Total computing time : 0h00m01s
+Note: 1 warning(s) encountered in the preprocessor
+","{λ�� 1 ����������������߽硣
 
-���� US_RA07_sac_svar_revealed_direct/driver (�� 600 ��)
-pi_epsz_baseline = pi_epsz;
-
-���� dynare (�� 300 ��)
-    evalin('base',[fname(1:end-4) '.driver']);
-
-���� run_US_RA07_sac_svar_revealed_direct (�� 4 ��)
-        dynare('US_RA07_sac_svar_revealed_direct.mod', 'noclearall', 'nolog');
+���� run_US_RA07_sac_svar_revealed_direct (�� 10 ��)
+rate_series = 4 * sim(loc(""r""), :);
 
 ���� run (�� 91 ��)
 evalin('caller', strcat(script, ';'));
 } 
 ERROR: MATLAB error Exit Status: 0x00000001
 ",failed
-NK_CFP10,NK_CFP10_baseline,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_CFP10\NK_CFP10_baseline\run_NK_CFP10_NK_CFP10_baseline.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_CFP10\NK_CFP10_baseline\summary.csv,"Starting Dynare (version 7.0).
-Calling Dynare with arguments: noclearall nolog
-Starting preprocessing of the model file ... 
-WARNING: Parameter(s) varphi  not used in the model 
-Found 18 equation(s). 
-Evaluating expressions... 
-Computing static model derivatives (order 1). 
-Normalizing the static model... 
-Finding the optimal block decomposition of the static model... 
-13 block(s) found: 
-  11 recursive block(s) and 2 simultaneous block(s). 
-  the largest simultaneous block has 4 equation(s) 
-                                 and 4 feedback variable(s). 
-Computing dynamic model derivatives (order 2). 
-Normalizing the dynamic model... 
-Finding the optimal block decomposition of the dynamic model... 
-8 block(s) found: 
-  6 recursive block(s) and 2 simultaneous block(s). 
-  the largest simultaneous block has 6 equation(s) 
-                                 and 4 feedback variable(s). 
-Preprocessing completed. 
-Preprocessing time: 0h00m00s.
-
-EIGENVALUES:
-         Modulus             Real        Imaginary
-             0.4              0.4                0
-          0.7869           0.7869                0
-             0.9              0.9                0
-             0.9              0.9                0
-            0.95             0.95                0
-            1.01             1.01                0
-           1.042            1.042                0
-           4.344            4.344                0
-       1.285e+16        1.285e+16                0
-       1.736e+16        1.736e+16                0
-       1.472e+17       -1.472e+17                0
-
-There are 6 eigenvalue(s) larger than 1 in modulus for 6 forward-looking variable(s).
-The order and rank conditions are verified.
-
-
-STEADY-STATE RESULTS:
-
-y      		 0
-yeff   		 0
-yg     		 0
-R      		 0
-pi     		 0
-z      		 0
-phi    		 0
-e      		 0
-q      		 0
-d      		 0
-L      		 0
-u      		 0
-r      		 0
-w      		 0
-a      		 0
-eps_pi 		 0
-n      		 0
-eps_R  		 0
-Total computing time : 0h00m01s
-Note: 1 warning(s) encountered in the preprocessor
-",,ok
-NK_CFP10,empirical_taylor_rule,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_CFP10\empirical_taylor_rule\run_NK_CFP10_empirical_taylor_rule.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_CFP10\empirical_taylor_rule\summary.csv,"Starting Dynare (version 7.0).
-Calling Dynare with arguments: noclearall nolog
-Starting preprocessing of the model file ... 
-WARNING: Parameter(s) varphi tau tau_g  not used in the model 
-Found 18 equation(s). 
-Evaluating expressions... 
-Computing static model derivatives (order 1). 
-Normalizing the static model... 
-Finding the optimal block decomposition of the static model... 
-13 block(s) found: 
-  11 recursive block(s) and 2 simultaneous block(s). 
-  the largest simultaneous block has 4 equation(s) 
-                                 and 4 feedback variable(s). 
-Computing dynamic model derivatives (order 2). 
-Normalizing the dynamic model... 
-Finding the optimal block decomposition of the dynamic model... 
-8 block(s) found: 
-  6 recursive block(s) and 2 simultaneous block(s). 
-  the largest simultaneous block has 6 equation(s) 
-                                 and 5 feedback variable(s). 
-Preprocessing completed. 
-Preprocessing time: 0h00m00s.
-
-EIGENVALUES:
-         Modulus             Real        Imaginary
-          0.2421           0.2421                0
-             0.4              0.4                0
-          0.7853           0.7853                0
-             0.9              0.9                0
-             0.9              0.9                0
-            0.95             0.95                0
-            1.01             1.01                0
-           1.016            1.016                0
-           3.535            3.535                0
-       8.323e+16        8.323e+16                0
-             Inf              Inf                0
-             Inf              Inf                0
-
-There are 6 eigenvalue(s) larger than 1 in modulus for 6 forward-looking variable(s).
-The order and rank conditions are verified.
-
-
-STEADY-STATE RESULTS:
-
-y      		 0
-yeff   		 0
-yg     		 0
-R      		 0
-pi     		 0
-z      		 0
-phi    		 0
-e      		 0
-q      		 0
-d      		 0
-L      		 0
-u      		 0
-r      		 0
-w      		 0
-a      		 0
-eps_pi 		 0
-n      		 0
-eps_R  		 0
-Total computing time : 0h00m01s
-Note: 1 warning(s) encountered in the preprocessor
-",,ok
-NK_CFP10,td3_benchmark_transfer,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_CFP10\td3_benchmark_transfer\run_NK_CFP10_td3_benchmark_transfer.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_CFP10\td3_benchmark_transfer\summary.csv,"Starting Dynare (version 7.0).
-Calling Dynare with arguments: noclearall nolog
-Starting preprocessing of the model file ... 
-WARNING: Parameter(s) varphi tau tau_g  not used in the model 
-Found 18 equation(s). 
-Evaluating expressions... 
-Computing static model derivatives (order 1). 
-Normalizing the static model... 
-Finding the optimal block decomposition of the static model... 
-13 block(s) found: 
-  11 recursive block(s) and 2 simultaneous block(s). 
-  the largest simultaneous block has 4 equation(s) 
-                                 and 4 feedback variable(s). 
-Computing dynamic model derivatives (order 2). 
-Normalizing the dynamic model... 
-Finding the optimal block decomposition of the dynamic model... 
-8 block(s) found: 
-  6 recursive block(s) and 2 simultaneous block(s). 
-  the largest simultaneous block has 6 equation(s) 
-                                 and 5 feedback variable(s). 
-Preprocessing completed. 
-Preprocessing time: 0h00m00s.
-
-EIGENVALUES:
-         Modulus             Real        Imaginary
-         0.04574          0.04574                0
-             0.4              0.4                0
-          0.7816           0.7816                0
-             0.9              0.9                0
-             0.9              0.9                0
-            0.95             0.95                0
-            1.01             1.01                0
-           1.021            1.021                0
-           8.982            8.982                0
-       2.325e+16       -2.325e+16                0
-       2.441e+18        2.441e+18                0
-       3.467e+18       -3.467e+18                0
-
-There are 6 eigenvalue(s) larger than 1 in modulus for 6 forward-looking variable(s).
-The order and rank conditions are verified.
-
-
-STEADY-STATE RESULTS:
-
-y      		 0
-yeff   		 0
-yg     		 0
-R      		 0
-pi     		 0
-z      		 0
-phi    		 0
-e      		 0
-q      		 0
-d      		 0
-L      		 0
-u      		 0
-r      		 0
-w      		 0
-a      		 0
-eps_pi 		 0
-n      		 0
-eps_R  		 0
-Total computing time : 0h00m01s
-Note: 1 warning(s) encountered in the preprocessor
-",,ok
-NK_CFP10,sac_benchmark_transfer,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_CFP10\sac_benchmark_transfer\run_NK_CFP10_sac_benchmark_transfer.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_CFP10\sac_benchmark_transfer\summary.csv,"Starting Dynare (version 7.0).
-Calling Dynare with arguments: noclearall nolog
-Starting preprocessing of the model file ... 
-WARNING: Parameter(s) varphi tau tau_g  not used in the model 
-Found 18 equation(s). 
-Evaluating expressions... 
-Computing static model derivatives (order 1). 
-Normalizing the static model... 
-Finding the optimal block decomposition of the static model... 
-13 block(s) found: 
-  11 recursive block(s) and 2 simultaneous block(s). 
-  the largest simultaneous block has 4 equation(s) 
-                                 and 4 feedback variable(s). 
-Computing dynamic model derivatives (order 2). 
-Normalizing the dynamic model... 
-Finding the optimal block decomposition of the dynamic model... 
-8 block(s) found: 
-  6 recursive block(s) and 2 simultaneous block(s). 
-  the largest simultaneous block has 6 equation(s) 
-                                 and 5 feedback variable(s). 
-Preprocessing completed. 
-Preprocessing time: 0h00m00s.
-
-EIGENVALUES:
-         Modulus             Real        Imaginary
-         0.04855          0.04855                0
-             0.4              0.4                0
-          0.7834           0.7834                0
-             0.9              0.9                0
-             0.9              0.9                0
-            0.95             0.95                0
-            1.01             1.01                0
-           1.028            1.028                0
-           7.969            7.969                0
-       1.744e+16        1.744e+16                0
-       1.892e+18        1.892e+18                0
-             Inf              Inf                0
-
-There are 6 eigenvalue(s) larger than 1 in modulus for 6 forward-looking variable(s).
-The order and rank conditions are verified.
-
-
-STEADY-STATE RESULTS:
-
-y      		 0
-yeff   		 0
-yg     		 0
-R      		 0
-pi     		 0
-z      		 0
-phi    		 0
-e      		 0
-q      		 0
-d      		 0
-L      		 0
-u      		 0
-r      		 0
-w      		 0
-a      		 0
-eps_pi 		 0
-n      		 0
-eps_R  		 0
-Total computing time : 0h00m02s
-Note: 1 warning(s) encountered in the preprocessor
-",,ok
-NK_CFP10,td3_svar_direct,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_CFP10\td3_svar_direct\run_NK_CFP10_td3_svar_direct.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_CFP10\td3_svar_direct\summary.csv,"Starting Dynare (version 7.0).
-Calling Dynare with arguments: noclearall nolog
-Starting preprocessing of the model file ... 
-WARNING: Parameter(s) varphi tau tau_g  not used in the model 
-Found 18 equation(s). 
-Evaluating expressions... 
-Computing static model derivatives (order 1). 
-Normalizing the static model... 
-Finding the optimal block decomposition of the static model... 
-13 block(s) found: 
-  11 recursive block(s) and 2 simultaneous block(s). 
-  the largest simultaneous block has 4 equation(s) 
-                                 and 4 feedback variable(s). 
-Computing dynamic model derivatives (order 2). 
-Normalizing the dynamic model... 
-Finding the optimal block decomposition of the dynamic model... 
-8 block(s) found: 
-  6 recursive block(s) and 2 simultaneous block(s). 
-  the largest simultaneous block has 6 equation(s) 
-                                 and 5 feedback variable(s). 
-Preprocessing completed. 
-Preprocessing time: 0h00m00s.
-
-EIGENVALUES:
-         Modulus             Real        Imaginary
-        0.006781        -0.006781                0
-             0.4              0.4                0
-          0.7825           0.7825                0
-             0.9              0.9                0
-             0.9              0.9                0
-            0.95             0.95                0
-            1.01             1.01                0
-           1.025            1.025                0
-           8.484            8.484                0
-        1.86e+16         1.86e+16                0
-       2.325e+16        2.325e+16                0
-       3.556e+18        3.556e+18                0
-
-There are 6 eigenvalue(s) larger than 1 in modulus for 6 forward-looking variable(s).
-The order and rank conditions are verified.
-
-
-STEADY-STATE RESULTS:
-
-y      		 0
-yeff   		 0
-yg     		 0
-R      		 0
-pi     		 0
-z      		 0
-phi    		 0
-e      		 0
-q      		 0
-d      		 0
-L      		 0
-u      		 0
-r      		 0
-w      		 0
-a      		 0
-eps_pi 		 0
-n      		 0
-eps_R  		 0
-Total computing time : 0h00m01s
-Note: 1 warning(s) encountered in the preprocessor
-",,ok
-NK_CFP10,sac_svar_direct,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_CFP10\sac_svar_direct\run_NK_CFP10_sac_svar_direct.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_CFP10\sac_svar_direct\summary.csv,"Starting Dynare (version 7.0).
-Calling Dynare with arguments: noclearall nolog
-Starting preprocessing of the model file ... 
-WARNING: Parameter(s) varphi tau tau_g  not used in the model 
-Found 18 equation(s). 
-Evaluating expressions... 
-Computing static model derivatives (order 1). 
-Normalizing the static model... 
-Finding the optimal block decomposition of the static model... 
-13 block(s) found: 
-  11 recursive block(s) and 2 simultaneous block(s). 
-  the largest simultaneous block has 4 equation(s) 
-                                 and 4 feedback variable(s). 
-Computing dynamic model derivatives (order 2). 
-Normalizing the dynamic model... 
-Finding the optimal block decomposition of the dynamic model... 
-8 block(s) found: 
-  6 recursive block(s) and 2 simultaneous block(s). 
-  the largest simultaneous block has 6 equation(s) 
-                                 and 5 feedback variable(s). 
-Preprocessing completed. 
-Preprocessing time: 0h00m00s.
-
-EIGENVALUES:
-         Modulus             Real        Imaginary
-         0.04309          0.04309                0
-             0.4              0.4                0
-          0.7885           0.7885                0
-             0.9              0.9                0
-             0.9              0.9                0
-            0.95             0.95                0
-            1.01             1.01                0
-           1.053            1.053                0
-           4.966            4.966                0
-       2.325e+16       -2.325e+16                0
-       2.397e+18        2.397e+18                0
-             Inf              Inf                0
-
-There are 6 eigenvalue(s) larger than 1 in modulus for 6 forward-looking variable(s).
-The order and rank conditions are verified.
-
-
-STEADY-STATE RESULTS:
-
-y      		 0
-yeff   		 0
-yg     		 0
-R      		 0
-pi     		 0
-z      		 0
-phi    		 0
-e      		 0
-q      		 0
-d      		 0
-L      		 0
-u      		 0
-r      		 0
-w      		 0
-a      		 0
-eps_pi 		 0
-n      		 0
-eps_R  		 0
-Total computing time : 0h00m01s
-Note: 1 warning(s) encountered in the preprocessor
-",,ok
-NK_CFP10,sac_svar_revealed_direct,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_CFP10\sac_svar_revealed_direct\run_NK_CFP10_sac_svar_revealed_direct.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_CFP10\sac_svar_revealed_direct\summary.csv,"Starting Dynare (version 7.0).
-Calling Dynare with arguments: noclearall nolog
-Starting preprocessing of the model file ... 
-WARNING: Parameter(s) varphi tau tau_g  not used in the model 
-Found 18 equation(s). 
-Evaluating expressions... 
-Computing static model derivatives (order 1). 
-Normalizing the static model... 
-Finding the optimal block decomposition of the static model... 
-13 block(s) found: 
-  11 recursive block(s) and 2 simultaneous block(s). 
-  the largest simultaneous block has 4 equation(s) 
-                                 and 4 feedback variable(s). 
-Computing dynamic model derivatives (order 2). 
-Normalizing the dynamic model... 
-Finding the optimal block decomposition of the dynamic model... 
-8 block(s) found: 
-  6 recursive block(s) and 2 simultaneous block(s). 
-  the largest simultaneous block has 6 equation(s) 
-                                 and 5 feedback variable(s). 
-Preprocessing completed. 
-Preprocessing time: 0h00m00s.
-
-EIGENVALUES:
-         Modulus             Real        Imaginary
-             0.4              0.4                0
-          0.4442           0.4442                0
-           0.799            0.799                0
-             0.9              0.9                0
-             0.9              0.9                0
-            0.95             0.95                0
-           1.006            1.006                0
-            1.01             1.01                0
-           2.049            2.049                0
-       2.248e+16        2.248e+16                0
-       2.325e+16       -2.325e+16                0
-        1.73e+17         1.73e+17                0
-
-There are 6 eigenvalue(s) larger than 1 in modulus for 6 forward-looking variable(s).
-The order and rank conditions are verified.
-
-
-STEADY-STATE RESULTS:
-
-y      		 0
-yeff   		 0
-yg     		 0
-R      		 0
-pi     		 0
-z      		 0
-phi    		 0
-e      		 0
-q      		 0
-d      		 0
-L      		 0
-u      		 0
-r      		 0
-w      		 0
-a      		 0
-eps_pi 		 0
-n      		 0
-eps_R  		 0
-Total computing time : 0h00m01s
-Note: 1 warning(s) encountered in the preprocessor
-",,ok
-US_FRB03,US_FRB03_baseline,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_FRB03\US_FRB03_baseline\run_US_FRB03_US_FRB03_baseline.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_FRB03\US_FRB03_baseline\summary.csv,"Starting Dynare (version 7.0).
-Calling Dynare with arguments: noclearall nolog
-Starting preprocessing of the model file ... 
-WARNING: Parameter(s) stockoff shortlag xgaprho leadpi20 leadpi19 leadpi18 leadpi17 leadpi16 leadpi15 leadpi14 leadpi13 leadpi12 leadpi11 leadpi10 leadpi9 leadpi8 leadpi7 leadpi6 leadpi5 leadpi4 leadpi3 leadpi2 leadpi1 leadpi0 lagpi1 lagpi2 lagpi3 lagpi4 leadpi1l laginfo leadinfo tayr2 tayr3 tayr4 taypm20 taypm19 taypm18 taypm17 taypm16 taypm15 taypm14 taypm13 taypm12 taypm11 taypm10 taypm9 taypm8 taypm7 taypm6 taypm5 taypm4 taypm3 taypm2 taypm1 tayp0 tayp1 tayp2 tayp3 tayp4 tayp8 tayp12 tayp16 tayplm4 tayplm3 tayplm2 tayplm1 taypl0 taypl1 taypl2 taypl3 taypl4 tayxm8 tayxm7 tayxm6 tayxm5 tayxm4 tayxm3 tayxm2 tayxm1 tayx0 tayx1 tayx2 tayx3 tayx4 tayu1 tayre0 taymu0 taymu1 taye0 taysp0 tayg0 tayc0 tayfi0 tayii0 sprule tayul4 tayul3 tayul2 tayul1 tayu0 tayrl0 bfi1 bfi2 yhln1 yhln2  not used in the model 
-Substitution of endo leads >= 2: added 39 auxiliary variables and equations. 
-Substitution of endo lags >= 2: added 94 auxiliary variables and equations. 
-Found 412 equation(s). 
-Evaluating expressions... 
-Computing static model derivatives (order 1). 
-Normalizing the static model... 
-Normalization failed with cutoff, trying symbolic normalization... 
-Finding the optimal block decomposition of the static model... 
-45 block(s) found: 
-  32 recursive block(s) and 13 simultaneous block(s). 
-  the largest simultaneous block has 299 equation(s) 
-                                 and 299 feedback variable(s). 
-Computing dynamic model derivatives (order 2). 
-Normalizing the dynamic model... 
-Finding the optimal block decomposition of the dynamic model... 
-17 block(s) found: 
-  12 recursive block(s) and 5 simultaneous block(s). 
-  the largest simultaneous block has 328 equation(s) 
-                                 and 312 feedback variable(s). 
-Preprocessing completed. 
-Preprocessing time: 0h00m01s.
-Total computing time : 0h00m02s
-Note: 1 warning(s) encountered in the preprocessor
-",,ok
-US_FRB03,empirical_taylor_rule,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_FRB03\empirical_taylor_rule\run_US_FRB03_empirical_taylor_rule.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_FRB03\empirical_taylor_rule\summary.csv,"Starting Dynare (version 7.0).
-Calling Dynare with arguments: noclearall nolog
-Starting preprocessing of the model file ... 
-WARNING: Parameter(s) stockoff shortlag xgaprho leadpi20 leadpi19 leadpi18 leadpi17 leadpi16 leadpi15 leadpi14 leadpi13 leadpi12 leadpi11 leadpi10 leadpi9 leadpi8 leadpi7 leadpi6 leadpi5 leadpi4 leadpi3 leadpi2 leadpi1 leadpi0 lagpi1 lagpi2 lagpi3 lagpi4 leadpi1l laginfo leadinfo tayr1 tayr2 tayr3 tayr4 taypm20 taypm19 taypm18 taypm17 taypm16 taypm15 taypm14 taypm13 taypm12 taypm11 taypm10 taypm9 taypm8 taypm7 taypm6 taypm5 taypm4 taypm3 taypm2 taypm1 tayp0 tayp1 tayp2 tayp3 tayp4 tayp8 tayp12 tayp16 tayplm4 tayplm3 tayplm2 tayplm1 taypl0 taypl1 taypl2 taypl3 taypl4 tayxm8 tayxm7 tayxm6 tayxm5 tayxm4 tayxm3 tayxm2 tayxm1 tayx0 tayx1 tayx2 tayx3 tayx4 tayu1 tayre0 taymu0 taymu1 taye0 taysp0 tayg0 tayc0 tayfi0 tayii0 sprule tayul4 tayul3 tayul2 tayul1 tayu0 tayrl0 bfi1 bfi2 yhln1 yhln2  not used in the model 
-Substitution of endo leads >= 2: added 39 auxiliary variables and equations. 
-Substitution of endo lags >= 2: added 92 auxiliary variables and equations. 
-Found 410 equation(s). 
-Evaluating expressions... 
-Computing static model derivatives (order 1). 
-Normalizing the static model... 
-Normalization failed with cutoff, trying symbolic normalization... 
-Finding the optimal block decomposition of the static model... 
-48 block(s) found: 
-  35 recursive block(s) and 13 simultaneous block(s). 
-  the largest simultaneous block has 294 equation(s) 
-                                 and 294 feedback variable(s). 
-Computing dynamic model derivatives (order 2). 
-Normalizing the dynamic model... 
-Finding the optimal block decomposition of the dynamic model... 
-17 block(s) found: 
-  12 recursive block(s) and 5 simultaneous block(s). 
-  the largest simultaneous block has 323 equation(s) 
-                                 and 305 feedback variable(s). 
-Preprocessing completed. 
-Preprocessing time: 0h00m01s.
-Total computing time : 0h00m02s
-Note: 1 warning(s) encountered in the preprocessor
-",,ok
-US_FRB03,td3_benchmark_transfer,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_FRB03\td3_benchmark_transfer\run_US_FRB03_td3_benchmark_transfer.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_FRB03\td3_benchmark_transfer\summary.csv,"Starting Dynare (version 7.0).
-Calling Dynare with arguments: noclearall nolog
-Starting preprocessing of the model file ... 
-WARNING: Parameter(s) stockoff shortlag xgaprho leadpi20 leadpi19 leadpi18 leadpi17 leadpi16 leadpi15 leadpi14 leadpi13 leadpi12 leadpi11 leadpi10 leadpi9 leadpi8 leadpi7 leadpi6 leadpi5 leadpi4 leadpi3 leadpi2 leadpi1 leadpi0 lagpi1 lagpi2 lagpi3 lagpi4 leadpi1l laginfo leadinfo tayr1 tayr2 tayr3 tayr4 taypm20 taypm19 taypm18 taypm17 taypm16 taypm15 taypm14 taypm13 taypm12 taypm11 taypm10 taypm9 taypm8 taypm7 taypm6 taypm5 taypm4 taypm3 taypm2 taypm1 tayp0 tayp1 tayp2 tayp3 tayp4 tayp8 tayp12 tayp16 tayplm4 tayplm3 tayplm2 tayplm1 taypl0 taypl1 taypl2 taypl3 taypl4 tayxm8 tayxm7 tayxm6 tayxm5 tayxm4 tayxm3 tayxm2 tayxm1 tayx0 tayx1 tayx2 tayx3 tayx4 tayu1 tayre0 taymu0 taymu1 taye0 taysp0 tayg0 tayc0 tayfi0 tayii0 sprule tayul4 tayul3 tayul2 tayul1 tayu0 tayrl0 bfi1 bfi2 yhln1 yhln2  not used in the model 
-Substitution of endo leads >= 2: added 39 auxiliary variables and equations. 
-Substitution of endo lags >= 2: added 92 auxiliary variables and equations. 
-Found 410 equation(s). 
-Evaluating expressions... 
-Computing static model derivatives (order 1). 
-Normalizing the static model... 
-Normalization failed with cutoff, trying symbolic normalization... 
-Finding the optimal block decomposition of the static model... 
-48 block(s) found: 
-  35 recursive block(s) and 13 simultaneous block(s). 
-  the largest simultaneous block has 294 equation(s) 
-                                 and 294 feedback variable(s). 
-Computing dynamic model derivatives (order 2). 
-Normalizing the dynamic model... 
-Finding the optimal block decomposition of the dynamic model... 
-17 block(s) found: 
-  12 recursive block(s) and 5 simultaneous block(s). 
-  the largest simultaneous block has 323 equation(s) 
-                                 and 305 feedback variable(s). 
-Preprocessing completed. 
-Preprocessing time: 0h00m01s.
-Total computing time : 0h00m02s
-Note: 1 warning(s) encountered in the preprocessor
-",,ok
-US_FRB03,sac_benchmark_transfer,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_FRB03\sac_benchmark_transfer\run_US_FRB03_sac_benchmark_transfer.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_FRB03\sac_benchmark_transfer\summary.csv,"Starting Dynare (version 7.0).
-Calling Dynare with arguments: noclearall nolog
-Starting preprocessing of the model file ... 
-WARNING: Parameter(s) stockoff shortlag xgaprho leadpi20 leadpi19 leadpi18 leadpi17 leadpi16 leadpi15 leadpi14 leadpi13 leadpi12 leadpi11 leadpi10 leadpi9 leadpi8 leadpi7 leadpi6 leadpi5 leadpi4 leadpi3 leadpi2 leadpi1 leadpi0 lagpi1 lagpi2 lagpi3 lagpi4 leadpi1l laginfo leadinfo tayr1 tayr2 tayr3 tayr4 taypm20 taypm19 taypm18 taypm17 taypm16 taypm15 taypm14 taypm13 taypm12 taypm11 taypm10 taypm9 taypm8 taypm7 taypm6 taypm5 taypm4 taypm3 taypm2 taypm1 tayp0 tayp1 tayp2 tayp3 tayp4 tayp8 tayp12 tayp16 tayplm4 tayplm3 tayplm2 tayplm1 taypl0 taypl1 taypl2 taypl3 taypl4 tayxm8 tayxm7 tayxm6 tayxm5 tayxm4 tayxm3 tayxm2 tayxm1 tayx0 tayx1 tayx2 tayx3 tayx4 tayu1 tayre0 taymu0 taymu1 taye0 taysp0 tayg0 tayc0 tayfi0 tayii0 sprule tayul4 tayul3 tayul2 tayul1 tayu0 tayrl0 bfi1 bfi2 yhln1 yhln2  not used in the model 
-Substitution of endo leads >= 2: added 39 auxiliary variables and equations. 
-Substitution of endo lags >= 2: added 92 auxiliary variables and equations. 
-Found 410 equation(s). 
-Evaluating expressions... 
-Computing static model derivatives (order 1). 
-Normalizing the static model... 
-Normalization failed with cutoff, trying symbolic normalization... 
-Finding the optimal block decomposition of the static model... 
-48 block(s) found: 
-  35 recursive block(s) and 13 simultaneous block(s). 
-  the largest simultaneous block has 294 equation(s) 
-                                 and 294 feedback variable(s). 
-Computing dynamic model derivatives (order 2). 
-Normalizing the dynamic model... 
-Finding the optimal block decomposition of the dynamic model... 
-17 block(s) found: 
-  12 recursive block(s) and 5 simultaneous block(s). 
-  the largest simultaneous block has 323 equation(s) 
-                                 and 305 feedback variable(s). 
-Preprocessing completed. 
-Preprocessing time: 0h00m01s.
-Total computing time : 0h00m02s
-Note: 1 warning(s) encountered in the preprocessor
-",,ok
+NK_CFP10,NK_CFP10_baseline,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_CFP10\NK_CFP10_baseline\run_NK_CFP10_NK_CFP10_baseline.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_CFP10\NK_CFP10_baseline\summary.csv,cached summary.csv,,ok
+NK_CFP10,empirical_taylor_rule,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_CFP10\empirical_taylor_rule\run_NK_CFP10_empirical_taylor_rule.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_CFP10\empirical_taylor_rule\summary.csv,cached summary.csv,,ok
+NK_CFP10,td3_benchmark_transfer,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_CFP10\td3_benchmark_transfer\run_NK_CFP10_td3_benchmark_transfer.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_CFP10\td3_benchmark_transfer\summary.csv,cached summary.csv,,ok
+NK_CFP10,sac_benchmark_transfer,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_CFP10\sac_benchmark_transfer\run_NK_CFP10_sac_benchmark_transfer.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_CFP10\sac_benchmark_transfer\summary.csv,cached summary.csv,,ok
+NK_CFP10,td3_svar_direct,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_CFP10\td3_svar_direct\run_NK_CFP10_td3_svar_direct.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_CFP10\td3_svar_direct\summary.csv,cached summary.csv,,ok
+NK_CFP10,sac_svar_direct,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_CFP10\sac_svar_direct\run_NK_CFP10_sac_svar_direct.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_CFP10\sac_svar_direct\summary.csv,cached summary.csv,,ok
+NK_CFP10,sac_svar_revealed_direct,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_CFP10\sac_svar_revealed_direct\run_NK_CFP10_sac_svar_revealed_direct.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_CFP10\sac_svar_revealed_direct\summary.csv,cached summary.csv,,ok
+US_FRB03,US_FRB03_baseline,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_FRB03\US_FRB03_baseline\run_US_FRB03_US_FRB03_baseline.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_FRB03\US_FRB03_baseline\summary.csv,cached summary.csv,,ok
+US_FRB03,empirical_taylor_rule,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_FRB03\empirical_taylor_rule\run_US_FRB03_empirical_taylor_rule.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_FRB03\empirical_taylor_rule\summary.csv,cached summary.csv,,ok
+US_FRB03,td3_benchmark_transfer,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_FRB03\td3_benchmark_transfer\run_US_FRB03_td3_benchmark_transfer.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_FRB03\td3_benchmark_transfer\summary.csv,cached summary.csv,,ok
+US_FRB03,sac_benchmark_transfer,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_FRB03\sac_benchmark_transfer\run_US_FRB03_sac_benchmark_transfer.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_FRB03\sac_benchmark_transfer\summary.csv,cached summary.csv,,ok
 US_FRB03,td3_svar_direct,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_FRB03\td3_svar_direct\run_US_FRB03_td3_svar_direct.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_FRB03\td3_svar_direct\summary.csv,"Starting Dynare (version 7.0).
 Calling Dynare with arguments: noclearall nolog
 Starting preprocessing of the model file ... 
@@ -1278,7 +536,7 @@ Finding the optimal block decomposition of the dynamic model...
                                  and 305 feedback variable(s). 
 Preprocessing completed. 
 Preprocessing time: 0h00m01s.
-Total computing time : 0h00m02s
+Total computing time : 0h00m01s
 Note: 1 warning(s) encountered in the preprocessor
 ","{λ�� 1 ����������������߽硣
 
@@ -1290,31 +548,1529 @@ evalin('caller', strcat(script, ';'));
 } 
 ERROR: MATLAB error Exit Status: 0x00000001
 ",failed
-US_FRB03,sac_svar_revealed_direct,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_FRB03\sac_svar_revealed_direct\run_US_FRB03_sac_svar_revealed_direct.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_FRB03\sac_svar_revealed_direct\summary.csv,"Starting Dynare (version 7.0).
+US_FRB03,sac_svar_revealed_direct,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_FRB03\sac_svar_revealed_direct\run_US_FRB03_sac_svar_revealed_direct.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\US_FRB03\sac_svar_revealed_direct\summary.csv,cached summary.csv,,ok
+G7_TAY93,G7_TAY93_baseline,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\G7_TAY93\G7_TAY93_baseline\run_G7_TAY93_G7_TAY93_baseline.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\G7_TAY93\G7_TAY93_baseline\summary.csv,cached summary.csv,,ok
+G7_TAY93,empirical_taylor_rule,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\G7_TAY93\empirical_taylor_rule\run_G7_TAY93_empirical_taylor_rule.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\G7_TAY93\empirical_taylor_rule\summary.csv,cached summary.csv,,ok
+G7_TAY93,td3_benchmark_transfer,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\G7_TAY93\td3_benchmark_transfer\run_G7_TAY93_td3_benchmark_transfer.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\G7_TAY93\td3_benchmark_transfer\summary.csv,cached summary.csv,,ok
+G7_TAY93,sac_benchmark_transfer,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\G7_TAY93\sac_benchmark_transfer\run_G7_TAY93_sac_benchmark_transfer.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\G7_TAY93\sac_benchmark_transfer\summary.csv,cached summary.csv,,ok
+G7_TAY93,td3_svar_direct,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\G7_TAY93\td3_svar_direct\run_G7_TAY93_td3_svar_direct.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\G7_TAY93\td3_svar_direct\summary.csv,cached summary.csv,,ok
+G7_TAY93,sac_svar_direct,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\G7_TAY93\sac_svar_direct\run_G7_TAY93_sac_svar_direct.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\G7_TAY93\sac_svar_direct\summary.csv,cached summary.csv,,ok
+G7_TAY93,sac_svar_revealed_direct,0,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\G7_TAY93\sac_svar_revealed_direct\run_G7_TAY93_sac_svar_revealed_direct.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\G7_TAY93\sac_svar_revealed_direct\summary.csv,cached summary.csv,,ok
+NK_GHP16,NK_GHP16_baseline,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_GHP16\NK_GHP16_baseline\run_NK_GHP16_NK_GHP16_baseline.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_GHP16\NK_GHP16_baseline\summary.csv,"Starting Dynare (version 7.0).
 Calling Dynare with arguments: noclearall nolog
 Starting preprocessing of the model file ... 
-WARNING: Parameter(s) stockoff shortlag xgaprho leadpi20 leadpi19 leadpi18 leadpi17 leadpi16 leadpi15 leadpi14 leadpi13 leadpi12 leadpi11 leadpi10 leadpi9 leadpi8 leadpi7 leadpi6 leadpi5 leadpi4 leadpi3 leadpi2 leadpi1 leadpi0 lagpi1 lagpi2 lagpi3 lagpi4 leadpi1l laginfo leadinfo tayr1 tayr2 tayr3 tayr4 taypm20 taypm19 taypm18 taypm17 taypm16 taypm15 taypm14 taypm13 taypm12 taypm11 taypm10 taypm9 taypm8 taypm7 taypm6 taypm5 taypm4 taypm3 taypm2 taypm1 tayp0 tayp1 tayp2 tayp3 tayp4 tayp8 tayp12 tayp16 tayplm4 tayplm3 tayplm2 tayplm1 taypl0 taypl1 taypl2 taypl3 taypl4 tayxm8 tayxm7 tayxm6 tayxm5 tayxm4 tayxm3 tayxm2 tayxm1 tayx0 tayx1 tayx2 tayx3 tayx4 tayu1 tayre0 taymu0 taymu1 taye0 taysp0 tayg0 tayc0 tayfi0 tayii0 sprule tayul4 tayul3 tayul2 tayul1 tayu0 tayrl0 bfi1 bfi2 yhln1 yhln2  not used in the model 
-Substitution of endo leads >= 2: added 39 auxiliary variables and equations. 
-Substitution of endo lags >= 2: added 92 auxiliary variables and equations. 
-Found 410 equation(s). 
+WARNING: Parameter(s) std_r_quart g_ratio phi_infl RMC_ss h_n_ss h_m_ss kn_y_ss km_y_ss i_ratio_ss r_k_ss Y_ss C_m_ss C_n_ss W_ss h_ss l_ss  not used in the model 
+Substitution of endo leads >= 2: added 9 auxiliary variables and equations. 
+Substitution of endo lags >= 2: added 14 auxiliary variables and equations. 
+Found 75 equation(s). 
 Evaluating expressions... 
 Computing static model derivatives (order 1). 
 Normalizing the static model... 
-Normalization failed with cutoff, trying symbolic normalization... 
 Finding the optimal block decomposition of the static model... 
-48 block(s) found: 
-  35 recursive block(s) and 13 simultaneous block(s). 
-  the largest simultaneous block has 294 equation(s) 
-                                 and 294 feedback variable(s). 
+14 block(s) found: 
+  13 recursive block(s) and 1 simultaneous block(s). 
+  the largest simultaneous block has 61 equation(s) 
+                                 and 61 feedback variable(s). 
+Computing dynamic model derivatives (order 1). 
+Normalizing the dynamic model... 
+Normalization failed with cutoff, trying symbolic normalization... 
+Could not normalize the dynamic model, i.e. it was not possible to construct a one-to-one matching between variables and equations. More precisely, variable K_m could not be associated to an equation (either it appears nowhere, or the equations in which it appears had to be matched with other variables that appear nowhere else). 
+Preprocessing completed. 
+Preprocessing time: 0h00m00s.
+","{����ʹ�� load
+�Ҳ����ļ���Ŀ¼ 'policy_param.mat'��
+
+���� NK_GHP16_NK_GHP16_baseline/driver (�� 1308 ��)
+load policy_param.mat;
+
+���� dynare (�� 300 ��)
+    evalin('base',[fname(1:end-4) '.driver']);
+
+���� run_NK_GHP16_NK_GHP16_baseline (�� 4 ��)
+        dynare('NK_GHP16_NK_GHP16_baseline.mod', 'noclearall', 'nolog');
+
+���� run (�� 91 ��)
+evalin('caller', strcat(script, ';'));
+} 
+ERROR: MATLAB error Exit Status: 0x00000001
+",failed
+NK_GHP16,empirical_taylor_rule,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_GHP16\empirical_taylor_rule\run_NK_GHP16_empirical_taylor_rule.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_GHP16\empirical_taylor_rule\summary.csv,"		 -0.738118
+K                 		 1.7212
+K_m               		 0.883919
+K_n               		 1.15401
+I                 		 -2.00434
+W                 		 0.157481
+h_m               		 -1.10866
+h_n               		 -1.66073
+r_k               		 -3.3755
+r                 		 0.0100503
+lambda            		 0.761498
+infl              		 0
+inflstar          		 0
+x_1               		 0.599718
+x_2               		 0.599718
+RMC               		 -0.0953102
+G                 		 -2.47182
+g                 		 0
+Y                 		 -0.757017
+D                 		 0
+Cf                		 -1.05042
+C_mf              		 -1.38676
+C_nf              		 -0.738118
+Kf                		 1.7212
+K_mf              		 0.883919
+K_nf              		 1.15401
+If                		 -2.00434
+Wf                		 0.157481
+h_mf              		 -1.10866
+h_nf              		 -1.66073
+r_kf              		 -3.3755
+rf                		 0.0100503
+lambdaf           		 0.761498
+inflf             		 0
+inflstarf         		 0
+x_1f              		 -0.757017
+x_2f              		 -0.757017
+RMCf              		 -0.0953102
+Gf                		 -2.47182
+gf                		 0
+Yf                		 -0.757017
+Df                		 0
+e_g               		 0
+e_gf              		 0
+interest          		 0
+inflation         		 0
+inflationq        		 0
+outputgap         		 0
+output            		 -0.757017
+fispol            		 0
+
+
+Residuals of the static equations:
+Equation number  1: interest   :       0.000000
+Equation number  2: inflation  :       0.000000
+Equation number  3: inflationq :       0.000000
+Equation number  4: 4          :       0.000000
+Equation number  5: output     :       0.000000
+Equation number  6: fispol     :       0.000000
+Equation number  7: 7          :       0.000000
+Equation number  8: 8          :       0.000000
+Equation number  9: 9          :       0.000000
+Equation number 10: 10         :       0.000000
+Equation number 11: 11         :       0.000000
+Equation number 12: 12         :       0.000000
+Equation number 13: 13         :       0.000000
+Equation number 14: 14         :       0.000000
+Equation number 15: 15         :       0.000000
+Equation number 16: 16         :       0.000000
+Equation number 17: 17         :       0.000000
+Equation number 18: 18         :       0.000000
+Equation number 19: 19         :       0.000000
+Equation number 20: 20         :       0.000000
+Equation number 21: 21         :       0.000000
+Equation number 22: 22         :       0.000000
+Equation number 23: 23         :       0.000000
+Equation number 24: 24         :       0.000000
+Equation number 25: 25         :       0.000000
+Equation number 26: 26         :       0.000000
+Equation number 27: 27         :       0.000000
+Equation number 28: 28         :       0.000000
+Equation number 29: gf         :       0.000000
+Equation number 30: 30         :       0.000000
+Equation number 31: 31         :       0.000000
+Equation number 32: 32         :       0.000000
+Equation number 33: 33         :       0.000000
+Equation number 34: 34         :       0.000000
+Equation number 35: 35         :       0.000000
+Equation number 36: 36         :       0.000000
+Equation number 37: 37         :       0.000000
+Equation number 38: 38         :       0.000000
+Equation number 39: 39         :       0.000000
+Equation number 40: 40         :       0.000000
+Equation number 41: 41         :       0.000000
+Equation number 42: 42         :       0.000000
+Equation number 43: 43         :       0.000000
+Equation number 44: 44         :       0.000000
+Equation number 45: 45         :       0.000000
+Equation number 46: 46         :       0.000000
+Equation number 47: 47         :       0.000000
+Equation number 48: 48         :       0.000000
+Equation number 49: 49         :       0.000000
+Equation number 50: 50         :       0.000000
+Equation number 51: 51         :       0.000000
+Equation number 52: g          :       0.000000
+
+
+Total computing time : 0h00m01s
+Note: 1 warning(s) encountered in the preprocessor
+","{λ�� 1 ����������������߽硣
+
+���� run_NK_GHP16_empirical_taylor_rule (�� 10 ��)
+rate_series = sim(loc(""interest""), :);
+
+���� run (�� 91 ��)
+evalin('caller', strcat(script, ';'));
+} 
+ERROR: MATLAB error Exit Status: 0x00000001
+",failed
+NK_GHP16,td3_benchmark_transfer,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_GHP16\td3_benchmark_transfer\run_NK_GHP16_td3_benchmark_transfer.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_GHP16\td3_benchmark_transfer\summary.csv,"		 -0.738118
+K                 		 1.7212
+K_m               		 0.883919
+K_n               		 1.15401
+I                 		 -2.00434
+W                 		 0.157481
+h_m               		 -1.10866
+h_n               		 -1.66073
+r_k               		 -3.3755
+r                 		 0.0100503
+lambda            		 0.761498
+infl              		 0
+inflstar          		 0
+x_1               		 0.599718
+x_2               		 0.599718
+RMC               		 -0.0953102
+G                 		 -2.47182
+g                 		 0
+Y                 		 -0.757017
+D                 		 0
+Cf                		 -1.05042
+C_mf              		 -1.38676
+C_nf              		 -0.738118
+Kf                		 1.7212
+K_mf              		 0.883919
+K_nf              		 1.15401
+If                		 -2.00434
+Wf                		 0.157481
+h_mf              		 -1.10866
+h_nf              		 -1.66073
+r_kf              		 -3.3755
+rf                		 0.0100503
+lambdaf           		 0.761498
+inflf             		 0
+inflstarf         		 0
+x_1f              		 -0.757017
+x_2f              		 -0.757017
+RMCf              		 -0.0953102
+Gf                		 -2.47182
+gf                		 0
+Yf                		 -0.757017
+Df                		 0
+e_g               		 0
+e_gf              		 0
+interest          		 0
+inflation         		 0
+inflationq        		 0
+outputgap         		 0
+output            		 -0.757017
+fispol            		 0
+
+
+Residuals of the static equations:
+Equation number  1: interest   :       0.000000
+Equation number  2: inflation  :       0.000000
+Equation number  3: inflationq :       0.000000
+Equation number  4: 4          :       0.000000
+Equation number  5: output     :       0.000000
+Equation number  6: fispol     :       0.000000
+Equation number  7: 7          :       0.000000
+Equation number  8: 8          :       0.000000
+Equation number  9: 9          :       0.000000
+Equation number 10: 10         :       0.000000
+Equation number 11: 11         :       0.000000
+Equation number 12: 12         :       0.000000
+Equation number 13: 13         :       0.000000
+Equation number 14: 14         :       0.000000
+Equation number 15: 15         :       0.000000
+Equation number 16: 16         :       0.000000
+Equation number 17: 17         :       0.000000
+Equation number 18: 18         :       0.000000
+Equation number 19: 19         :       0.000000
+Equation number 20: 20         :       0.000000
+Equation number 21: 21         :       0.000000
+Equation number 22: 22         :       0.000000
+Equation number 23: 23         :       0.000000
+Equation number 24: 24         :       0.000000
+Equation number 25: 25         :       0.000000
+Equation number 26: 26         :       0.000000
+Equation number 27: 27         :       0.000000
+Equation number 28: 28         :       0.000000
+Equation number 29: gf         :       0.000000
+Equation number 30: 30         :       0.000000
+Equation number 31: 31         :       0.000000
+Equation number 32: 32         :       0.000000
+Equation number 33: 33         :       0.000000
+Equation number 34: 34         :       0.000000
+Equation number 35: 35         :       0.000000
+Equation number 36: 36         :       0.000000
+Equation number 37: 37         :       0.000000
+Equation number 38: 38         :       0.000000
+Equation number 39: 39         :       0.000000
+Equation number 40: 40         :       0.000000
+Equation number 41: 41         :       0.000000
+Equation number 42: 42         :       0.000000
+Equation number 43: 43         :       0.000000
+Equation number 44: 44         :       0.000000
+Equation number 45: 45         :       0.000000
+Equation number 46: 46         :       0.000000
+Equation number 47: 47         :       0.000000
+Equation number 48: 48         :       0.000000
+Equation number 49: 49         :       0.000000
+Equation number 50: 50         :       0.000000
+Equation number 51: 51         :       0.000000
+Equation number 52: g          :       0.000000
+
+
+Total computing time : 0h00m01s
+Note: 1 warning(s) encountered in the preprocessor
+","{λ�� 1 ����������������߽硣
+
+���� run_NK_GHP16_td3_benchmark_transfer (�� 10 ��)
+rate_series = sim(loc(""interest""), :);
+
+���� run (�� 91 ��)
+evalin('caller', strcat(script, ';'));
+} 
+ERROR: MATLAB error Exit Status: 0x00000001
+",failed
+NK_GHP16,sac_benchmark_transfer,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_GHP16\sac_benchmark_transfer\run_NK_GHP16_sac_benchmark_transfer.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_GHP16\sac_benchmark_transfer\summary.csv,"		 -0.738118
+K                 		 1.7212
+K_m               		 0.883919
+K_n               		 1.15401
+I                 		 -2.00434
+W                 		 0.157481
+h_m               		 -1.10866
+h_n               		 -1.66073
+r_k               		 -3.3755
+r                 		 0.0100503
+lambda            		 0.761498
+infl              		 0
+inflstar          		 0
+x_1               		 0.599718
+x_2               		 0.599718
+RMC               		 -0.0953102
+G                 		 -2.47182
+g                 		 0
+Y                 		 -0.757017
+D                 		 0
+Cf                		 -1.05042
+C_mf              		 -1.38676
+C_nf              		 -0.738118
+Kf                		 1.7212
+K_mf              		 0.883919
+K_nf              		 1.15401
+If                		 -2.00434
+Wf                		 0.157481
+h_mf              		 -1.10866
+h_nf              		 -1.66073
+r_kf              		 -3.3755
+rf                		 0.0100503
+lambdaf           		 0.761498
+inflf             		 0
+inflstarf         		 0
+x_1f              		 -0.757017
+x_2f              		 -0.757017
+RMCf              		 -0.0953102
+Gf                		 -2.47182
+gf                		 0
+Yf                		 -0.757017
+Df                		 0
+e_g               		 0
+e_gf              		 0
+interest          		 0
+inflation         		 0
+inflationq        		 0
+outputgap         		 0
+output            		 -0.757017
+fispol            		 0
+
+
+Residuals of the static equations:
+Equation number  1: interest   :       0.000000
+Equation number  2: inflation  :       0.000000
+Equation number  3: inflationq :       0.000000
+Equation number  4: 4          :       0.000000
+Equation number  5: output     :       0.000000
+Equation number  6: fispol     :       0.000000
+Equation number  7: 7          :       0.000000
+Equation number  8: 8          :       0.000000
+Equation number  9: 9          :       0.000000
+Equation number 10: 10         :       0.000000
+Equation number 11: 11         :       0.000000
+Equation number 12: 12         :       0.000000
+Equation number 13: 13         :       0.000000
+Equation number 14: 14         :       0.000000
+Equation number 15: 15         :       0.000000
+Equation number 16: 16         :       0.000000
+Equation number 17: 17         :       0.000000
+Equation number 18: 18         :       0.000000
+Equation number 19: 19         :       0.000000
+Equation number 20: 20         :       0.000000
+Equation number 21: 21         :       0.000000
+Equation number 22: 22         :       0.000000
+Equation number 23: 23         :       0.000000
+Equation number 24: 24         :       0.000000
+Equation number 25: 25         :       0.000000
+Equation number 26: 26         :       0.000000
+Equation number 27: 27         :       0.000000
+Equation number 28: 28         :       0.000000
+Equation number 29: gf         :       0.000000
+Equation number 30: 30         :       0.000000
+Equation number 31: 31         :       0.000000
+Equation number 32: 32         :       0.000000
+Equation number 33: 33         :       0.000000
+Equation number 34: 34         :       0.000000
+Equation number 35: 35         :       0.000000
+Equation number 36: 36         :       0.000000
+Equation number 37: 37         :       0.000000
+Equation number 38: 38         :       0.000000
+Equation number 39: 39         :       0.000000
+Equation number 40: 40         :       0.000000
+Equation number 41: 41         :       0.000000
+Equation number 42: 42         :       0.000000
+Equation number 43: 43         :       0.000000
+Equation number 44: 44         :       0.000000
+Equation number 45: 45         :       0.000000
+Equation number 46: 46         :       0.000000
+Equation number 47: 47         :       0.000000
+Equation number 48: 48         :       0.000000
+Equation number 49: 49         :       0.000000
+Equation number 50: 50         :       0.000000
+Equation number 51: 51         :       0.000000
+Equation number 52: g          :       0.000000
+
+
+Total computing time : 0h00m01s
+Note: 1 warning(s) encountered in the preprocessor
+","{λ�� 1 ����������������߽硣
+
+���� run_NK_GHP16_sac_benchmark_transfer (�� 10 ��)
+rate_series = sim(loc(""interest""), :);
+
+���� run (�� 91 ��)
+evalin('caller', strcat(script, ';'));
+} 
+ERROR: MATLAB error Exit Status: 0x00000001
+",failed
+NK_GHP16,td3_svar_direct,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_GHP16\td3_svar_direct\run_NK_GHP16_td3_svar_direct.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_GHP16\td3_svar_direct\summary.csv,"		 -0.738118
+K                 		 1.7212
+K_m               		 0.883919
+K_n               		 1.15401
+I                 		 -2.00434
+W                 		 0.157481
+h_m               		 -1.10866
+h_n               		 -1.66073
+r_k               		 -3.3755
+r                 		 0.0100503
+lambda            		 0.761498
+infl              		 0
+inflstar          		 0
+x_1               		 0.599718
+x_2               		 0.599718
+RMC               		 -0.0953102
+G                 		 -2.47182
+g                 		 0
+Y                 		 -0.757017
+D                 		 0
+Cf                		 -1.05042
+C_mf              		 -1.38676
+C_nf              		 -0.738118
+Kf                		 1.7212
+K_mf              		 0.883919
+K_nf              		 1.15401
+If                		 -2.00434
+Wf                		 0.157481
+h_mf              		 -1.10866
+h_nf              		 -1.66073
+r_kf              		 -3.3755
+rf                		 0.0100503
+lambdaf           		 0.761498
+inflf             		 0
+inflstarf         		 0
+x_1f              		 -0.757017
+x_2f              		 -0.757017
+RMCf              		 -0.0953102
+Gf                		 -2.47182
+gf                		 0
+Yf                		 -0.757017
+Df                		 0
+e_g               		 0
+e_gf              		 0
+interest          		 0
+inflation         		 0
+inflationq        		 0
+outputgap         		 0
+output            		 -0.757017
+fispol            		 0
+
+
+Residuals of the static equations:
+Equation number  1: interest   :       0.000000
+Equation number  2: inflation  :       0.000000
+Equation number  3: inflationq :       0.000000
+Equation number  4: 4          :       0.000000
+Equation number  5: output     :       0.000000
+Equation number  6: fispol     :       0.000000
+Equation number  7: 7          :       0.000000
+Equation number  8: 8          :       0.000000
+Equation number  9: 9          :       0.000000
+Equation number 10: 10         :       0.000000
+Equation number 11: 11         :       0.000000
+Equation number 12: 12         :       0.000000
+Equation number 13: 13         :       0.000000
+Equation number 14: 14         :       0.000000
+Equation number 15: 15         :       0.000000
+Equation number 16: 16         :       0.000000
+Equation number 17: 17         :       0.000000
+Equation number 18: 18         :       0.000000
+Equation number 19: 19         :       0.000000
+Equation number 20: 20         :       0.000000
+Equation number 21: 21         :       0.000000
+Equation number 22: 22         :       0.000000
+Equation number 23: 23         :       0.000000
+Equation number 24: 24         :       0.000000
+Equation number 25: 25         :       0.000000
+Equation number 26: 26         :       0.000000
+Equation number 27: 27         :       0.000000
+Equation number 28: 28         :       0.000000
+Equation number 29: gf         :       0.000000
+Equation number 30: 30         :       0.000000
+Equation number 31: 31         :       0.000000
+Equation number 32: 32         :       0.000000
+Equation number 33: 33         :       0.000000
+Equation number 34: 34         :       0.000000
+Equation number 35: 35         :       0.000000
+Equation number 36: 36         :       0.000000
+Equation number 37: 37         :       0.000000
+Equation number 38: 38         :       0.000000
+Equation number 39: 39         :       0.000000
+Equation number 40: 40         :       0.000000
+Equation number 41: 41         :       0.000000
+Equation number 42: 42         :       0.000000
+Equation number 43: 43         :       0.000000
+Equation number 44: 44         :       0.000000
+Equation number 45: 45         :       0.000000
+Equation number 46: 46         :       0.000000
+Equation number 47: 47         :       0.000000
+Equation number 48: 48         :       0.000000
+Equation number 49: 49         :       0.000000
+Equation number 50: 50         :       0.000000
+Equation number 51: 51         :       0.000000
+Equation number 52: g          :       0.000000
+
+
+Total computing time : 0h00m01s
+Note: 1 warning(s) encountered in the preprocessor
+","{λ�� 1 ����������������߽硣
+
+���� run_NK_GHP16_td3_svar_direct (�� 10 ��)
+rate_series = sim(loc(""interest""), :);
+
+���� run (�� 91 ��)
+evalin('caller', strcat(script, ';'));
+} 
+ERROR: MATLAB error Exit Status: 0x00000001
+",failed
+NK_GHP16,sac_svar_direct,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_GHP16\sac_svar_direct\run_NK_GHP16_sac_svar_direct.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_GHP16\sac_svar_direct\summary.csv,"		 -0.738118
+K                 		 1.7212
+K_m               		 0.883919
+K_n               		 1.15401
+I                 		 -2.00434
+W                 		 0.157481
+h_m               		 -1.10866
+h_n               		 -1.66073
+r_k               		 -3.3755
+r                 		 0.0100503
+lambda            		 0.761498
+infl              		 0
+inflstar          		 0
+x_1               		 0.599718
+x_2               		 0.599718
+RMC               		 -0.0953102
+G                 		 -2.47182
+g                 		 0
+Y                 		 -0.757017
+D                 		 0
+Cf                		 -1.05042
+C_mf              		 -1.38676
+C_nf              		 -0.738118
+Kf                		 1.7212
+K_mf              		 0.883919
+K_nf              		 1.15401
+If                		 -2.00434
+Wf                		 0.157481
+h_mf              		 -1.10866
+h_nf              		 -1.66073
+r_kf              		 -3.3755
+rf                		 0.0100503
+lambdaf           		 0.761498
+inflf             		 0
+inflstarf         		 0
+x_1f              		 -0.757017
+x_2f              		 -0.757017
+RMCf              		 -0.0953102
+Gf                		 -2.47182
+gf                		 0
+Yf                		 -0.757017
+Df                		 0
+e_g               		 0
+e_gf              		 0
+interest          		 0
+inflation         		 0
+inflationq        		 0
+outputgap         		 0
+output            		 -0.757017
+fispol            		 0
+
+
+Residuals of the static equations:
+Equation number  1: interest   :       0.000000
+Equation number  2: inflation  :       0.000000
+Equation number  3: inflationq :       0.000000
+Equation number  4: 4          :       0.000000
+Equation number  5: output     :       0.000000
+Equation number  6: fispol     :       0.000000
+Equation number  7: 7          :       0.000000
+Equation number  8: 8          :       0.000000
+Equation number  9: 9          :       0.000000
+Equation number 10: 10         :       0.000000
+Equation number 11: 11         :       0.000000
+Equation number 12: 12         :       0.000000
+Equation number 13: 13         :       0.000000
+Equation number 14: 14         :       0.000000
+Equation number 15: 15         :       0.000000
+Equation number 16: 16         :       0.000000
+Equation number 17: 17         :       0.000000
+Equation number 18: 18         :       0.000000
+Equation number 19: 19         :       0.000000
+Equation number 20: 20         :       0.000000
+Equation number 21: 21         :       0.000000
+Equation number 22: 22         :       0.000000
+Equation number 23: 23         :       0.000000
+Equation number 24: 24         :       0.000000
+Equation number 25: 25         :       0.000000
+Equation number 26: 26         :       0.000000
+Equation number 27: 27         :       0.000000
+Equation number 28: 28         :       0.000000
+Equation number 29: gf         :       0.000000
+Equation number 30: 30         :       0.000000
+Equation number 31: 31         :       0.000000
+Equation number 32: 32         :       0.000000
+Equation number 33: 33         :       0.000000
+Equation number 34: 34         :       0.000000
+Equation number 35: 35         :       0.000000
+Equation number 36: 36         :       0.000000
+Equation number 37: 37         :       0.000000
+Equation number 38: 38         :       0.000000
+Equation number 39: 39         :       0.000000
+Equation number 40: 40         :       0.000000
+Equation number 41: 41         :       0.000000
+Equation number 42: 42         :       0.000000
+Equation number 43: 43         :       0.000000
+Equation number 44: 44         :       0.000000
+Equation number 45: 45         :       0.000000
+Equation number 46: 46         :       0.000000
+Equation number 47: 47         :       0.000000
+Equation number 48: 48         :       0.000000
+Equation number 49: 49         :       0.000000
+Equation number 50: 50         :       0.000000
+Equation number 51: 51         :       0.000000
+Equation number 52: g          :       0.000000
+
+
+Total computing time : 0h00m01s
+Note: 1 warning(s) encountered in the preprocessor
+","{λ�� 1 ����������������߽硣
+
+���� run_NK_GHP16_sac_svar_direct (�� 10 ��)
+rate_series = sim(loc(""interest""), :);
+
+���� run (�� 91 ��)
+evalin('caller', strcat(script, ';'));
+} 
+ERROR: MATLAB error Exit Status: 0x00000001
+",failed
+NK_GHP16,sac_svar_revealed_direct,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_GHP16\sac_svar_revealed_direct\run_NK_GHP16_sac_svar_revealed_direct.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\NK_GHP16\sac_svar_revealed_direct\summary.csv,"		 -0.738118
+K                 		 1.7212
+K_m               		 0.883919
+K_n               		 1.15401
+I                 		 -2.00434
+W                 		 0.157481
+h_m               		 -1.10866
+h_n               		 -1.66073
+r_k               		 -3.3755
+r                 		 0.0100503
+lambda            		 0.761498
+infl              		 0
+inflstar          		 0
+x_1               		 0.599718
+x_2               		 0.599718
+RMC               		 -0.0953102
+G                 		 -2.47182
+g                 		 0
+Y                 		 -0.757017
+D                 		 0
+Cf                		 -1.05042
+C_mf              		 -1.38676
+C_nf              		 -0.738118
+Kf                		 1.7212
+K_mf              		 0.883919
+K_nf              		 1.15401
+If                		 -2.00434
+Wf                		 0.157481
+h_mf              		 -1.10866
+h_nf              		 -1.66073
+r_kf              		 -3.3755
+rf                		 0.0100503
+lambdaf           		 0.761498
+inflf             		 0
+inflstarf         		 0
+x_1f              		 -0.757017
+x_2f              		 -0.757017
+RMCf              		 -0.0953102
+Gf                		 -2.47182
+gf                		 0
+Yf                		 -0.757017
+Df                		 0
+e_g               		 0
+e_gf              		 0
+interest          		 0
+inflation         		 0
+inflationq        		 0
+outputgap         		 0
+output            		 -0.757017
+fispol            		 0
+
+
+Residuals of the static equations:
+Equation number  1: interest   :       0.000000
+Equation number  2: inflation  :       0.000000
+Equation number  3: inflationq :       0.000000
+Equation number  4: 4          :       0.000000
+Equation number  5: output     :       0.000000
+Equation number  6: fispol     :       0.000000
+Equation number  7: 7          :       0.000000
+Equation number  8: 8          :       0.000000
+Equation number  9: 9          :       0.000000
+Equation number 10: 10         :       0.000000
+Equation number 11: 11         :       0.000000
+Equation number 12: 12         :       0.000000
+Equation number 13: 13         :       0.000000
+Equation number 14: 14         :       0.000000
+Equation number 15: 15         :       0.000000
+Equation number 16: 16         :       0.000000
+Equation number 17: 17         :       0.000000
+Equation number 18: 18         :       0.000000
+Equation number 19: 19         :       0.000000
+Equation number 20: 20         :       0.000000
+Equation number 21: 21         :       0.000000
+Equation number 22: 22         :       0.000000
+Equation number 23: 23         :       0.000000
+Equation number 24: 24         :       0.000000
+Equation number 25: 25         :       0.000000
+Equation number 26: 26         :       0.000000
+Equation number 27: 27         :       0.000000
+Equation number 28: 28         :       0.000000
+Equation number 29: gf         :       0.000000
+Equation number 30: 30         :       0.000000
+Equation number 31: 31         :       0.000000
+Equation number 32: 32         :       0.000000
+Equation number 33: 33         :       0.000000
+Equation number 34: 34         :       0.000000
+Equation number 35: 35         :       0.000000
+Equation number 36: 36         :       0.000000
+Equation number 37: 37         :       0.000000
+Equation number 38: 38         :       0.000000
+Equation number 39: 39         :       0.000000
+Equation number 40: 40         :       0.000000
+Equation number 41: 41         :       0.000000
+Equation number 42: 42         :       0.000000
+Equation number 43: 43         :       0.000000
+Equation number 44: 44         :       0.000000
+Equation number 45: 45         :       0.000000
+Equation number 46: 46         :       0.000000
+Equation number 47: 47         :       0.000000
+Equation number 48: 48         :       0.000000
+Equation number 49: 49         :       0.000000
+Equation number 50: 50         :       0.000000
+Equation number 51: 51         :       0.000000
+Equation number 52: g          :       0.000000
+
+
+Total computing time : 0h00m01s
+Note: 1 warning(s) encountered in the preprocessor
+","{λ�� 1 ����������������߽硣
+
+���� run_NK_GHP16_sac_svar_revealed_direct (�� 10 ��)
+rate_series = sim(loc(""interest""), :);
+
+���� run (�� 91 ��)
+evalin('caller', strcat(script, ';'));
+} 
+ERROR: MATLAB error Exit Status: 0x00000001
+",failed
+EA_SWW14,EA_SWW14_baseline,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\EA_SWW14\EA_SWW14_baseline\run_EA_SWW14_EA_SWW14_baseline.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\EA_SWW14\EA_SWW14_baseline\summary.csv,"Starting Dynare (version 7.0).
+Calling Dynare with arguments: noclearall nolog
+Starting preprocessing of the model file ... 
+WARNING: Parameter(s) std_r_quart cgy cky crhointr crpi cry crdeltay cpi cbetabar cw clk cphiw crhos  not used in the model 
+Substitution of endo leads >= 2: added 9 auxiliary variables and equations. 
+Substitution of endo lags >= 2: added 14 auxiliary variables and equations. 
+Found 82 equation(s). 
+Evaluating expressions... 
+Computing static model derivatives (order 1). 
+Normalizing the static model... 
+Finding the optimal block decomposition of the static model... 
+20 block(s) found: 
+  18 recursive block(s) and 2 simultaneous block(s). 
+  the largest simultaneous block has 42 equation(s) 
+                                 and 42 feedback variable(s). 
 Computing dynamic model derivatives (order 2). 
 Normalizing the dynamic model... 
 Finding the optimal block decomposition of the dynamic model... 
-17 block(s) found: 
-  12 recursive block(s) and 5 simultaneous block(s). 
-  the largest simultaneous block has 323 equation(s) 
-                                 and 305 feedback variable(s). 
+10 block(s) found: 
+  8 recursive block(s) and 2 simultaneous block(s). 
+  the largest simultaneous block has 42 equation(s) 
+                                 and 40 feedback variable(s). 
 Preprocessing completed. 
-Preprocessing time: 0h00m01s.
-Total computing time : 0h00m02s
+Preprocessing time: 0h00m00s.
+","{����ʹ�� load
+�Ҳ����ļ���Ŀ¼ 'policy_param.mat'��
+
+���� EA_SWW14_EA_SWW14_baseline/driver (�� 1887 ��)
+load policy_param.mat;
+
+���� dynare (�� 300 ��)
+    evalin('base',[fname(1:end-4) '.driver']);
+
+���� run_EA_SWW14_EA_SWW14_baseline (�� 4 ��)
+        dynare('EA_SWW14_EA_SWW14_baseline.mod', 'noclearall', 'nolog');
+
+���� run (�� 91 ��)
+evalin('caller', strcat(script, ';'));
+} 
+ERROR: MATLAB error Exit Status: 0x00000001
+",failed
+EA_SWW14,empirical_taylor_rule,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\EA_SWW14\empirical_taylor_rule\run_EA_SWW14_empirical_taylor_rule.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\EA_SWW14\empirical_taylor_rule\summary.csv," 		 0
+ryear             		 0
+dyobs             		 0.36
+dcobs             		 0.36
+diobs             		 0.36
+piobs             		 0.56
+dwobs             		 0.7
+deobs             		 0.22
+uobs              		 -5.03597
+robs              		 3.8907
+etag              		 0
+interest          		 0
+inflation         		 0
+inflationq        		 0
+outputgap         		 0
+output            		 0
+fispol            		 0
+
+EIGENVALUES:
+         Modulus             Real        Imaginary
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+       9.166e-18       -9.166e-18                0
+       1.229e-17       -1.229e-17                0
+       3.945e-16       -3.945e-16                0
+       6.185e-16        6.185e-16                0
+       2.065e-08        2.065e-08                0
+       2.065e-08       -2.065e-08                0
+            0.27             0.27                0
+             0.3              0.3                0
+            0.35             0.35                0
+            0.53             0.53                0
+          0.7088           0.6995           0.1146
+          0.7088           0.6995          -0.1146
+          0.7092           0.7092                0
+          0.7268           0.7268                0
+          0.7983           0.7983                0
+          0.8123           0.8123                0
+          0.8499           0.8499                0
+          0.8859           0.8859                0
+            0.89             0.89                0
+          0.8944           0.8944                0
+            0.91             0.91                0
+          0.9586           0.9586                0
+          0.9663           0.9663                0
+            0.98             0.98                0
+            0.99             0.99                0
+           0.999            0.999                0
+            1.01             1.01                0
+           1.039            1.039                0
+           1.042            1.042                0
+           1.123            1.123                0
+           1.179            1.167           0.1706
+           1.179            1.167          -0.1706
+           1.333            1.333                0
+           1.408            1.408                0
+            1.41             1.41                0
+       1.303e+16       -1.303e+16                0
+       1.344e+16        1.344e+16                0
+       1.824e+16       -1.824e+16                0
+       2.889e+16        2.889e+16                0
+       3.174e+16       -3.174e+16                0
+       3.944e+16       -3.944e+16                0
+       5.979e+16       -5.979e+16                0
+       6.117e+16       -6.117e+16                0
+       6.735e+16       -6.735e+16                0
+       1.114e+17        1.114e+17                0
+       2.712e+17        2.712e+17                0
+       1.291e+18        1.291e+18                0
+       3.968e+18       -3.968e+18                0
+       5.352e+33        5.352e+33                0
+             Inf             -Inf                0
+
+There are 24 eigenvalue(s) larger than 1 in modulus for 24 forward-looking variable(s).
+The order and rank conditions are verified.
+
+Total computing time : 0h00m01s
 Note: 1 warning(s) encountered in the preprocessor
-",,ok
+","{λ�� 1 ����������������߽硣
+
+���� run_EA_SWW14_empirical_taylor_rule (�� 10 ��)
+rate_series = sim(loc(""interest""), :);
+
+���� run (�� 91 ��)
+evalin('caller', strcat(script, ';'));
+} 
+ERROR: MATLAB error Exit Status: 0x00000001
+",failed
+EA_SWW14,td3_benchmark_transfer,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\EA_SWW14\td3_benchmark_transfer\run_EA_SWW14_td3_benchmark_transfer.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\EA_SWW14\td3_benchmark_transfer\summary.csv," 		 0
+ryear             		 0
+dyobs             		 0.36
+dcobs             		 0.36
+diobs             		 0.36
+piobs             		 0.56
+dwobs             		 0.7
+deobs             		 0.22
+uobs              		 -5.03597
+robs              		 3.8907
+etag              		 0
+interest          		 0
+inflation         		 0
+inflationq        		 0
+outputgap         		 0
+output            		 0
+fispol            		 0
+
+EIGENVALUES:
+         Modulus             Real        Imaginary
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+       1.113e-17       -1.113e-17                0
+       1.179e-17       -1.179e-17                0
+       4.054e-17       -4.054e-17                0
+       1.666e-15       -1.666e-15                0
+       4.987e-09       -4.987e-09                0
+       4.987e-09        4.987e-09                0
+            0.27             0.27                0
+             0.3              0.3                0
+            0.35             0.35                0
+          0.4627           0.4444           0.1291
+          0.4627           0.4444          -0.1291
+            0.53             0.53                0
+          0.7092           0.7092                0
+          0.7153           0.7153                0
+          0.7983           0.7983                0
+          0.8556           0.8556          0.01163
+          0.8556           0.8556         -0.01163
+          0.8832           0.8832                0
+            0.89             0.89                0
+          0.8944           0.8944                0
+            0.91             0.91                0
+          0.9578           0.9578                0
+          0.9663           0.9663                0
+            0.98             0.98                0
+            0.99             0.99                0
+           0.999            0.999                0
+           1.015            1.015                0
+           1.038            1.038                0
+           1.042            1.042                0
+           1.117            1.117                0
+           1.229            1.208           0.2227
+           1.229            1.208          -0.2227
+           1.333            1.333                0
+           1.408            1.408                0
+            1.41             1.41                0
+       3.051e+16        3.051e+16                0
+       3.372e+16       -3.372e+16                0
+        3.53e+16         3.53e+16                0
+         4.7e+16          4.7e+16                0
+       5.215e+16       -5.215e+16                0
+        5.55e+16         5.55e+16                0
+       6.173e+16       -6.173e+16                0
+       1.342e+17       -1.342e+17                0
+       1.412e+17       -1.412e+17                0
+       2.488e+17       -2.488e+17                0
+       1.291e+18       -1.291e+18                0
+       5.008e+18       -5.008e+18                0
+       1.928e+50        1.928e+50                0
+             Inf             -Inf                0
+             Inf             -Inf                0
+
+There are 24 eigenvalue(s) larger than 1 in modulus for 24 forward-looking variable(s).
+The order and rank conditions are verified.
+
+Total computing time : 0h00m01s
+Note: 1 warning(s) encountered in the preprocessor
+","{λ�� 1 ����������������߽硣
+
+���� run_EA_SWW14_td3_benchmark_transfer (�� 10 ��)
+rate_series = sim(loc(""interest""), :);
+
+���� run (�� 91 ��)
+evalin('caller', strcat(script, ';'));
+} 
+ERROR: MATLAB error Exit Status: 0x00000001
+",failed
+EA_SWW14,sac_benchmark_transfer,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\EA_SWW14\sac_benchmark_transfer\run_EA_SWW14_sac_benchmark_transfer.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\EA_SWW14\sac_benchmark_transfer\summary.csv," 		 0
+ryear             		 0
+dyobs             		 0.36
+dcobs             		 0.36
+diobs             		 0.36
+piobs             		 0.56
+dwobs             		 0.7
+deobs             		 0.22
+uobs              		 -5.03597
+robs              		 3.8907
+etag              		 0
+interest          		 0
+inflation         		 0
+inflationq        		 0
+outputgap         		 0
+output            		 0
+fispol            		 0
+
+EIGENVALUES:
+         Modulus             Real        Imaginary
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+       3.541e-18       -3.541e-18                0
+       9.196e-18        9.196e-18                0
+       2.906e-17        2.906e-17                0
+       5.443e-17       -5.443e-17                0
+       1.692e-08       -1.692e-08                0
+       1.692e-08        1.692e-08                0
+          0.2699           0.2699                0
+             0.3              0.3                0
+            0.35             0.35                0
+          0.4569            0.444           0.1077
+          0.4569            0.444          -0.1077
+            0.53             0.53                0
+          0.7092           0.7092                0
+          0.7157           0.7157                0
+          0.7983           0.7983                0
+          0.8537           0.8534          0.01959
+          0.8537           0.8534         -0.01959
+          0.8865           0.8865                0
+            0.89             0.89                0
+          0.8944           0.8944                0
+            0.91             0.91                0
+          0.9587           0.9587                0
+          0.9663           0.9663                0
+            0.98             0.98                0
+            0.99             0.99                0
+           0.999            0.999                0
+           1.027            1.027                0
+           1.035            1.035                0
+           1.042            1.042                0
+            1.11             1.11                0
+           1.211            1.192           0.2143
+           1.211            1.192          -0.2143
+           1.333            1.333                0
+           1.408            1.408                0
+            1.41             1.41                0
+       1.024e+16        1.024e+16                0
+       1.343e+16        1.343e+16                0
+       2.889e+16        2.889e+16                0
+       3.369e+16        3.369e+16                0
+       3.457e+16       -3.457e+16                0
+       6.078e+16       -6.078e+16                0
+       6.952e+16        6.952e+16                0
+       7.094e+16       -7.094e+16                0
+       2.486e+17        2.486e+17                0
+       5.481e+17        5.481e+17                0
+       8.728e+18       -8.728e+18                0
+       1.883e+47        1.883e+47                0
+             Inf             -Inf                0
+             Inf             -Inf                0
+             Inf             -Inf                0
+
+There are 24 eigenvalue(s) larger than 1 in modulus for 24 forward-looking variable(s).
+The order and rank conditions are verified.
+
+Total computing time : 0h00m01s
+Note: 1 warning(s) encountered in the preprocessor
+","{λ�� 1 ����������������߽硣
+
+���� run_EA_SWW14_sac_benchmark_transfer (�� 10 ��)
+rate_series = sim(loc(""interest""), :);
+
+���� run (�� 91 ��)
+evalin('caller', strcat(script, ';'));
+} 
+ERROR: MATLAB error Exit Status: 0x00000001
+",failed
+EA_SWW14,td3_svar_direct,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\EA_SWW14\td3_svar_direct\run_EA_SWW14_td3_svar_direct.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\EA_SWW14\td3_svar_direct\summary.csv," 		 0
+ryear             		 0
+dyobs             		 0.36
+dcobs             		 0.36
+diobs             		 0.36
+piobs             		 0.56
+dwobs             		 0.7
+deobs             		 0.22
+uobs              		 -5.03597
+robs              		 3.8907
+etag              		 0
+interest          		 0
+inflation         		 0
+inflationq        		 0
+outputgap         		 0
+output            		 0
+fispol            		 0
+
+EIGENVALUES:
+         Modulus             Real        Imaginary
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+       4.833e-20       -4.833e-20                0
+       1.398e-17       -1.398e-17                0
+       3.612e-16       -3.612e-16                0
+       4.877e-16       -4.877e-16                0
+       1.123e-08       -1.123e-08                0
+       1.123e-08        1.123e-08                0
+         0.05837         -0.05837                0
+          0.2701           0.2701                0
+             0.3              0.3                0
+            0.35             0.35                0
+            0.53             0.53                0
+          0.5521           0.5521                0
+          0.7092           0.7092                0
+          0.7146           0.7146                0
+          0.7983           0.7983                0
+          0.8618           0.8615          0.02069
+          0.8618           0.8615         -0.02069
+          0.8859           0.8859                0
+            0.89             0.89                0
+          0.8944           0.8944                0
+            0.91             0.91                0
+          0.9566           0.9566                0
+          0.9663           0.9663                0
+            0.98             0.98                0
+            0.99             0.99                0
+           0.999            0.999                0
+           1.022            1.022                0
+           1.036            1.036                0
+           1.042            1.042                0
+            1.11             1.11                0
+            1.18            1.162           0.2049
+            1.18            1.162          -0.2049
+           1.333            1.333                0
+           1.408            1.408                0
+            1.41             1.41                0
+       8.413e+15       -8.413e+15                0
+       1.554e+16       -1.554e+16                0
+       1.639e+16        1.639e+16                0
+       1.679e+16       -1.679e+16                0
+        1.87e+16         1.87e+16                0
+       3.153e+16        3.153e+16                0
+       3.536e+16       -3.536e+16                0
+       5.091e+16        5.091e+16                0
+       7.142e+16        7.142e+16                0
+       1.217e+17       -1.217e+17                0
+        1.34e+17        -1.34e+17                0
+       8.244e+18       -8.244e+18                0
+             Inf             -Inf                0
+             Inf             -Inf                0
+             Inf             -Inf                0
+
+There are 24 eigenvalue(s) larger than 1 in modulus for 24 forward-looking variable(s).
+The order and rank conditions are verified.
+
+Total computing time : 0h00m01s
+Note: 1 warning(s) encountered in the preprocessor
+","{λ�� 1 ����������������߽硣
+
+���� run_EA_SWW14_td3_svar_direct (�� 10 ��)
+rate_series = sim(loc(""interest""), :);
+
+���� run (�� 91 ��)
+evalin('caller', strcat(script, ';'));
+} 
+ERROR: MATLAB error Exit Status: 0x00000001
+",failed
+EA_SWW14,sac_svar_direct,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\EA_SWW14\sac_svar_direct\run_EA_SWW14_sac_svar_direct.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\EA_SWW14\sac_svar_direct\summary.csv," 		 0
+ryear             		 0
+dyobs             		 0.36
+dcobs             		 0.36
+diobs             		 0.36
+piobs             		 0.56
+dwobs             		 0.7
+deobs             		 0.22
+uobs              		 -5.03597
+robs              		 3.8907
+etag              		 0
+interest          		 0
+inflation         		 0
+inflationq        		 0
+outputgap         		 0
+output            		 0
+fispol            		 0
+
+EIGENVALUES:
+         Modulus             Real        Imaginary
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+       2.018e-17       -2.018e-17                0
+       2.473e-17        2.473e-17                0
+        1.65e-15        -1.65e-15                0
+       8.758e-15       -8.758e-15                0
+       3.289e-09       -3.289e-09                0
+       3.289e-09        3.289e-09                0
+          0.2329           0.2329                0
+          0.2705           0.2705                0
+             0.3              0.3                0
+            0.35             0.35                0
+            0.53             0.53                0
+          0.5573           0.5573                0
+          0.7092           0.7092                0
+          0.7162           0.7162                0
+          0.7983           0.7983                0
+          0.8571           0.8565          0.03211
+          0.8571           0.8565         -0.03211
+            0.89             0.89                0
+          0.8913           0.8913                0
+          0.8944           0.8944                0
+            0.91             0.91                0
+          0.9592           0.9592                0
+          0.9663           0.9663                0
+            0.98             0.98                0
+            0.99             0.99                0
+           0.999            0.999                0
+           1.042            1.042                0
+            1.05             1.05                0
+           1.063            1.063          0.02134
+           1.063            1.063         -0.02134
+           1.147            1.134           0.1728
+           1.147            1.134          -0.1728
+           1.333            1.333                0
+           1.408            1.408                0
+            1.41             1.41                0
+       9.302e+15       -9.302e+15                0
+       1.365e+16       -1.365e+16                0
+       3.071e+16        3.071e+16                0
+       3.346e+16        3.346e+16                0
+        3.44e+16         3.44e+16                0
+       3.547e+16        3.547e+16                0
+       6.008e+16       -6.008e+16                0
+       6.635e+16        6.635e+16                0
+       6.947e+16        6.947e+16                0
+       7.824e+16       -7.824e+16                0
+        2.53e+18        -2.53e+18                0
+       2.584e+18       -2.584e+18                0
+       3.951e+18       -3.951e+18                0
+       3.766e+47       -3.766e+47                0
+             Inf             -Inf                0
+
+There are 24 eigenvalue(s) larger than 1 in modulus for 24 forward-looking variable(s).
+The order and rank conditions are verified.
+
+Total computing time : 0h00m01s
+Note: 1 warning(s) encountered in the preprocessor
+","{λ�� 1 ����������������߽硣
+
+���� run_EA_SWW14_sac_svar_direct (�� 10 ��)
+rate_series = sim(loc(""interest""), :);
+
+���� run (�� 91 ��)
+evalin('caller', strcat(script, ';'));
+} 
+ERROR: MATLAB error Exit Status: 0x00000001
+",failed
+EA_SWW14,sac_svar_revealed_direct,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\EA_SWW14\sac_svar_revealed_direct\run_EA_SWW14_sac_svar_revealed_direct.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\EA_SWW14\sac_svar_revealed_direct\summary.csv," 		 0
+ryear             		 0
+dyobs             		 0.36
+dcobs             		 0.36
+diobs             		 0.36
+piobs             		 0.56
+dwobs             		 0.7
+deobs             		 0.22
+uobs              		 -5.03597
+robs              		 3.8907
+etag              		 0
+interest          		 0
+inflation         		 0
+inflationq        		 0
+outputgap         		 0
+output            		 0
+fispol            		 0
+
+EIGENVALUES:
+         Modulus             Real        Imaginary
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+               0                0                0
+       1.081e-17        1.081e-17                0
+       2.189e-17       -2.189e-17                0
+       1.265e-16       -1.265e-16                0
+       6.451e-16        6.451e-16                0
+       6.072e-09       -6.072e-09                0
+       6.072e-09        6.072e-09                0
+            0.27             0.27                0
+             0.3              0.3                0
+            0.35             0.35                0
+            0.53             0.53                0
+          0.6562           0.6562                0
+          0.7038           0.7038                0
+          0.7092           0.7092                0
+          0.7983           0.7983                0
+          0.8486           0.8486                0
+          0.8713           0.8648           0.1061
+          0.8713           0.8648          -0.1061
+            0.89             0.89                0
+          0.8901           0.8901                0
+          0.8944           0.8944                0
+            0.91             0.91                0
+          0.9594           0.9594                0
+          0.9663           0.9663                0
+            0.98             0.98                0
+            0.99             0.99                0
+           0.999            0.999                0
+           1.001            1.001                0
+            1.04             1.04                0
+           1.042            1.042                0
+           1.119            1.112            0.127
+           1.119            1.112           -0.127
+           1.134            1.134                0
+           1.333            1.333                0
+           1.408            1.408                0
+            1.41             1.41                0
+       8.706e+15        8.706e+15                0
+       1.365e+16        1.365e+16                0
+       2.889e+16       -2.889e+16                0
+       3.773e+16       -3.773e+16                0
+       6.172e+16        6.172e+16                0
+       6.818e+16        6.818e+16                0
+        9.08e+16         9.08e+16                0
+       3.081e+17        3.081e+17                0
+        2.17e+18         2.17e+18                0
+       3.951e+18       -3.951e+18                0
+       5.008e+18        5.008e+18                0
+       2.347e+19        2.347e+19                0
+       1.338e+33       -1.338e+33                0
+             Inf              Inf                0
+             Inf             -Inf                0
+
+There are 24 eigenvalue(s) larger than 1 in modulus for 24 forward-looking variable(s).
+The order and rank conditions are verified.
+
+Total computing time : 0h00m01s
+Note: 1 warning(s) encountered in the preprocessor
+","{λ�� 1 ����������������߽硣
+
+���� run_EA_SWW14_sac_svar_revealed_direct (�� 10 ��)
+rate_series = sim(loc(""interest""), :);
+
+���� run (�� 91 ��)
+evalin('caller', strcat(script, ';'));
+} 
+ERROR: MATLAB error Exit Status: 0x00000001
+",failed
+EA_SW03,EA_SW03_baseline,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\EA_SW03\EA_SW03_baseline\run_EA_SW03_EA_SW03_baseline.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\EA_SW03\EA_SW03_baseline\summary.csv,"Starting Dynare (version 7.0).
+Calling Dynare with arguments: noclearall nolog
+Starting preprocessing of the model file ... 
+WARNING: Parameter(s) crpi crdpi crr cry crdy cscaleeg std_r_  not used in the model 
+ERROR: y_ not used in model block. To bypass this error, use the `nostrict` option. This may lead to crashes or unexpected behavior. 
+Preprocessing time: 0h00m00s.
+","{����ʹ�� dynare
+Dynare: preprocessing failed
+
+���� run_EA_SW03_EA_SW03_baseline (�� 4 ��)
+        dynare('EA_SW03_EA_SW03_baseline.mod', 'noclearall', 'nolog');
+
+���� run (�� 91 ��)
+evalin('caller', strcat(script, ';'));
+} 
+ERROR: MATLAB error Exit Status: 0x00000001
+",failed
+EA_SW03,empirical_taylor_rule,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\EA_SW03\empirical_taylor_rule\run_EA_SW03_empirical_taylor_rule.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\EA_SW03\empirical_taylor_rule\summary.csv,"Starting Dynare (version 7.0).
+Calling Dynare with arguments: noclearall nolog
+Starting preprocessing of the model file ... 
+WARNING: Parameter(s) crpi crdpi crr cry crdy cscaleeg std_r_  not used in the model 
+ERROR: y_ not used in model block. To bypass this error, use the `nostrict` option. This may lead to crashes or unexpected behavior. 
+Preprocessing time: 0h00m00s.
+","{����ʹ�� dynare
+Dynare: preprocessing failed
+
+���� run_EA_SW03_empirical_taylor_rule (�� 4 ��)
+        dynare('EA_SW03_empirical_taylor_rule.mod', 'noclearall', 'nolog');
+
+���� run (�� 91 ��)
+evalin('caller', strcat(script, ';'));
+} 
+ERROR: MATLAB error Exit Status: 0x00000001
+",failed
+EA_SW03,td3_benchmark_transfer,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\EA_SW03\td3_benchmark_transfer\run_EA_SW03_td3_benchmark_transfer.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\EA_SW03\td3_benchmark_transfer\summary.csv,"Starting Dynare (version 7.0).
+Calling Dynare with arguments: noclearall nolog
+Starting preprocessing of the model file ... 
+WARNING: Parameter(s) crpi crdpi crr cry crdy cscaleeg std_r_  not used in the model 
+ERROR: y_ not used in model block. To bypass this error, use the `nostrict` option. This may lead to crashes or unexpected behavior. 
+Preprocessing time: 0h00m00s.
+","{����ʹ�� dynare
+Dynare: preprocessing failed
+
+���� run_EA_SW03_td3_benchmark_transfer (�� 4 ��)
+        dynare('EA_SW03_td3_benchmark_transfer.mod', 'noclearall', 'nolog');
+
+���� run (�� 91 ��)
+evalin('caller', strcat(script, ';'));
+} 
+ERROR: MATLAB error Exit Status: 0x00000001
+",failed
+EA_SW03,sac_benchmark_transfer,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\EA_SW03\sac_benchmark_transfer\run_EA_SW03_sac_benchmark_transfer.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\EA_SW03\sac_benchmark_transfer\summary.csv,"Starting Dynare (version 7.0).
+Calling Dynare with arguments: noclearall nolog
+Starting preprocessing of the model file ... 
+WARNING: Parameter(s) crpi crdpi crr cry crdy cscaleeg std_r_  not used in the model 
+ERROR: y_ not used in model block. To bypass this error, use the `nostrict` option. This may lead to crashes or unexpected behavior. 
+Preprocessing time: 0h00m00s.
+","{����ʹ�� dynare
+Dynare: preprocessing failed
+
+���� run_EA_SW03_sac_benchmark_transfer (�� 4 ��)
+        dynare('EA_SW03_sac_benchmark_transfer.mod', 'noclearall', 'nolog');
+
+���� run (�� 91 ��)
+evalin('caller', strcat(script, ';'));
+} 
+ERROR: MATLAB error Exit Status: 0x00000001
+",failed
+EA_SW03,td3_svar_direct,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\EA_SW03\td3_svar_direct\run_EA_SW03_td3_svar_direct.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\EA_SW03\td3_svar_direct\summary.csv,"Starting Dynare (version 7.0).
+Calling Dynare with arguments: noclearall nolog
+Starting preprocessing of the model file ... 
+WARNING: Parameter(s) crpi crdpi crr cry crdy cscaleeg std_r_  not used in the model 
+ERROR: y_ not used in model block. To bypass this error, use the `nostrict` option. This may lead to crashes or unexpected behavior. 
+Preprocessing time: 0h00m00s.
+","{����ʹ�� dynare
+Dynare: preprocessing failed
+
+���� run_EA_SW03_td3_svar_direct (�� 4 ��)
+        dynare('EA_SW03_td3_svar_direct.mod', 'noclearall', 'nolog');
+
+���� run (�� 91 ��)
+evalin('caller', strcat(script, ';'));
+} 
+ERROR: MATLAB error Exit Status: 0x00000001
+",failed
+EA_SW03,sac_svar_direct,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\EA_SW03\sac_svar_direct\run_EA_SW03_sac_svar_direct.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\EA_SW03\sac_svar_direct\summary.csv,"Starting Dynare (version 7.0).
+Calling Dynare with arguments: noclearall nolog
+Starting preprocessing of the model file ... 
+WARNING: Parameter(s) crpi crdpi crr cry crdy cscaleeg std_r_  not used in the model 
+ERROR: y_ not used in model block. To bypass this error, use the `nostrict` option. This may lead to crashes or unexpected behavior. 
+Preprocessing time: 0h00m00s.
+","{����ʹ�� dynare
+Dynare: preprocessing failed
+
+���� run_EA_SW03_sac_svar_direct (�� 4 ��)
+        dynare('EA_SW03_sac_svar_direct.mod', 'noclearall', 'nolog');
+
+���� run (�� 91 ��)
+evalin('caller', strcat(script, ';'));
+} 
+ERROR: MATLAB error Exit Status: 0x00000001
+",failed
+EA_SW03,sac_svar_revealed_direct,1,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\EA_SW03\sac_svar_revealed_direct\run_EA_SW03_sac_svar_revealed_direct.m,C:\Users\Laplace\Documents\Code\MonetaryRL\outputs\phase16\mmb_candidate_work\EA_SW03\sac_svar_revealed_direct\summary.csv,"Starting Dynare (version 7.0).
+Calling Dynare with arguments: noclearall nolog
+Starting preprocessing of the model file ... 
+WARNING: Parameter(s) crpi crdpi crr cry crdy cscaleeg std_r_  not used in the model 
+ERROR: y_ not used in model block. To bypass this error, use the `nostrict` option. This may lead to crashes or unexpected behavior. 
+Preprocessing time: 0h00m00s.
+","{����ʹ�� dynare
+Dynare: preprocessing failed
+
+���� run_EA_SW03_sac_svar_revealed_direct (�� 4 ��)
+        dynare('EA_SW03_sac_svar_revealed_direct.mod', 'noclearall', 'nolog');
+
+���� run (�� 91 ��)
+evalin('caller', strcat(script, ';'));
+} 
+ERROR: MATLAB error Exit Status: 0x00000001
+",failed

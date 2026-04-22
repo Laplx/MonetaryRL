@@ -180,7 +180,7 @@ end;
 %----------------------------------------------------------------
 
 steady;
-resid(1);
+resid;
 
 shocks;
 %var Rs = sdr^2; 
@@ -188,7 +188,7 @@ shocks;
 %var zs = sdz^2;
 %var lambddaps = sdlambddap^2;
 %var pits = sdpit^2;
-var pits = 1;
+var pits; stderr 1;
 %var bs = sdb^2;
 end;
 

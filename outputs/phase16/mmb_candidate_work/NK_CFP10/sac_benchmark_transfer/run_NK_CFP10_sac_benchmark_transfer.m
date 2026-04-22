@@ -1,7 +1,7 @@
 addpath('C:/dynare/7.0/matlab');
         cd('C:/Users/Laplace/Documents/Code/MonetaryRL/outputs/phase16/mmb_candidate_work/NK_CFP10/sac_benchmark_transfer');
         rng(1, 'twister');
-        dynare('NK_CFP10_sac_benchmark_transfer.mod', 'noclearall', 'nolog');
+        dynare('NK_CFP10_rep.mod', 'noclearall', 'nolog');
 
 names = string(strtrim(cellstr(M_.endo_names)));
 sim = oo_.endo_simul;

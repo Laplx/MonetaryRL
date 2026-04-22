@@ -1,7 +1,7 @@
 addpath('C:/dynare/7.0/matlab');
         cd('C:/Users/Laplace/Documents/Code/MonetaryRL/outputs/phase16/mmb_candidate_work/US_FRB03/empirical_taylor_rule');
         rng(1, 'twister');
-        dynare('US_FRB03_empirical_taylor_rule.mod', 'noclearall', 'nolog');
+        dynare('US_FRB03_rep.mod', 'noclearall', 'nolog');
 
 names = string(strtrim(cellstr(M_.endo_names)));
 sim = oo_.endo_simul;

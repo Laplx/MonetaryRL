@@ -134,6 +134,82 @@ output_gap = sim(loc("outputgap"), :);
         expected_fit="medium",
         rationale="与 `pyfrbus/US_CCTW10` 同属 FRB-family 结构，若可稳定 patch，论文叙事最自然。",
     ),
+    CandidateInfo(
+        priority=5,
+        model_id="G7_TAY93",
+        relative_dir="G7_TAY93/G7_TAY93_rep",
+        template_file="G7_TAY93_rep.mod",
+        patch_style="modelbase_standard",
+        summary_code="""
+names = string(strtrim(cellstr(M_.endo_names)));
+sim = oo_.endo_simul;
+sim = sim(:, max(1, size(sim, 2) - 2499):size(sim, 2));
+loc = @(n) find(names == n, 1);
+rate_series = sim(loc("interest"), :);
+inflation_gap = sim(loc("inflationq"), :);
+output_gap = sim(loc("outputgap"), :);
+""",
+        rule_form="modelbase rule on interest, inflation/output gap",
+        expected_fit="medium-high",
+        rationale="经典 `modelbase` 三参数规则，变量口径标准，最适合做额外外部稳健性补充。",
+    ),
+    CandidateInfo(
+        priority=6,
+        model_id="NK_GHP16",
+        relative_dir="NK_GHP16",
+        template_file="NK_GHP16.mod",
+        patch_style="modelbase_standard",
+        summary_code="""
+names = string(strtrim(cellstr(M_.endo_names)));
+sim = oo_.endo_simul;
+sim = sim(:, max(1, size(sim, 2) - 2499):size(sim, 2));
+loc = @(n) find(names == n, 1);
+rate_series = sim(loc("interest"), :);
+inflation_gap = sim(loc("inflationq"), :);
+output_gap = sim(loc("outputgap"), :);
+""",
+        rule_form="modelbase rule on interest, inflationq, outputgap",
+        expected_fit="medium-high",
+        rationale="标准 NK 结构，政策规则和评价变量都直接兼容。",
+    ),
+    CandidateInfo(
+        priority=7,
+        model_id="EA_SWW14",
+        relative_dir="EA_SWW14",
+        template_file="EA_SWW14.mod",
+        patch_style="modelbase_standard",
+        summary_code="""
+names = string(strtrim(cellstr(M_.endo_names)));
+sim = oo_.endo_simul;
+sim = sim(:, max(1, size(sim, 2) - 2499):size(sim, 2));
+loc = @(n) find(names == n, 1);
+rate_series = sim(loc("interest"), :);
+inflation_gap = sim(loc("inflationq"), :);
+output_gap = sim(loc("outputgap"), :);
+""",
+        rule_form="modelbase rule on interest, inflationq, outputgap",
+        expected_fit="medium",
+        rationale="Smets-Wouters 类口径标准，若为正可补足欧元区外部模型证据。",
+    ),
+    CandidateInfo(
+        priority=8,
+        model_id="EA_SW03",
+        relative_dir="EA_SW03/EA_SW03_rep",
+        template_file="EA_SW03_rep.mod",
+        patch_style="modelbase_ea_sw03",
+        summary_code="""
+names = string(strtrim(cellstr(M_.endo_names)));
+sim = oo_.endo_simul;
+sim = sim(:, max(1, size(sim, 2) - 2499):size(sim, 2));
+loc = @(n) find(names == n, 1);
+rate_series = sim(loc("interest"), :);
+inflation_gap = sim(loc("inflation"), :);
+output_gap = sim(loc("outputgap"), :);
+""",
+        rule_form="modelbase quarterly-rate rule on inflation and outputgap",
+        expected_fit="medium",
+        rationale="早期 EA `modelbase` 规则，替换简单，可作为额外补样本。",
+    ),
 ]
 
 
@@ -160,6 +236,16 @@ def patch_candidate_text(spec: CandidateInfo, template: str, policy: p10.PolicyS
             )
         text = p10.replace_once(
             text,
+            r"var pits = 1;",
+            "var pits; stderr 1;",
+        )
+        text = p10.replace_once(
+            text,
+            r"resid\(1\);",
+            "resid;",
+        )
+        text = p10.replace_once(
+            text,
             r"stoch_simul\(order=1,irf=17,solve_algo=1\) inflgap realR;",
             f"stoch_simul(order=1, periods={p10.SIM_PERIODS}, irf=0, nograph, noprint) inflgap outpgap R;",
         )
@@ -174,8 +260,13 @@ def patch_candidate_text(spec: CandidateInfo, template: str, policy: p10.PolicyS
             )
         text = p10.replace_once(
             text,
-            r"stoch_simul\(irf = 25,nograph\);",
-            f"stoch_simul(order=1, periods={p10.SIM_PERIODS}, irf=0, nograph, noprint) r pi y;",
+            r"stoch_simul\(irf = 25,nograph\);[\s\S]*@#endfor",
+            f"stoch_simul(order=1, periods={p10.SIM_PERIODS}, irf=0, nograph, noprint) r pi y;\n@#endfor",
+        )
+        text = p10.replace_once(
+            text,
+            r"@#endfor[\s\S]*$",
+            "@#endfor\n",
         )
         return text
 
@@ -215,6 +306,109 @@ def patch_candidate_text(spec: CandidateInfo, template: str, policy: p10.PolicyS
             r"stoch_simul \(irf =16, nograph, noprint\) interest inflationq outputgap;",
             f"stoch_simul(order=1, periods={p10.SIM_PERIODS}, irf=0, nograph, noprint) interest inflationq outputgap;",
         )
+        return text
+
+    if spec.patch_style == "modelbase_standard":
+        coeff_block = textwrap.dedent(
+            f"""
+            // Load Modelbase Monetary Policy Parameters                             //*
+            cofintintb1 = {policy.lagged_policy_rate_gap:.12f}; cofintintb2 = 0; cofintintb3 = 0; cofintintb4 = 0;
+            cofintinf0 = {policy.inflation_gap:.12f}; cofintinfb1 = 0; cofintinfb2 = 0; cofintinfb3 = 0; cofintinfb4 = 0;
+            cofintinff1 = 0; cofintinff2 = 0; cofintinff3 = 0; cofintinff4 = 0;
+            cofintout = {policy.output_gap:.12f}; cofintoutb1 = 0; cofintoutb2 = 0; cofintoutb3 = 0; cofintoutb4 = 0;
+            cofintoutf1 = 0; cofintoutf2 = 0; cofintoutf3 = 0; cofintoutf4 = 0;
+            cofintoutp = 0; cofintoutpb1 = 0; cofintoutpb2 = 0; cofintoutpb3 = 0; cofintoutpb4 = 0;
+            cofintoutpf1 = 0; cofintoutpf2 = 0; cofintoutpf3 = 0; cofintoutpf4 = 0;
+            std_r_ = 1;
+            std_r_quart = 0.25;
+            """
+        ).strip()
+        if not use_original:
+            try:
+                text = p10.replace_once(
+                    text,
+                    r"cofintintb1\s*=\s*.*?;",
+                    (
+                        f"cofintintb1 =  {policy.lagged_policy_rate_gap:.12f}; "
+                        "cofintintb2 = 0; cofintintb3 = 0; cofintintb4 = 0;"
+                    ),
+                )
+                text = p10.replace_once(
+                    text,
+                    r"cofintinf0\s*=\s*.*?;",
+                    (
+                        f"cofintinf0 = {policy.inflation_gap:.12f}; "
+                        "cofintinfb1 = 0; cofintinfb2 = 0; cofintinfb3 = 0; cofintinfb4 = 0; "
+                        "cofintinff1 = 0; cofintinff2 = 0; cofintinff3 = 0; cofintinff4 = 0;"
+                    ),
+                )
+                text = p10.replace_once(
+                    text,
+                    r"cofintout\s*=\s*.*?;",
+                    (
+                        f"cofintout = {policy.output_gap:.12f}; "
+                        "cofintoutb1 = 0; cofintoutb2 = 0; cofintoutb3 = 0; cofintoutb4 = 0; "
+                        "cofintoutf1 = 0; cofintoutf2 = 0; cofintoutf3 = 0; cofintoutf4 = 0;"
+                    ),
+                )
+            except ValueError:
+                text = p10.replace_once(
+                    text,
+                    r"// Load Modelbase Monetary Policy Parameters[\s\S]*?cd\(thispath\);\s*",
+                    coeff_block + "\n",
+                )
+        if "stoch_simul" in text:
+            text = p10.replace_once(
+                text,
+                r"stoch_simul\s*\([^;]*;",
+                f"stoch_simul(order=1, periods={p10.SIM_PERIODS}, irf=0, nograph, noprint) interest inflationq outputgap;",
+            )
+        else:
+            text += (
+                f"\n\nstoch_simul(order=1, periods={p10.SIM_PERIODS}, irf=0, nograph, noprint) "
+                "interest inflationq outputgap;\n"
+            )
+        return text
+
+    if spec.patch_style == "modelbase_ea_sw03":
+        if not use_original:
+            text = p10.replace_once(
+                text,
+                r"cofintintb1\s*=\s*.*?;",
+                (
+                    f"cofintintb1 =  {policy.lagged_policy_rate_gap:.12f}; "
+                    "cofintintb2 = 0; cofintintb3 = 0; cofintintb4 = 0;"
+                ),
+            )
+            text = p10.replace_once(
+                text,
+                r"cofintinf0\s*=\s*.*?;",
+                (
+                    f"cofintinf0 = {policy.inflation_gap:.12f}; "
+                    "cofintinfb1 = 0; cofintinfb2 = 0; cofintinfb3 = 0; cofintinfb4 = 0; "
+                    "cofintinff1 = 0; cofintinff2 = 0; cofintinff3 = 0; cofintinff4 = 0;"
+                ),
+            )
+            text = p10.replace_once(
+                text,
+                r"cofintout\s*=\s*.*?;",
+                (
+                    f"cofintout = {policy.output_gap:.12f}; "
+                    "cofintoutb1 = 0; cofintoutb2 = 0; cofintoutb3 = 0; cofintoutb4 = 0; "
+                    "cofintoutf1 = 0; cofintoutf2 = 0; cofintoutf3 = 0; cofintoutf4 = 0;"
+                ),
+            )
+        if "stoch_simul" in text:
+            text = p10.replace_once(
+                text,
+                r"stoch_simul\s*\([^;]*;",
+                f"stoch_simul(order=1, periods={p10.SIM_PERIODS}, irf=0, nograph, noprint) inflation outputgap interest;",
+            )
+        else:
+            text += (
+                f"\n\nstoch_simul(order=1, periods={p10.SIM_PERIODS}, irf=0, nograph, noprint) "
+                "inflation outputgap interest;\n"
+            )
         return text
 
     raise ValueError(f"Unsupported patch style: {spec.patch_style}")

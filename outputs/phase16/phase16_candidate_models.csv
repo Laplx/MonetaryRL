@@ -3,3 +3,7 @@ priority,model_id,patch_style,rule_form,expected_fit,packaged_results_mat,ration
 2,US_RA07,us_ra07,"explicit Taylor rule with lagged rate, inflation, and output",high,False,规则结构就是三参数泰勒式，替换成本低；若结果为正，可作为额外 U.S. 模型支撑。
 3,NK_CFP10,nk_cfp10,explicit Taylor rule on pi and output gap yg,medium-high,False,有显式 output gap 变量 `yg`，与 `NK_CW09` 同属 NK 类 simple-rule 外部检验。
 4,US_FRB03,us_frb03,"FRB-family rule on interest, inflationq, and outputgap",medium,False,与 `pyfrbus/US_CCTW10` 同属 FRB-family 结构，若可稳定 patch，论文叙事最自然。
+5,G7_TAY93,modelbase_standard,"modelbase rule on interest, inflation/output gap",medium-high,False,经典 `modelbase` 三参数规则，变量口径标准，最适合做额外外部稳健性补充。
+6,NK_GHP16,modelbase_standard,"modelbase rule on interest, inflationq, outputgap",medium-high,True,标准 NK 结构，政策规则和评价变量都直接兼容。
+7,EA_SWW14,modelbase_standard,"modelbase rule on interest, inflationq, outputgap",medium,False,Smets-Wouters 类口径标准，若为正可补足欧元区外部模型证据。
+8,EA_SW03,modelbase_ea_sw03,modelbase quarterly-rate rule on inflation and outputgap,medium,False,早期 EA `modelbase` 规则，替换简单，可作为额外补样本。
